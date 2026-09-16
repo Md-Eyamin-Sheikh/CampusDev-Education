@@ -102,12 +102,40 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        {/* ── PWA / Web App ─────────────────────── */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-title" content="CampusDev" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="manifest" href="/manifest.json" />
+
+        {/* ── Apple Touch Icons ─────────────────── */}
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="167x167" href="/favicon.ico" />
+
+        {/* ── Apple Splash Screens (portrait) ─── */}
+        {/* iPhone SE */}
+        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/favicon.ico" />
+        {/* iPhone X/XS/11 Pro */}
+        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="/favicon.ico" />
+        {/* iPhone XR/11 */}
+        <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" href="/favicon.ico" />
+        {/* iPhone 12/13/14 Pro Max */}
+        <link rel="apple-touch-startup-image" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3)" href="/favicon.ico" />
+        {/* iPad */}
+        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" href="/favicon.ico" />
+        {/* iPad Pro 11" */}
+        <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" href="/favicon.ico" />
+
+        {/* ── Microsoft Tiles ───────────────────── */}
         <meta name="msapplication-TileColor" content="#0a0312" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <link rel="manifest" href="/manifest.json" />
+
+        {/* ── Theme color per OS ────────────────── */}
+        <meta name="theme-color" content="#0a0312" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#0a0312" media="(prefers-color-scheme: light)" />
       </head>
       <body className="min-h-screen bg-[#0a0312] text-white antialiased font-sans selection:bg-fuchsia-500/35 selection:text-white">
         {children}
