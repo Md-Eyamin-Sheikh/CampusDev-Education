@@ -1,0 +1,51 @@
+{
+  "name": "CampusDev",
+  "short_name": "CampusDev",
+  "description": "শিক্ষা প্রতিষ্ঠানের জন্য প্রিমিয়াম ওয়েব সল্যুশন",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0312",
+  "theme_color": "#c026d3",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "bn",
+  "categories": ["education", "business"],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "CampusDev Mobile"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "পরামর্শ নিন",
+      "short_name": "পরামর্শ",
+      "description": "বিনামূল্যে পরামর্শ নিন",
+      "url": "/?section=contact",
+      "icons": [{ "src": "/favicon.ico", "sizes": "any" }]
+    }
+  ],
+  "prefer_related_applications": false
+}
