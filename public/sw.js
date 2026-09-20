@@ -1,5 +1,5 @@
 // CampusDev Service Worker — Cache-first for static assets, network-first for pages
-const CACHE_NAME = 'campusdev-v1';
+const CACHE_NAME = 'campusdev-v2';
 const STATIC_ASSETS = [
   '/',
   '/manifest.json',
@@ -48,9 +48,15 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // For static assets (_next/static, fonts, images): cache-first
+  // Next.js development chunks have stable URLs during Fast Refresh. Never
+  // cache them here, otherwise a freshly rendered page can hydrate with an
+  // older client bundle.
+  if (url.pathname.startsWith('/_next/')) {
+    return;
+  }
+
+  // For app-owned static assets: cache-first
   if (
-    url.pathname.startsWith('/_next/static') ||
     url.pathname.startsWith('/fonts') ||
     url.pathname.match(/\.(png|jpg|jpeg|svg|ico|woff2|woff|css|js)$/)
   ) {

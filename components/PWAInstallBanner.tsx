@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Download, X, Smartphone } from 'lucide-react';
+import { Download, X } from 'lucide-react';
+import { CampusDevIcon } from './Logo';
 import { Language } from '../types';
 
 interface BeforeInstallPromptEvent extends Event {
@@ -83,9 +84,7 @@ export function PWAInstallBanner({ language }: PWAInstallBannerProps) {
         {/* Main surface */}
         <div className="relative flex items-center gap-3 px-4 py-3.5 bg-[rgba(18,8,34,0.92)] backdrop-blur-2xl border border-[rgba(139,92,246,0.35)] rounded-2xl shadow-[0_8px_40px_rgba(5,1,13,0.7)]">
           {/* App icon */}
-          <div className="shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-violet-600 to-fuchsia-500 flex items-center justify-center shadow-[0_0_14px_rgba(192,38,211,0.5)]">
-            <Smartphone className="w-6 h-6 text-white" />
-          </div>
+          <CampusDevIcon size={42} />
 
           {/* Text */}
           <div className="flex-1 min-w-0">

@@ -240,7 +240,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="flex items-center gap-1.5 text-left focus:outline-none group cursor-pointer min-w-0"
               aria-label="CampusDev Home"
             >
-              <Logo size="responsive" />
+              <Logo size="responsive" theme="light" />
             </button>
 
             {/* <span className="hidden 2xl:inline-flex items-center gap-1.5 text-[10px] font-bold text-fuchsia-400 bg-fuchsia-950/20 border border-fuchsia-500/20 px-2.5 py-1 rounded-full shadow-2xs">
@@ -475,10 +475,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Institution Badge & Language Switcher in Drawer Header */}
             <div className="flex items-center justify-between pb-3 border-b border-slate-100 gap-2">
               <div className="flex items-center gap-2 min-w-0">
-                <ShieldCheck className="w-4 h-4 text-fuchsia-500 flex-shrink-0" />
-                <span className="text-xs font-bold text-slate-800 truncate">
-                  {language === 'bn' ? 'স্পেশালাইজড শিক্ষা প্ল্যাটফর্ম' : 'Specialized Education Platform'}
-                </span>
+                <Logo variant="compact" size="sm" theme="dark" />
               </div>
               <button
                 id="mobile-drawer-language-toggle-btn"

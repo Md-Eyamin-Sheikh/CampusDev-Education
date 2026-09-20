@@ -96,7 +96,7 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
           {/* Brand Info */}
           <div className="lg:col-span-2 flex flex-col gap-4">
-            <Logo theme="dark" size="md" />
+            <Logo theme="light" size="md" />
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
               {language === 'bn'
                 ? 'বাংলাদেশের স্কুল, কলেজ, মাদ্রাসা ও কোচিং ইনস্টিটিউটের জন্য আধুনিক, নিরাপদ এবং হাই-কনভার্টিং এডুকেশনাল ওয়েব সল্যুশন প্ল্যাটফর্ম।'

@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import { Logo } from './Logo';
 import { Language } from '../types';
 import { 
   FileText, 
@@ -160,9 +161,9 @@ export const AdminDemoInteractive: React.FC<AdminDemoInteractiveProps> = ({
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             {language === 'bn' ? 'সরাসরি লাইভ সিমুলেশন' : 'Live Interactive Mode'}
           </span>
-          <span className="text-xs text-violet-300/50 hidden md:inline">
-            CampusDev OS 3.4
-          </span>
+          <div className="hidden md:flex items-center gap-1 opacity-90 scale-90">
+            <Logo variant="compact" size="sm" theme="light" />
+          </div>
         </div>
       </div>
 

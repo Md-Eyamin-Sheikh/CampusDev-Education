@@ -36,9 +36,19 @@ const NAV_ORDER: NavSection[] = [
 // ── Service Worker registration ───────────────────────────────────────────────
 function useServiceWorker() {
   useEffect(() => {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(() => {/* silent */});
+    if (!('serviceWorker' in navigator)) return;
+
+    // A service worker must never cache Next's development chunks: their URLs
+    // are stable while Fast Refresh replaces their contents, which can pair
+    // newly rendered HTML with an older client bundle and cause hydration errors.
+    if (process.env.NODE_ENV !== 'production') {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        registrations.forEach((registration) => registration.unregister());
+      }).catch(() => {/* silent */});
+      return;
     }
+
+    navigator.serviceWorker.register('/sw.js').catch(() => {/* silent */});
   }, []);
 }
 

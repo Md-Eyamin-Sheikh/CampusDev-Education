@@ -239,7 +239,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             </div>
 
             {/* Desktop Trust Strip */}
-            <div className="hidden sm:flex flex-wrap items-center justify-center gap-4 lg:gap-8 text-xs sm:text-sm font-semibold text-slate-600 mb-8 sm:mb-10">
+            {/* <div className="hidden sm:flex flex-wrap items-center justify-center gap-4 lg:gap-8 text-xs sm:text-sm font-semibold text-slate-600 mb-8 sm:mb-10">
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
                 <span>{language === 'bn' ? '৫০+ সফল শিক্ষা প্রতিষ্ঠান' : '50+ Campuses'}</span>
@@ -254,7 +254,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
                 <span>{language === 'bn' ? 'শিক্ষা বোর্ড স্ট্যান্ডার্ড কমপ্লায়েন্ট' : 'Board Standard Compliant'}</span>
               </div>
-            </div>
+            </div> */}
 
             {/* Interactive Tabs (School / College / Madrasa / Admin) */}
             <div className="w-full max-w-xl lg:max-w-2xl mx-auto mb-4 sm:mb-6 px-1">

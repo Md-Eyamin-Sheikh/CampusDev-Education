@@ -1,138 +1,299 @@
 'use client';
-import React from 'react';
+import React, { useId } from 'react';
 
-interface LogoProps {
-  variant?: 'full' | 'icon';
-  theme?: 'dark' | 'light';
+export interface LogoProps {
+  variant?: 'full' | 'compact' | 'icon';
+  theme?: 'light' | 'dark' | 'glow';
   className?: string;
-  size?: 'sm' | 'md' | 'lg' | 'responsive';
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'responsive';
+  showSubtitle?: boolean;
+  subtitleText?: string;
+  interactive?: boolean;
 }
 
-export const CampusDevIcon: React.FC<{ className?: string; size?: number }> = ({ 
+export interface CampusDevIconProps {
+  className?: string;
+  size?: number | string;
+  glow?: boolean;
+  interactive?: boolean;
+}
+
+/**
+ * Premium CampusDev Standalone Icon Mark
+ * Features:
+ * - 3D squircle app container with specular glass finish & inset keyline
+ * - Stylized 3D Academic Graduation Crest / Shield
+ * - Flanking glowing digital code brackets (< >)
+ * - Interlocking 'C' & 'D' monogram with multi-stop neon gradients
+ * - Unique SVG element IDs generated per instance to avoid DOM collisions
+ */
+export const CampusDevIcon: React.FC<CampusDevIconProps> = ({ 
   className = '', 
-  size = 36 
+  size = 38,
+  glow = true,
+  interactive = true
 }) => {
+  const uid = useId().replace(/:/g, '');
+  const gradPrimary = `cd-grad-p-${uid}`;
+  const gradCap = `cd-grad-cap-${uid}`;
+  const gradAccent = `cd-grad-acc-${uid}`;
+  const filterGlow = `cd-glow-${uid}`;
+
+  // Dimension handling
+  const sizeStyle = typeof size === 'number' ? { width: size, height: size } : {};
+  const sizeClasses = typeof size === 'string' ? size : '';
+
   return (
     <div 
-      className={`relative inline-flex items-center justify-center rounded-xl bg-[#0e0520] shadow-md shadow-fuchsia-950/20 flex-shrink-0 ${className}`}
-      style={{ width: size, height: size }}
+      suppressHydrationWarning
+      className={`relative inline-flex items-center justify-center flex-shrink-0 group overflow-hidden rounded-[26%] bg-[#0B0518] shadow-[0_6px_24px_rgba(124,58,237,0.32),inset_0_1px_1px_rgba(255,255,255,0.22)] ring-1 ring-white/15 ${
+        interactive ? 'hover:scale-[1.04] hover:shadow-[0_8px_30px_rgba(217,70,239,0.45)] hover:ring-fuchsia-400/40 transition-all duration-300 ease-out' : ''
+      } ${sizeClasses} ${className}`}
+      style={sizeStyle}
+      aria-hidden="true"
     >
+      {/* Background Radial Glow */}
+      {glow && (
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(240,171,252,0.25),transparent_65%),radial-gradient(circle_at_80%_80%,rgba(139,92,246,0.3),transparent_65%)] pointer-events-none" />
+      )}
+
+      {/* Glossy Diagonal Reflection */}
+      <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-white/20 via-transparent to-transparent rotate-45 pointer-events-none group-hover:translate-x-3 transition-transform duration-500" />
+
       <svg
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-[72%] h-[72%]"
+        className="relative z-10 w-full h-full p-[8%]"
       >
-        {/* Graduation cap top rhombus */}
-        <polygon 
-          points="50,15 88,32 50,49 12,32" 
-          fill="url(#capGrad)" 
-        />
-        {/* Tassel cord & button */}
-        <circle cx="50" cy="32" r="3" fill="#c4b5fd" />
-        <path 
-          d="M50,32 C68,34 76,42 78,54" 
-          stroke="#c4b5fd" 
-          strokeWidth="3" 
-          strokeLinecap="round" 
-        />
-        <circle cx="78" cy="56" r="3.5" fill="#c4b5fd" />
-
-        {/* Code symbol inside cap < > */}
-        <path 
-          d="M40,28 L32,32 L40,36" 
-          stroke="#FFFFFF" 
-          strokeWidth="3.2" 
-          strokeLinecap="round" 
-          strokeLinejoin="round" 
-        />
-        <path 
-          d="M60,28 L68,32 L60,36" 
-          stroke="#FFFFFF" 
-          strokeWidth="3.2" 
-          strokeLinecap="round" 
-          strokeLinejoin="round" 
-        />
-
-        {/* Lower U-arc / smile arch representing student collar / foundation */}
-        <path 
-          d="M26,45 C26,72 74,72 74,45" 
-          stroke="#e879f9" 
-          strokeWidth="7" 
-          strokeLinecap="round" 
-        />
-
-        {/* Gradients */}
         <defs>
-          <linearGradient id="capGrad" x1="12" y1="32" x2="88" y2="32" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#c026d3" />
-            <stop offset="50%" stopColor="#d946ef" />
-            <stop offset="100%" stopColor="#e879f9" />
+          {/* Primary Monogram & Crest Gradient */}
+          <linearGradient id={gradPrimary} x1="10" y1="10" x2="90" y2="90" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#F5D0FE" />
+            <stop offset="35%" stopColor="#E879F9" />
+            <stop offset="70%" stopColor="#C084FC" />
+            <stop offset="100%" stopColor="#7C3AED" />
           </linearGradient>
+
+          {/* Graduation Cap Top Facet Gradient */}
+          <linearGradient id={gradCap} x1="20" y1="18" x2="80" y2="48" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#FCE7F3" />
+            <stop offset="40%" stopColor="#F0ABFC" />
+            <stop offset="100%" stopColor="#A855F7" />
+          </linearGradient>
+
+          {/* Cyber Cyan Accent Gradient */}
+          <linearGradient id={gradAccent} x1="15" y1="80" x2="85" y2="20" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#38BDF8" />
+            <stop offset="50%" stopColor="#818CF8" />
+            <stop offset="100%" stopColor="#C084FC" />
+          </linearGradient>
+
+          {/* High Intensity Glow Filter */}
+          <filter id={filterGlow} x="-25%" y="-25%" width="150%" height="150%">
+            <feGaussianBlur stdDeviation="2.8" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
         </defs>
+
+        {/* Fine Inner Bevel Keyline */}
+        <rect x="4" y="4" width="92" height="92" rx="23" stroke={`url(#${gradCap})`} strokeWidth="1.2" strokeOpacity="0.25" />
+
+        {/* Ambient Swoosh Arch Base */}
+        <path 
+          d="M16 80C30 94 68 94 84 76" 
+          stroke={`url(#${gradAccent})`} 
+          strokeWidth="6" 
+          strokeLinecap="round" 
+          strokeOpacity="0.3" 
+        />
+
+        {/* --- Top Component: Academic Crest / Graduation Cap --- */}
+        {/* Diamond Top Roof */}
+        <path 
+          d="M20 34L50 17L80 34L50 51L20 34Z" 
+          fill={`url(#${gradCap})`} 
+        />
+        {/* Diamond Under-shadow Facet */}
+        <path 
+          d="M27 38.5V50C37 59 63 59 73 50V38.5L50 50L27 38.5Z" 
+          fill="#581C87" 
+          fillOpacity="0.9"
+        />
+        {/* Cap Rim Light Edge */}
+        <path 
+          d="M50 34L80 34L50 51Z" 
+          fill="white" 
+          fillOpacity="0.18"
+        />
+        {/* Graduation Tassel Cord & Golden Node */}
+        <path 
+          d="M50 34C60 35.5 70 39.5 76 46.5" 
+          stroke="#F5D0FE" 
+          strokeWidth="2.8" 
+          strokeLinecap="round" 
+        />
+        <circle cx="77.5" cy="49" r="3.2" fill="#38BDF8" filter={`url(#${filterGlow})`} />
+
+        {/* --- Flanking Code Brackets (< >) --- */}
+        <path 
+          d="M39 29.5L33 34L39 38.5" 
+          stroke="#0F172A" 
+          strokeWidth="3.2" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+        />
+        <path 
+          d="M61 29.5L67 34L61 38.5" 
+          stroke="#0F172A" 
+          strokeWidth="3.2" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+        />
+
+        {/* --- Central Interlocking Monogram ('C' and 'D') --- */}
+        {/* 'C' Arc (Campus) */}
+        <path 
+          d="M44 61.5C40.5 58.2 33.8 58.5 31 63.2C28 68.5 31.8 75 37.8 75C40.2 75 42.4 74 44.2 72.2" 
+          stroke={`url(#${gradPrimary})`} 
+          strokeWidth="6" 
+          strokeLinecap="round" 
+          filter={`url(#${filterGlow})`} 
+        />
+        {/* 'C' Sparkle Tip */}
+        <circle cx="44.2" cy="72.2" r="2" fill="#FFFFFF" />
+
+        {/* 'D' Stem & Loop (Dev) */}
+        <path 
+          d="M51 59V75.5H57C62.5 75.5 66.5 72.2 66.5 67.25C66.5 62.3 62.5 59 57 59H51Z" 
+          stroke="#FFFFFF" 
+          strokeWidth="4.5" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+        />
+        <path 
+          d="M55.5 63H57C59.5 63 61.5 64.8 61.5 67.25C61.5 69.7 59.5 71.5 57 71.5H55.5V63Z" 
+          fill={`url(#${gradAccent})`} 
+          fillOpacity="0.4"
+        />
       </svg>
     </div>
   );
 };
 
+/**
+ * Standalone CampusDev Wordmark Component
+ */
+export const CampusDevWordmark: React.FC<{
+  theme?: 'light' | 'dark' | 'glow';
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'responsive';
+  showSubtitle?: boolean;
+  subtitleText?: string;
+  className?: string;
+}> = ({
+  theme = 'light',
+  size = 'md',
+  showSubtitle = true,
+  subtitleText = 'EDUCATION WEB SOLUTIONS',
+  className = ''
+}) => {
+  const titleSizes = {
+    sm: 'text-base font-black',
+    md: 'text-xl font-black',
+    lg: 'text-2xl font-black',
+    xl: 'text-3xl font-black',
+    responsive: 'text-[17px] xs:text-lg sm:text-xl md:text-2xl font-black',
+  };
+
+  const subtitleSizes = {
+    sm: 'text-[8.5px] tracking-[0.18em]',
+    md: 'text-[9.5px] tracking-[0.22em]',
+    lg: 'text-[11px] tracking-[0.25em]',
+    xl: 'text-xs tracking-[0.28em]',
+    responsive: 'text-[8px] sm:text-[9.5px] tracking-[0.16em] sm:tracking-[0.22em]',
+  };
+
+  const campusColor = {
+    light: 'text-white',
+    dark: 'text-slate-900',
+    glow: 'text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]',
+  }[theme];
+
+  const subtitleColor = {
+    light: 'text-slate-300/90',
+    dark: 'text-slate-500 font-semibold',
+    glow: 'text-violet-200/90',
+  }[theme];
+
+  return (
+    <div className={`flex flex-col justify-center min-w-0 leading-none select-none ${className}`}>
+      <div className={`${titleSizes[size]} truncate tracking-tight flex items-baseline gap-0.5`}>
+        <span className={`${campusColor} font-heading`}>Campus</span>
+        <span className="bg-gradient-to-r from-fuchsia-400 via-violet-300 to-cyan-300 bg-clip-text text-transparent font-heading drop-shadow-2xs">
+          Dev
+        </span>
+      </div>
+      {showSubtitle && (
+        <span 
+          className={`font-bold uppercase ${subtitleSizes[size]} ${subtitleColor} mt-1 truncate hidden sm:block`}
+        >
+          {subtitleText}
+        </span>
+      )}
+    </div>
+  );
+};
+
+/**
+ * Universal CampusDev Reusable Logo Component
+ */
 export const Logo: React.FC<LogoProps> = ({ 
   variant = 'full', 
   theme = 'light',
   className = '',
-  size = 'md' 
+  size = 'md',
+  showSubtitle = true,
+  subtitleText = 'EDUCATION WEB SOLUTIONS',
+  interactive = true
 }) => {
-  const isResponsive = size === 'responsive';
-
-  const iconSizes = {
+  const iconPixelSizes = {
     sm: 30,
     md: 38,
-    lg: 48,
+    lg: 46,
+    xl: 56,
     responsive: 38,
   };
 
-  const textSizes = {
-    sm: 'text-lg',
-    md: 'text-2xl',
-    lg: 'text-3xl',
-    responsive: 'text-[17px] xs:text-lg sm:text-2xl',
-  };
-
-  const subTextSizes = {
-    sm: 'text-[9px] tracking-[0.16em]',
-    md: 'text-[10px] tracking-[0.2em]',
-    lg: 'text-xs tracking-[0.24em]',
-    responsive: 'text-[8.5px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em]',
-  };
+  if (variant === 'icon') {
+    return (
+      <div suppressHydrationWarning className={`inline-flex items-center ${className}`}>
+        {size === 'responsive' ? (
+          <CampusDevIcon className="w-8 h-8 sm:w-10 sm:h-10" interactive={interactive} />
+        ) : (
+          <CampusDevIcon size={iconPixelSizes[size]} interactive={interactive} />
+        )}
+      </div>
+    );
+  }
 
   return (
-    <div className={`inline-flex items-center gap-1.5 sm:gap-2.5 select-none min-w-0 ${className}`}>
-      {isResponsive ? (
-        <>
-          <div className="sm:hidden flex-shrink-0">
-            <CampusDevIcon size={30} />
-          </div>
-          <div className="hidden sm:block flex-shrink-0">
-            <CampusDevIcon size={38} />
-          </div>
-        </>
+    <div suppressHydrationWarning className={`inline-flex items-center gap-2 sm:gap-2.5 select-none min-w-0 ${className}`}>
+      {size === 'responsive' ? (
+        <CampusDevIcon className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0" interactive={interactive} />
       ) : (
-        <CampusDevIcon size={iconSizes[size]} />
+        <CampusDevIcon size={iconPixelSizes[size]} interactive={interactive} />
       )}
       
-      {variant === 'full' && (
-        <div className="flex flex-col min-w-0 justify-center">
-          <div className={`font-black font-heading leading-none ${textSizes[size]} truncate tracking-tight`}>
-            <span className={theme === 'dark' ? 'text-white' : 'text-[#0B1C30]'}>Campus</span>
-            <span className="text-fuchsia-400">Dev</span>
-          </div>
-          <span 
-            className={`font-semibold uppercase ${subTextSizes[size]} ${
-              theme === 'dark' ? 'text-slate-400' : 'text-slate-500'
-            } mt-0.5 truncate hidden sm:block`}
-          >
-            Education Web Solutions
-          </span>
-        </div>
+      {variant !== 'icon' && (
+        <CampusDevWordmark
+          theme={theme}
+          size={size}
+          showSubtitle={variant === 'full' && showSubtitle}
+          subtitleText={subtitleText}
+        />
       )}
     </div>
   );
