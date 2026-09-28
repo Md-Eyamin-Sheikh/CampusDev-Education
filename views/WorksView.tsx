@@ -67,7 +67,7 @@ export const WorksView: React.FC<WorksViewProps> = ({
               <button
                 key={btn.id}
                 onClick={() => setActiveFilter(btn.id)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all cursor-pointer ${
                   isActive
                     ? 'bg-[#003B73] text-white shadow-md'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
@@ -118,18 +118,18 @@ export const WorksView: React.FC<WorksViewProps> = ({
                   {/* Tech stack badges */}
                   <div className="flex flex-wrap gap-1.5">
                     {project.techStack.map((tech) => (
-                      <span key={tech} className="px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 text-[11px] font-mono font-medium">
+                      <span key={tech} className="px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 text-xs font-mono font-medium">
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {language === 'bn' ? project.summaryBn : project.summaryEn}
                   </p>
 
                   {/* Highlight Result Callout */}
-                  <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200/80 text-xs">
+                  <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200/80 text-sm">
                     <p className="font-bold text-emerald-900">
                       ফলাফল: {language === 'bn' ? project.resultsBn[0] : project.resultsEn[0]}
                     </p>
@@ -164,7 +164,7 @@ export const WorksView: React.FC<WorksViewProps> = ({
             <h3 className="text-lg sm:text-xl font-bold font-heading">
               {language === 'bn' ? 'আপনার প্রতিষ্ঠানের জন্য এমন একটি প্ল্যাটফর্ম তৈরি করতে চান?' : 'Ready to Elevate Your Academic Institution?'}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-lg">
+            <p className="text-sm sm:text-base text-slate-300 mt-1 max-w-lg">
               {language === 'bn'
                 ? 'আমাদের অভিজ্ঞ টিম আপনার প্রয়োজন অনুযায়ী কাস্টম ডেমো ও প্রজেক্ট রোডম্যাপ প্রস্তুত করে দেবে।'
                 : 'Our engineers will assemble a tailored scope, prototype structure, and investment plan.'}

@@ -37,7 +37,7 @@ export const Card: React.FC<CardProps> = ({
   };
 
   const hoverClasses = hover
-    ? 'hover:-translate-y-1 hover:border-[var(--color-brand)]/20 hover:shadow-[0_16px_40px_-8px_rgb(61_90_254/.12)] cursor-pointer'
+    ? 'hover:-translate-y-1 hover:border-[var(--color-brand)]/20 hover:shadow-[0_16px_40px_-8px_rgba(0,59,115,.12)] cursor-pointer'
     : '';
   const interactiveClasses = onClick ? 'cursor-pointer' : '';
 

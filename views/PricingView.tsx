@@ -51,7 +51,7 @@ export const PricingView: React.FC<PricingViewProps> = ({
           <div className="inline-flex p-1.5 bg-white border border-slate-200 rounded-2xl shadow-xs mt-8">
             <button
               onClick={() => setActiveBillingTab('build')}
-              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+              className={`px-5 py-2.5 rounded-xl text-sm sm:text-base font-bold transition-all cursor-pointer ${
                 activeBillingTab === 'build'
                   ? 'bg-[#003B73] text-white shadow-xs'
                   : 'text-slate-600 hover:text-slate-900'
@@ -61,7 +61,7 @@ export const PricingView: React.FC<PricingViewProps> = ({
             </button>
             <button
               onClick={() => setActiveBillingTab('care')}
-              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+              className={`px-5 py-2.5 rounded-xl text-sm sm:text-base font-bold transition-all cursor-pointer ${
                 activeBillingTab === 'care'
                   ? 'bg-[#003B73] text-white shadow-xs'
                   : 'text-slate-600 hover:text-slate-900'
@@ -95,7 +95,7 @@ export const PricingView: React.FC<PricingViewProps> = ({
                     <h3 className={`text-xl font-bold font-heading ${plan.popular ? 'text-white' : 'text-[#0F172A]'}`}>
                       {language === 'bn' ? plan.nameBn : plan.nameEn}
                     </h3>
-                    <p className={`text-xs mt-1 ${plan.popular ? 'text-slate-300' : 'text-slate-500'}`}>
+                    <p className={`text-sm mt-1 ${plan.popular ? 'text-slate-300' : 'text-slate-500'}`}>
                       {language === 'bn' ? plan.subtitleBn : plan.subtitleEn}
                     </p>
 
@@ -103,21 +103,21 @@ export const PricingView: React.FC<PricingViewProps> = ({
                       <span className={`text-3xl sm:text-4xl font-extrabold font-heading ${plan.popular ? 'text-blue-300' : 'text-[#0F172A]'}`}>
                         {language === 'bn' ? plan.priceBn : plan.priceEn}
                       </span>
-                      <span className={`text-xs ml-1 ${plan.popular ? 'text-slate-400' : 'text-slate-500'}`}>
+                      <span className={`text-sm ml-1 ${plan.popular ? 'text-slate-400' : 'text-slate-500'}`}>
                         {language === 'bn' ? '/এককালীন বিনিয়োগ' : '/one-time'}
                       </span>
                     </div>
 
-                    <div className="p-3 rounded-xl mb-6 bg-slate-500/10 border border-slate-200/20 text-xs">
+                    <div className="p-3 rounded-xl mb-6 bg-slate-500/10 border border-slate-200/20 text-sm">
                       <p className={`font-semibold ${plan.popular ? 'text-slate-300' : 'text-slate-700'}`}>
                         ⏱️ ডেলিভারি সময়: <b>{language === 'bn' ? plan.deliveryTimeBn : plan.deliveryTimeEn}</b>
                       </p>
-                      <p className={`text-[11px] mt-0.5 ${plan.popular ? 'text-slate-400' : 'text-slate-500'}`}>
+                      <p className={`text-sm mt-0.5 ${plan.popular ? 'text-slate-400' : 'text-slate-500'}`}>
                         সাপোর্ট: {language === 'bn' ? plan.supportDurationBn : plan.supportDurationEn}
                       </p>
                     </div>
 
-                    <ul className="flex flex-col gap-2.5 text-xs mb-8">
+                    <ul className="flex flex-col gap-2.5 text-sm mb-8">
                       {(language === 'bn' ? plan.featuresBn : plan.featuresEn).map((feat, idx) => (
                         <li key={idx} className="flex items-start gap-2">
                           <Check className={`w-4 h-4 flex-shrink-0 mt-0.5 ${plan.popular ? 'text-blue-300' : 'text-[#003B73]'}`} />
@@ -130,7 +130,7 @@ export const PricingView: React.FC<PricingViewProps> = ({
                   <div>
                     <button
                       onClick={onOpenConsultation}
-                      className={`w-full py-3.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                      className={`w-full py-3.5 rounded-xl text-sm font-bold transition-all cursor-pointer ${
                         plan.popular
                           ? 'bg-[#003B73] hover:bg-[#00529B] text-white shadow-md'
                           : 'bg-[#0C1929] hover:bg-[#122640] text-white'
@@ -152,7 +152,7 @@ export const PricingView: React.FC<PricingViewProps> = ({
                 <h3 className="text-lg sm:text-xl font-bold font-heading text-[#0F172A] mt-2">
                   {language === 'bn' ? 'এন্টারপ্রাইজ বা বিশেষ শিক্ষা ট্রাস্টের ওয়েবসাইট?' : 'Custom Architecture & Trust Portals'}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-xl">
+                <p className="text-sm sm:text-base text-slate-600 mt-1 max-w-xl">
                   {language === 'bn'
                     ? 'একাধিক ক্যাম্পাস, অনলাইন ফি কালেকশন, এসএমএস ব্রডকাস্ট বা বিশেষ ডাটাবেজ ইন্টিগ্রেশনের জন্য আমরা কাস্টম সমাধান প্রদান করি।'
                     : 'Tailored for multi-branch cadet chains, universities, and customized institutional workflows.'}
@@ -161,7 +161,7 @@ export const PricingView: React.FC<PricingViewProps> = ({
 
               <button
                 onClick={onOpenEstimator}
-                className="px-6 py-3.5 rounded-xl bg-[#003B73] hover:bg-[#00529B] text-white text-xs sm:text-sm font-bold whitespace-nowrap cursor-pointer flex items-center gap-2"
+                className="px-6 py-3.5 rounded-xl bg-[#003B73] hover:bg-[#00529B] text-white text-sm font-bold whitespace-nowrap cursor-pointer flex items-center gap-2"
               >
                 <Calculator className="w-4 h-4 text-blue-200" />
                 <span>{language === 'bn' ? 'কাস্টম এস্টিমেটর খুলুন' : 'Open Custom Estimator'}</span>
@@ -172,7 +172,7 @@ export const PricingView: React.FC<PricingViewProps> = ({
           /* 2. MAINTENANCE & CARE PLANS */
           <div>
             <div className="text-center max-w-2xl mx-auto mb-8">
-              <p className="text-xs text-slate-600">
+              <p className="text-sm text-slate-600">
                 {language === 'bn'
                   ? 'ওয়েবসাইট তৈরির পর নিশ্চিন্ত থাকতে আমাদের সার্বক্ষণিক টেকনিক্যাল সাপোর্ট, সিকিউরিটি ও কন্টেন্ট আপডেট কেয়ার প্ল্যান।'
                   : 'Ensure zero downtime, automated security patches, and instant content updates with our dedicated engineers.'}
@@ -196,7 +196,7 @@ export const PricingView: React.FC<PricingViewProps> = ({
                     <h3 className="text-xl font-bold font-heading text-[#0F172A]">
                       {language === 'bn' ? care.nameBn : care.nameEn}
                     </h3>
-                    <p className="text-xs text-slate-500 mt-1">
+                    <p className="text-sm text-slate-500 mt-1">
                       {language === 'bn' ? care.descBn : care.descEn}
                     </p>
 
@@ -206,7 +206,7 @@ export const PricingView: React.FC<PricingViewProps> = ({
                       </span>
                     </div>
 
-                    <ul className="flex flex-col gap-2.5 text-xs text-slate-700 mb-8">
+                    <ul className="flex flex-col gap-2.5 text-sm text-slate-700 mb-8">
                       {(language === 'bn' ? care.featuresBn : care.featuresEn).map((feat, idx) => (
                         <li key={idx} className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-[#003B73] flex-shrink-0 mt-0.5" />
@@ -218,7 +218,7 @@ export const PricingView: React.FC<PricingViewProps> = ({
 
                   <button
                     onClick={onOpenConsultation}
-                    className="w-full py-3 rounded-xl bg-[#003B73] hover:bg-[#00529B] text-white text-xs font-bold transition-colors cursor-pointer"
+                    className="w-full py-3 rounded-xl bg-[#003B73] hover:bg-[#00529B] text-white text-sm font-bold transition-colors cursor-pointer"
                   >
                     {language === 'bn' ? 'কেয়ার প্ল্যান নির্বাচন করুন' : 'Select Care Plan'}
                   </button>

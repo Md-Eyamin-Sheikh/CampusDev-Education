@@ -81,7 +81,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
               <span className="text-xs font-bold uppercase tracking-wider text-[#003B73] block mb-2">
                 কেন শুধুমাত্র শিক্ষা খাত? (Why Education Focus?)
               </span>
-              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                 {language === 'bn'
                   ? 'বাংলাদেশের অধিকাংশ শিক্ষা প্রতিষ্ঠানের ওয়েবসাইটগুলো প্রাচীন প্রযুক্তিতে তৈরি, মোবাইলে ঠিকমতো খোলে না এবং নোটিশ বা রেজাল্ট দিতে গেলে অন্য কোম্পানির ওপর নির্ভর করতে হয়। এই ভোগান্তি দূর করতেই আমরা CampusDev প্রতিষ্ঠা করেছি—যাতে প্রতিটি স্কুল, কলেজ ও মাদ্রাসা নিজস্ব আধুনিক পরিচিতি ও সহজ বাংলা কন্ট্রোল পায়।'
                   : 'Most academic websites in Bangladesh suffer from outdated codebases, poor mobile readability, and cumbersome admin layers. CampusDev was engineered specifically to give every school, college, and madrasa effortless digital independence and pride.'}
@@ -91,14 +91,14 @@ export const AboutView: React.FC<AboutViewProps> = ({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs">
                 <h4 className="text-sm font-bold text-[#0F172A] mb-2">🎯 আমাদের মিশন</h4>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   দেশের প্রতিটি শিক্ষা প্রতিষ্ঠানকে একটি আন্তর্জাতিক মানের, মোবাইল-ফ্রেন্ডলি ও নিরাপদ ওয়েবসাইট প্রদানের মাধ্যমে তাদের প্রশাসনিক গতি বৃদ্ধি করা।
                 </p>
               </div>
 
               <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs">
                 <h4 className="text-sm font-bold text-[#0F172A] mb-2">🔭 আমাদের ভিশন</h4>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   ২০৩০ সালের মধ্যে বাংলাদেশের ৫০০+ শীর্ষস্থানীয় শিক্ষা প্রতিষ্ঠানের জন্য নির্ভরযোগ্য এবং স্বয়ংক্রিয় ক্লাউড প্ল্যাটফর্ম তৈরি করা।
                 </p>
               </div>
@@ -144,7 +144,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
                 <h3 className="text-base font-bold text-[#0F172A]">
                   {language === 'bn' ? v.titleBn : v.titleEn}
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   {language === 'bn' ? v.descBn : v.descEn}
                 </p>
               </div>
@@ -158,7 +158,7 @@ export const AboutView: React.FC<AboutViewProps> = ({
             <h3 className="text-lg sm:text-xl font-bold font-heading">
               আমাদের সাথে আপনার প্রতিষ্ঠানের ডিজিটাল পরিকল্পনা শুরু করুন
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-lg">
+            <p className="text-sm text-slate-300 mt-1 max-w-lg">
               আমাদের সিনিয়র এডু-টেক কনসালটেন্ট সরাসরি আপনার প্রতিষ্ঠানে বা গুগল মিটে বিস্তারিত আলোচনা করবেন।
             </p>
           </div>

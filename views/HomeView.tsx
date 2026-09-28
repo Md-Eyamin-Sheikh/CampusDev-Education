@@ -604,7 +604,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                         <h3 className="text-xl sm:text-2xl font-bold font-heading leading-snug text-white mb-2">
                           {currentInst.heroTitle}
                         </h3>
-                        <p className="text-xs sm:text-sm text-slate-300 font-medium max-w-xl">
+                        <p className="text-sm text-slate-300 font-medium max-w-xl">
                           ডিজিটাল রেজাল্ট পোর্টাল, অনলাইন ক্যাশলেস পেমেন্ট এবং আধুনিক অটোমেটেড ক্যাম্পাস ম্যানেজমেন্ট সিস্টেম।
                         </p>
                       </div>
@@ -671,7 +671,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                           <p className="text-[11px] text-slate-500 font-medium">{currentInst.principal}</p>
                         </div>
                       </div>
-                      <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
+                      <p className="text-sm text-slate-600 line-clamp-3 leading-relaxed">
                         {currentInst.principalMsg}
                       </p>
                     </div>
@@ -815,25 +815,25 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
                 <span className="text-2xl sm:text-4xl font-extrabold font-heading text-sky-300">৫০+</span>
-                <p className="text-xs sm:text-sm text-slate-300 mt-1">
+                <p className="text-sm text-slate-300 mt-1">
                   {language === 'bn' ? 'শিক্ষা প্রতিষ্ঠান পরিচালিত' : 'Institutions Onboarded'}
                 </p>
               </div>
               <div>
                 <span className="text-2xl sm:text-4xl font-extrabold font-heading text-white">১,২০,০০০+</span>
-                <p className="text-xs sm:text-sm text-slate-300 mt-1">
+                <p className="text-sm text-slate-300 mt-1">
                   {language === 'bn' ? 'শিক্ষার্থী ট্র্যাকিং ও রেজাল্ট' : 'Students & Marks Tracked'}
                 </p>
               </div>
               <div>
                 <span className="text-2xl sm:text-4xl font-extrabold font-heading text-sky-300">৯৯.৯%</span>
-                <p className="text-xs sm:text-sm text-slate-300 mt-1">
+                <p className="text-sm text-slate-300 mt-1">
                   {language === 'bn' ? 'নিশ্চিত ক্লাউড আপটাইম' : 'Cloud Uptime Guarantee'}
                 </p>
               </div>
               <div>
                 <span className="text-2xl sm:text-4xl font-extrabold font-heading text-white">২.৫x</span>
-                <p className="text-xs sm:text-sm text-slate-300 mt-1">
+                <p className="text-sm text-slate-300 mt-1">
                   {language === 'bn' ? 'দ্রুত পেজ লোডিং স্পিড' : 'Faster Page Speed'}
                 </p>
               </div>
@@ -883,7 +883,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   <h3 className="text-base font-bold text-[#0F172A] mb-2">
                     {language === 'bn' ? srv.titleBn : srv.titleEn}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">
                     {language === 'bn' ? srv.descriptionBn : srv.descriptionEn}
                   </p>
 
@@ -919,7 +919,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 ? 'আমাদের তৈরি প্রতিটি ওয়েবসাইটে যা যা অন্তর্ভুক্ত থাকে'
                 : 'Everything Included in Every CampusDev Website'}
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 mt-2">
+            <p className="text-sm sm:text-base text-slate-600 mt-2">
               {language === 'bn'
                 ? 'কোনো অতিরিক্ত লুকানো খরচ ছাড়া একটি পূর্ণাঙ্গ আধুনিক শিক্ষা প্রতিষ্ঠান ওয়েবসাইট।'
                 : 'No hidden extras — complete turn-key digital operations suite for your school.'}
@@ -1097,7 +1097,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <h3 className="text-base font-bold text-[#0F172A]">
                   {language === 'bn' ? item.titleBn : item.titleEn}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                   {language === 'bn' ? item.descBn : item.descEn}
                 </p>
               </div>
@@ -1118,7 +1118,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 ? 'আমাদের কাজের ৬টি সুনির্দিষ্ট ও নির্ভরযোগ্য ধাপ'
                 : 'Structured 6-Step Implementation Flow'}
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 mt-2">
+            <p className="text-sm sm:text-base text-slate-600 mt-2">
               {language === 'bn'
                 ? 'চুক্তির দিন থেকে লাইভ হওয়া পর্যন্ত প্রতিটি পদক্ষেপ স্বচ্ছ ও সময়োপযোগী।'
                 : 'Transparent, reliable milestones from discovery to launch day.'}
@@ -1160,7 +1160,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 ? 'আপনার প্রতিষ্ঠানের প্রয়োজন অনুযায়ী সেরা প্যাকেজ বেছে নিন'
                 : 'Select the Right Package for Your Institution'}
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 mt-2">
+            <p className="text-sm sm:text-base text-slate-600 mt-2">
               {language === 'bn'
                 ? '১০০% স্বচ্ছ খরচ। কোনো গোপন ফি নেই।'
                 : '100% transparent investment. Zero hidden surcharges.'}
@@ -1278,7 +1278,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                       <span key={idx}>★</span>
                     ))}
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-700 italic leading-relaxed mb-6">
+                  <p className="text-sm sm:text-base text-slate-700 italic leading-relaxed mb-6">
                     "{language === 'bn' ? t.quoteBn : t.quoteEn}"
                   </p>
                 </div>
@@ -1312,7 +1312,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#0F172A] mt-1">
               {language === 'bn' ? 'সাধারণ জিজ্ঞাসা ও উত্তর' : 'Common Questions & Clear Answers'}
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 mt-2">
+            <p className="text-sm sm:text-base text-slate-600 mt-2">
               {language === 'bn'
                 ? 'প্রজেক্ট শুরুর পূর্বে সিদ্ধান্ত নিতে এই তথ্যগুলো আপনাকে সাহায্য করবে।'
                 : 'Everything you need to know before initiating your digital platform.'}
@@ -1367,7 +1367,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     : 'Ready to Transform Your Educational Institution with a Modern Digital Presence?'}
                 </h2>
 
-                <p className="text-xs sm:text-sm text-slate-300 mb-8 max-w-xl leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-300 mb-8 max-w-xl leading-relaxed">
                   {language === 'bn'
                     ? 'আজই একটি ফ্রি প্ল্যানিং কল বা প্রজেক্ট এস্টিমেট বুক করুন। আমাদের এডু-টেক স্পেশালিস্ট টিম আপনাকে সঠিক গাইডলাইন দেবে।'
                     : 'Book a free discovery session with our senior education web engineers. We provide end-to-end guidance tailored to your academic syllabus.'}

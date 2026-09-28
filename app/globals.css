@@ -761,18 +761,7 @@ button:not(:disabled):active {
   }
 }
 
-@keyframes glow-pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: 0 0 8px var(--color-brand), 0 0 16px rgba(14,165,233,.35);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(0.85);
-    box-shadow: 0 0 4px var(--color-brand), 0 0 8px rgba(14,165,233,.18);
-  }
-}
+/* (duplicate removed — single glow-pulse above) */
 
 /* ====== SHINE EFFECT ====== */
 .shine-effect {
@@ -907,9 +896,6 @@ button:not(:disabled):active {
   body {
     font-size: 15px;
   }
-  #mobile-bottom-navbar {
-    padding-bottom: calc(16px + env(safe-area-inset-bottom));
-  }
   .container, section, main {
     overflow-x: hidden;
   }
@@ -921,8 +907,8 @@ button:not(:disabled):active {
 /* ====== HOVER STATES ====== */
 @media (hover: hover) and (pointer: fine) {
   .surface-card:hover {
-    border-color: rgba(14,165,233,.22);
-    box-shadow: 0 12px 32px -8px rgba(14,165,233,.12), 0 4px 10px rgba(10,17,40,.06);
+    border-color: rgba(0,59,115,.18);
+    box-shadow: 0 12px 32px -8px rgba(0,59,115,.10), 0 4px 10px rgba(12,25,41,.05);
   }
 }
 
@@ -945,6 +931,29 @@ button:not(:disabled):active {
 
 :focus:not(:focus-visible) {
   outline: none;
+}
+
+/* ====== TEXT BALANCE ====== */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* ====== SECTION PADDING RESPONSIVE ====== */
+.section-padding {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+@media (min-width: 640px) {
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 }
 
 /* ====== PRINT STYLES ====== */

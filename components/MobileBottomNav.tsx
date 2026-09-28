@@ -26,21 +26,28 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   isVisible = true
 }) => {
   const items: { id: NavSection; icon: React.ReactNode; labelBn: string; labelEn: string }[] = [
-    { id: 'home', icon: <Home className="w-5 h-5" />, labelBn: 'হোম', labelEn: 'Home' },
-    { id: 'services', icon: <Layers className="w-5 h-5" />, labelBn: 'সার্ভিস', labelEn: 'Services' },
-    { id: 'works', icon: <Briefcase className="w-5 h-5" />, labelBn: 'কাজ', labelEn: 'Works' },
-    { id: 'admin-demo', icon: <LayoutDashboard className="w-5 h-5" />, labelBn: 'অ্যাডমিন', labelEn: 'Admin' },
-    { id: 'contact', icon: <MessageSquare className="w-5 h-5" />, labelBn: 'যোগাযোগ', labelEn: 'Contact' },
+    { id: 'home', icon: <Home />, labelBn: 'হোম', labelEn: 'Home' },
+    { id: 'services', icon: <Layers />, labelBn: 'সার্ভিস', labelEn: 'Services' },
+    { id: 'works', icon: <Briefcase />, labelBn: 'কাজ', labelEn: 'Works' },
+    { id: 'admin-demo', icon: <LayoutDashboard />, labelBn: 'অ্যাডমিন', labelEn: 'Admin' },
+    { id: 'contact', icon: <MessageSquare />, labelBn: 'যোগাযোগ', labelEn: 'Contact' },
   ];
 
   return (
     <div 
       id="mobile-bottom-navbar"
-      className={`md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-xl border-t border-slate-200/90 shadow-[0_-4px_25px_rgba(15,23,42,0.08)] pb-[max(0.4rem,env(safe-area-inset-bottom))] transition-transform duration-300 ease-in-out will-change-transform ${
+      className={`md:hidden fixed bottom-0 left-0 right-0 z-40 transition-transform duration-300 ease-in-out will-change-transform ${
         isVisible ? 'translate-y-0' : 'translate-y-full'
       }`}
     >
-      <div className="flex items-center justify-around px-1.5 py-1.5">
+      {/* Premium glass backdrop */}
+      <div className="absolute inset-0 bg-white/[0.97] backdrop-blur-xl border-t border-slate-200/80 shadow-[0_-2px_20px_rgba(15,23,42,0.06)]" />
+
+      {/* Content layer */}
+      <div 
+        className="relative flex items-end justify-around px-2 pt-1.5"
+        style={{ paddingBottom: 'max(10px, env(safe-area-inset-bottom))' }}
+      >
         {items.map((item) => {
           const isActive = currentSection === item.id;
           return (
@@ -51,37 +58,54 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                 onNavigate(item.id);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className={`flex flex-col items-center justify-center min-w-[52px] py-1 px-1.5 rounded-xl transition-all active:scale-90 cursor-pointer ${
+              className={`relative flex flex-col items-center justify-center min-w-[56px] py-1.5 px-2 rounded-xl transition-all duration-200 active:scale-90 cursor-pointer ${
                 isActive 
                   ? 'text-[#003B73]' 
-                  : 'text-slate-500 hover:text-slate-800'
+                  : 'text-slate-400 hover:text-slate-600'
               }`}
             >
-              <div className={`p-1.5 rounded-xl transition-all ${
-                isActive ? 'bg-sky-100/90 text-[#003B73] border border-sky-200/80 shadow-2xs scale-105' : 'bg-transparent'
+              {/* Active top pill indicator */}
+              {isActive && (
+                <span className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-6 h-[3px] rounded-full bg-[#003B73] shadow-[0_0_6px_rgba(0,59,115,0.4)]" />
+              )}
+
+              {/* Icon container */}
+              <div className={`flex items-center justify-center transition-all duration-200 ${
+                isActive 
+                  ? 'text-[#003B73]' 
+                  : 'text-slate-400'
               }`}>
-                {item.icon}
+                <div className={isActive ? 'w-[22px] h-[22px]' : 'w-5 h-5'}>
+                  {React.cloneElement(item.icon as React.ReactElement<{ className?: string; strokeWidth?: number }>, {
+                    className: 'w-full h-full',
+                    strokeWidth: isActive ? 2.5 : 1.8
+                  })}
+                </div>
               </div>
-              <span className={`text-[10px] tracking-tight mt-0.5 ${isActive ? 'font-black text-[#003B73]' : 'font-semibold text-slate-500'}`}>
+
+              {/* Label */}
+              <span className={`text-[11px] leading-tight mt-1 ${
+                isActive 
+                  ? 'font-bold text-[#003B73]' 
+                  : 'font-medium text-slate-400'
+              }`}>
                 {language === 'bn' ? item.labelBn : item.labelEn}
               </span>
-              {isActive && (
-                <span className="w-1 h-1 rounded-full bg-[#003B73] mt-0.5" />
-              )}
             </button>
           );
         })}
 
-        {/* Quick Consultation Pill Trigger */}
+        {/* Quick Consultation FAB */}
         <button
           id="mobile-bottom-nav-consult-btn"
           onClick={onOpenConsultation}
-          className="flex flex-col items-center justify-center min-w-[52px] py-1 px-1.5 transition-all active:scale-90 cursor-pointer group"
+          className="relative flex flex-col items-center justify-center min-w-[56px] py-1.5 px-2 transition-all active:scale-90 cursor-pointer group"
         >
-          <div className="p-1.5 rounded-full bg-[#003B73] text-white shadow-md group-hover:bg-[#00529B] group-hover:scale-105 transition-all border border-sky-400/30">
-            <Sparkles className="w-4 h-4 text-sky-200" />
+          {/* Elevated icon */}
+          <div className="flex items-center justify-center w-10 h-10 -mt-3 rounded-2xl bg-gradient-to-br from-[#003B73] to-[#00529B] text-white shadow-[0_4px_14px_rgba(0,59,115,0.35)] group-hover:shadow-[0_6px_20px_rgba(0,59,115,0.45)] group-hover:scale-105 transition-all duration-200 border border-white/20">
+            <Sparkles className="w-[18px] h-[18px] text-sky-200" />
           </div>
-          <span className="text-[10px] tracking-tight font-black text-[#003B73] mt-0.5">
+          <span className="text-[11px] leading-tight font-bold text-[#003B73] mt-1">
             {language === 'bn' ? 'পরামর্শ' : 'Consult'}
           </span>
         </button>

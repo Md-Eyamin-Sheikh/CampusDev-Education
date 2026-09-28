@@ -97,7 +97,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
               <div className="flex items-center gap-2">
                 {[1, 2, 3, 4].map((s) => (
                   <div key={s} className="flex items-center gap-1.5">
-                    <span className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs ${
+                    <span className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-sm ${
                       step === s 
                         ? 'bg-[#0C1929] text-white' 
                         : step > s 
@@ -106,7 +106,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                     }`}>
                       {step > s ? '✓' : s}
                     </span>
-                    <span className={`hidden sm:inline text-xs font-semibold ${step === s ? 'text-[#0F172A]' : 'text-slate-400'}`}>
+                    <span className={`hidden sm:inline text-sm font-semibold ${step === s ? 'text-[#0F172A]' : 'text-slate-400'}`}>
                       {s === 1 ? 'প্রতিষ্ঠান' : s === 2 ? 'প্যাকেজ' : s === 3 ? 'ফিচারস' : 'যোগাযোগ'}
                     </span>
                     {s < 4 && <span className="text-slate-300 mx-1">→</span>}
@@ -115,7 +115,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
               </div>
 
               <div className="text-right">
-                <span className="text-[10px] text-slate-400 block font-medium">আনুমানিক বাজেট:</span>
+                <span className="text-xs text-slate-400 block font-medium">আনুমানিক বাজেট:</span>
                 <span className="text-base sm:text-lg font-extrabold font-heading text-[#003B73] font-mono">
                   ৳{calculatedPrice.toLocaleString()}
                 </span>
@@ -131,7 +131,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                       <h3 className="text-base font-bold text-[#0F172A]">
                         ধাপ ১ — প্রতিষ্ঠানের ধরন নির্বাচন করুন
                       </h3>
-                      <p className="text-xs text-slate-500 mt-0.5">
+                      <p className="text-sm text-slate-500 mt-0.5">
                         কোন ধরনের শিক্ষা প্রতিষ্ঠানের জন্য ওয়েবসাইট তৈরি করতে চাচ্ছেন?
                       </p>
                     </div>
@@ -157,15 +157,15 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                             {item.icon}
                           </div>
                           <div>
-                            <p className="text-xs font-bold text-[#0F172A]">{item.title}</p>
-                            <p className="text-[11px] text-slate-500 mt-0.5">{item.desc}</p>
+                            <p className="text-sm font-bold text-[#0F172A]">{item.title}</p>
+                            <p className="text-xs text-slate-500 mt-0.5">{item.desc}</p>
                           </div>
                         </button>
                       ))}
                     </div>
 
                     <div>
-                      <label className="text-xs font-semibold text-slate-700 block mb-1">
+                      <label className="text-sm font-medium text-slate-700 block mb-1">
                         প্রতিষ্ঠানের নাম (ঐচ্ছিক):
                       </label>
                       <input
@@ -173,7 +173,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                         placeholder="উদা: আইডিয়াল স্কুল অ্যান্ড কলেজ..."
                         value={institutionName}
                         onChange={(e) => setInstitutionName(e.target.value)}
-                        className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B73]"
+                        className="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B73]"
                       />
                     </div>
 
@@ -181,7 +181,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                       <button
                         type="button"
                         onClick={() => setStep(2)}
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0C1929] text-white text-xs font-bold hover:bg-[#003B73] cursor-pointer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0C1929] text-white text-sm font-bold hover:bg-[#003B73] cursor-pointer"
                       >
                         <span>পরবর্তী ধাপ</span>
                         <ArrowRight className="w-4 h-4" />
@@ -197,7 +197,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                       <h3 className="text-base font-bold text-[#0F172A]">
                         ধাপ ২ — ওয়েবসাইট প্যাকেজের পরিসর বেছে নিন
                       </h3>
-                      <p className="text-xs text-slate-500 mt-0.5">
+                      <p className="text-sm text-slate-500 mt-0.5">
                         আপনার প্রতিষ্ঠানের চাহিদা ও আকার অনুযায়ী প্যাকেজ নির্বাচন করুন।
                       </p>
                     </div>
@@ -219,11 +219,11 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                           }`}
                         >
                           <div>
-                            <p className="text-xs font-bold text-[#0F172A]">{p.title}</p>
+                            <p className="text-sm font-bold text-[#0F172A]">{p.title}</p>
                             <p className="text-base font-bold text-[#003B73] font-mono mt-1">{p.price}</p>
-                            <p className="text-[11px] text-slate-500 mt-2">{p.desc}</p>
+                            <p className="text-sm text-slate-500 mt-2">{p.desc}</p>
                           </div>
-                          <div className="pt-3 border-t border-slate-100 mt-3 text-[10px] text-slate-400">
+                          <div className="pt-3 border-t border-slate-100 mt-3 text-xs text-slate-400">
                             ডেলিভারি: {p.time}
                           </div>
                         </button>
@@ -234,7 +234,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                       <button
                         type="button"
                         onClick={() => setStep(1)}
-                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-100 cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-100 cursor-pointer"
                       >
                         <ArrowLeft className="w-4 h-4" />
                         <span>পূর্ববর্তী</span>
@@ -243,7 +243,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                       <button
                         type="button"
                         onClick={() => setStep(3)}
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0C1929] text-white text-xs font-bold hover:bg-[#003B73] cursor-pointer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0C1929] text-white text-sm font-bold hover:bg-[#003B73] cursor-pointer"
                       >
                         <span>পরবর্তী ধাপ</span>
                         <ArrowRight className="w-4 h-4" />
@@ -259,7 +259,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                       <h3 className="text-base font-bold text-[#0F172A]">
                         ধাপ ৩ — প্রয়োজনীয় ফিচারসমূহে টিক দিন
                       </h3>
-                      <p className="text-xs text-slate-500 mt-0.5">
+                      <p className="text-sm text-slate-500 mt-0.5">
                         ওয়েবসাইটে যে যে মডিউল অন্তর্ভুক্ত করতে চান সেগুলো সিলেক্ট করুন।
                       </p>
                     </div>
@@ -282,7 +282,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                             key={feat.id}
                             type="button"
                             onClick={() => toggleFeature(feat.id)}
-                            className={`p-3 rounded-xl border text-left text-xs font-semibold flex items-center justify-between transition-colors cursor-pointer ${
+                            className={`p-3 rounded-xl border text-left text-sm font-semibold flex items-center justify-between transition-colors cursor-pointer ${
                               isChecked
                                 ? 'border-[#003B73] bg-blue-50/80 text-[#0F172A]'
                                 : 'border-slate-200 text-slate-600 hover:border-slate-300'
@@ -303,7 +303,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                       <button
                         type="button"
                         onClick={() => setStep(2)}
-                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-100 cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-100 cursor-pointer"
                       >
                         <ArrowLeft className="w-4 h-4" />
                         <span>পূর্ববর্তী</span>
@@ -312,7 +312,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                       <button
                         type="button"
                         onClick={() => setStep(4)}
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0C1929] text-white text-xs font-bold hover:bg-[#003B73] cursor-pointer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0C1929] text-white text-sm font-bold hover:bg-[#003B73] cursor-pointer"
                       >
                         <span>পরবর্তী ধাপ</span>
                         <ArrowRight className="w-4 h-4" />
@@ -328,14 +328,14 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                       <h3 className="text-base font-bold text-[#0F172A]">
                         ধাপ ৪ — যোগাযোগের তথ্য ও চূড়ান্ত এস্টিমেট
                       </h3>
-                      <p className="text-xs text-slate-500 mt-0.5">
+                      <p className="text-sm text-slate-500 mt-0.5">
                         প্রজেক্ট সামারি ও কোটেশন সংরক্ষণ করতে নিচের বিবরণ দিন।
                       </p>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="text-xs font-semibold text-slate-700 block mb-1">
+                        <label className="text-sm font-medium text-slate-700 block mb-1">
                           আপনার নাম ও পদবী *
                         </label>
                         <input
@@ -344,12 +344,12 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                           placeholder="উদা: আইডিয়াল স্কুল অ্যান্ড কলেজ (অধ্যক্ষ)"
                           value={name}
                           onChange={(e) => setName(e.target.value)}
-                          className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B73]"
+                          className="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B73]"
                         />
                       </div>
 
                       <div>
-                        <label className="text-xs font-semibold text-slate-700 block mb-1">
+                        <label className="text-sm font-medium text-slate-700 block mb-1">
                           মোবাইল নম্বর *
                         </label>
                         <input
@@ -358,12 +358,12 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                           placeholder="017XXXXXXXX"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B73]"
+                          className="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B73]"
                         />
                       </div>
 
                       <div className="sm:col-span-2">
-                        <label className="text-xs font-semibold text-slate-700 block mb-1">
+                        <label className="text-sm font-medium text-slate-700 block mb-1">
                           হোয়াটসঅ্যাপ নম্বর (যদি আলাদা হয়):
                         </label>
                         <input
@@ -371,7 +371,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                           placeholder="01XXXXXXXXX"
                           value={whatsapp}
                           onChange={(e) => setWhatsapp(e.target.value)}
-                          className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B73]"
+                          className="w-full px-3.5 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B73]"
                         />
                       </div>
                     </div>
@@ -380,7 +380,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                       <button
                         type="button"
                         onClick={() => setStep(3)}
-                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-100 cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-100 cursor-pointer"
                       >
                         <ArrowLeft className="w-4 h-4" />
                         <span>পূর্ববর্তী</span>
@@ -388,7 +388,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
 
                       <button
                         type="submit"
-                        className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-[#003B73] text-white text-xs font-bold hover:bg-[#00529B] shadow-sm cursor-pointer"
+                        className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-[#003B73] text-white text-sm font-bold hover:bg-[#00529B] shadow-sm cursor-pointer"
                       >
                         <Sparkles className="w-4 h-4" />
                         <span>Get My Estimate</span>
@@ -406,11 +406,11 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                 <h3 className="text-lg font-bold text-[#0F172A]">
                   ধন্যবাদ, {name}!
                 </h3>
-                <p className="text-xs text-slate-600 max-w-md">
+                <p className="text-sm text-slate-600 max-w-md">
                   আপনার প্রতিষ্ঠানের আনুমানিক কোটেশন <b>৳{calculatedPrice.toLocaleString()}</b> প্রস্তুত করা হয়েছে। আমাদের সিনিয়র এডু-টেক কনসালটেন্ট দ্রুততম সময়ে আপনার দেওয়া নম্বরে যোগাযোগ করবেন।
                 </p>
 
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-left w-full max-w-sm">
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-sm text-left w-full max-w-sm">
                   <p className="font-semibold text-slate-700">• প্রতিষ্ঠান: {institutionName || institutionType}</p>
                   <p className="text-slate-600">• প্যাকেজ: {websiteType} (৳{calculatedPrice.toLocaleString()})</p>
                   <p className="text-slate-600">• ফিচার সংখ্যা: {selectedFeatures.length} টি</p>
@@ -419,7 +419,7 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                 <div className="flex flex-col sm:flex-row gap-2 w-full max-w-sm pt-2">
                   <button
                     onClick={handleSendToWhatsApp}
-                    className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                    className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold flex items-center justify-center gap-2 cursor-pointer shadow-sm"
                   >
                     <MessageCircle className="w-4 h-4" />
                     <span>হোয়াটসঅ্যাপে সরাসরি পাঠান</span>
@@ -486,14 +486,14 @@ export const ContactView: React.FC<ContactViewProps> = ({ language }) => {
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] text-slate-400 block">অফিস ঠিকানা</span>
-                    <span className="text-xs">লেভেল ৪, রূপায়ণ সেন্টার, মহাখালী সি/এ, ঢাকা-১২১২</span>
+                    <span className="text-xs text-slate-400 block">অফিস ঠিকানা</span>
+                    <span className="text-sm">লেভেল ৪, রূপায়ণ সেন্টার, মহাখালী সি/এ, ঢাকা-১২১২</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-xs text-xs">
+            <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-xs text-sm">
               <span className="font-bold text-slate-800 block mb-2">⏱️ সাপোর্ট ও অফিস সময়:</span>
               <p className="text-slate-600 leading-relaxed">
                 শনিবার থেকে বৃহস্পতিবার: সকাল ৯:০০ — রাত ৮:০০<br />

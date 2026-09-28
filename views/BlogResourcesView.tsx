@@ -130,7 +130,7 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
           <div className="inline-flex p-1.5 bg-white border border-slate-200 rounded-2xl shadow-xs mt-8">
             <button
               onClick={() => setActiveTab('articles')}
-              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+              className={`px-5 py-2.5 rounded-xl text-sm sm:text-base font-bold transition-all cursor-pointer ${
                 activeTab === 'articles'
                   ? 'bg-[#0C1929] text-white shadow-xs'
                   : 'text-slate-600 hover:text-slate-900'
@@ -140,7 +140,7 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
             </button>
             <button
               onClick={() => setActiveTab('tools')}
-              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+              className={`px-5 py-2.5 rounded-xl text-sm sm:text-base font-bold transition-all cursor-pointer ${
                 activeTab === 'tools'
                   ? 'bg-[#0C1929] text-white shadow-xs'
                   : 'text-slate-600 hover:text-slate-900'
@@ -152,7 +152,7 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
         </div>
 
         {downloadSuccess && (
-          <div className="max-w-md mx-auto mb-8 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold flex items-center justify-between shadow-xs">
+          <div className="max-w-md mx-auto mb-8 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-bold flex items-center justify-between shadow-xs">
             <span className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-emerald-600" />
               <span>"{downloadSuccess}" ফাইলটি সফলভাবে ডাউনলোড শুরু হয়েছে!</span>
@@ -169,7 +169,7 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
                 className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-2xs hover:shadow-md transition-shadow flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between text-xs text-slate-400 mb-3">
+                  <div className="flex items-center justify-between text-sm text-slate-400 mb-3">
                     <span className="px-2.5 py-0.5 rounded-full bg-blue-50 text-[#003B73] font-bold">
                       {art.category}
                     </span>
@@ -183,16 +183,16 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
                     {language === 'bn' ? art.titleBn : art.titleEn}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
                     {language === 'bn' ? art.summaryBn : art.summaryEn}
                   </p>
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-xs text-slate-400">{art.date}</span>
+                  <span className="text-sm text-slate-400">{art.date}</span>
                   <button
                     onClick={onOpenAudit}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#003B73] hover:underline cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-sm font-bold text-[#003B73] hover:underline cursor-pointer"
                   >
                     <span>{language === 'bn' ? 'ওয়েবসাইট অডিট করে দেখুন' : 'Audit Your School Site'}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -214,7 +214,7 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
                     <FileText className="w-6 h-6" />
                   </div>
 
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
                     {res.format} • {res.fileSize}
                   </span>
 
@@ -222,14 +222,14 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
                     {language === 'bn' ? res.titleBn : res.titleEn}
                   </h3>
 
-                  <p className="text-xs text-slate-600 leading-relaxed mb-6">
+                  <p className="text-sm text-slate-600 leading-relaxed mb-6">
                     {language === 'bn' ? res.descBn : res.descEn}
                   </p>
                 </div>
 
                 <button
                   onClick={() => handleDownload(res.id, language === 'bn' ? res.titleBn : res.titleEn)}
-                  className="w-full py-3 rounded-xl bg-[#0C1929] hover:bg-[#003B73] text-white text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                  className="w-full py-3 rounded-xl bg-[#0C1929] hover:bg-[#003B73] text-white text-sm font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer"
                 >
                   <Download className="w-4 h-4 text-sky-300" />
                   <span>{language === 'bn' ? 'ফ্রি ডাউনলোড করুন' : 'Free Download'}</span>
@@ -250,7 +250,7 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
                 ? 'আপনার বর্তমান শিক্ষা প্রতিষ্ঠানের ওয়েবসাইটটি কি যথেষ্ট দ্রুত ও মোবাইল ফ্রেন্ডলি?' 
                 : 'Is Your Existing School Portal Mobile-Friendly & Fast?'}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-lg">
+            <p className="text-sm sm:text-base text-slate-300 mt-1 max-w-lg">
               {language === 'bn'
                 ? 'আমাদের ফ্রি ডায়াগনস্টিক ইঞ্জিন দিয়ে মাত্র ১ মিনিটে আপনার সাইটের স্পিড, এসইও ও সিকিউরিটি স্কোর পরীক্ষা করুন।'
                 : 'Run an instantaneous benchmark to identify mobile bottlenecks, missing SEO tags, and security gaps.'}
@@ -258,7 +258,7 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
           </div>
           <button
             onClick={onOpenAudit}
-            className="px-6 py-3.5 rounded-xl bg-[#003B73] hover:bg-[#00529B] text-white text-xs sm:text-sm font-bold whitespace-nowrap shadow-md cursor-pointer transition-colors flex items-center gap-2"
+            className="px-6 py-3.5 rounded-xl bg-[#003B73] hover:bg-[#00529B] text-white text-sm font-bold whitespace-nowrap shadow-md cursor-pointer transition-colors flex items-center gap-2"
           >
             <Zap className="w-4 h-4" />
             <span>{language === 'bn' ? 'ফ্রি ওয়েবসাইট অডিট টেস্ট করুন' : 'Run Free Speed Audit'}</span>

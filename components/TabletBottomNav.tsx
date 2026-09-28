@@ -54,7 +54,7 @@ export const TabletBottomNav: React.FC<TabletBottomNavProps> = ({
 
       {/* Content */}
       <div
-        className="relative w-full flex items-center justify-between px-2 py-1"
+        className="relative w-full flex items-center justify-between px-2 py-1.5"
         style={{ paddingBottom: 'calc(6px + env(safe-area-inset-bottom))' }}
       >
         {/* Nav items — scrollable row */}
@@ -72,7 +72,7 @@ export const TabletBottomNav: React.FC<TabletBottomNavProps> = ({
                 className={`relative flex flex-col items-center justify-center min-w-[60px] py-1.5 px-2 rounded-xl transition-all duration-200 active:scale-90 cursor-pointer group shrink-0 ${
                   isActive
                     ? 'text-[#003B73]'
-                    : 'text-slate-600 hover:text-slate-900'
+                    : 'text-slate-500 hover:text-slate-900'
                 }`}
               >
                 {/* Active background highlight */}
@@ -80,24 +80,24 @@ export const TabletBottomNav: React.FC<TabletBottomNavProps> = ({
                   <span className="absolute inset-0 rounded-xl bg-sky-100/90 border border-sky-200/80 shadow-2xs" />
                 )}
 
+                {/* Active Top Bar Indicator */}
+                {isActive && (
+                  <span className="absolute top-0 left-1/2 -translate-x-1/2 w-5 h-[2.5px] rounded-full bg-[#003B73]" />
+                )}
+
                 {/* Icon */}
-                <span className={`relative z-10 transition-transform duration-200 ${isActive ? 'scale-110 text-[#003B73]' : 'group-hover:scale-105 text-slate-600'}`}>
+                <span className={`relative z-10 transition-transform duration-200 ${isActive ? 'scale-105 text-[#003B73]' : 'group-hover:scale-105 text-slate-500'}`}>
                   {item.icon}
                 </span>
 
                 {/* Label */}
                 <span
-                  className={`relative z-10 text-[10px] mt-0.5 tracking-tight leading-none ${
-                    isActive ? 'font-black text-[#003B73]' : 'font-semibold text-slate-600'
+                  className={`relative z-10 text-[11px] mt-0.5 tracking-tight leading-none ${
+                    isActive ? 'font-black text-[#003B73]' : 'font-semibold text-slate-500'
                   }`}
                 >
                   {language === 'bn' ? item.labelBn : item.labelEn}
                 </span>
-
-                {/* Active dot indicator */}
-                {isActive && (
-                  <span className="relative z-10 w-1 h-1 rounded-full bg-[#003B73] mt-0.5" />
-                )}
               </button>
             );
           })}
@@ -117,10 +117,10 @@ export const TabletBottomNav: React.FC<TabletBottomNavProps> = ({
 
           {/* Icon with gradient ring */}
           <span className="relative z-10 p-1.5 rounded-full bg-[#003B73] text-white shadow-xs group-hover:bg-[#00529B] transition-colors duration-200">
-            <Sparkles className="w-4 h-4 text-sky-200" />
+            <Sparkles className="w-[18px] h-[18px] text-sky-200" />
           </span>
 
-          <span className="relative z-10 text-[10px] mt-0.5 font-black text-[#003B73] leading-none">
+          <span className="relative z-10 text-[11px] mt-0.5 font-black text-[#003B73] leading-none">
             {language === 'bn' ? 'পরামর্শ' : 'Consult'}
           </span>
         </button>

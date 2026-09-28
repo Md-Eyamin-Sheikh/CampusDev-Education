@@ -27,12 +27,12 @@ export const Button: React.FC<ButtonProps> = ({
     'inline-flex items-center justify-center font-medium transition-all duration-200 ' +
     'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ' +
     'focus-visible:ring-offset-[var(--color-canvas)] focus-visible:ring-[var(--color-brand)] ' +
-    'active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 rounded-lg';
+    'active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 rounded-xl';
 
   const variantClasses = {
     primary:
       'bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)] text-white ' +
-      'shadow-[0_4px_14px_rgb(61_90_254/.25)] hover:shadow-[0_6px_20px_rgb(61_90_254/.35)] border-none',
+      'shadow-[0_4px_14px_rgba(0,59,115,.25)] hover:shadow-[0_6px_20px_rgba(0,59,115,.35)] border-none',
     secondary:
       'bg-[var(--color-brand-soft)] text-[var(--color-brand)] border border-[var(--color-brand)]/20 ' +
       'hover:bg-[var(--color-brand)]/15 hover:border-[var(--color-brand)]/35',

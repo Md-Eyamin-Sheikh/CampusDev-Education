@@ -129,7 +129,7 @@ export const ProcessView: React.FC<ProcessViewProps> = ({
                     Step {idx + 1}
                   </span>
                 </div>
-                <p className="text-xs font-bold leading-snug line-clamp-2">
+                <p className="text-sm font-bold leading-snug line-clamp-2">
                   {language === 'bn' ? WORKFLOW_STEPS[idx].titleBn : WORKFLOW_STEPS[idx].titleEn}
                 </p>
               </button>
@@ -145,7 +145,7 @@ export const ProcessView: React.FC<ProcessViewProps> = ({
                 <span className="text-3xl sm:text-4xl font-extrabold font-heading text-[#003B73]">
                   ধাপ {current.step}
                 </span>
-                <span className="px-3 py-1 rounded-full bg-blue-50 text-[#003B73] text-xs font-bold">
+                <span className="px-3 py-1 rounded-full bg-blue-50 text-[#003B73] text-sm font-bold">
                   সময়কাল: {current.duration}
                 </span>
               </div>
@@ -161,14 +161,14 @@ export const ProcessView: React.FC<ProcessViewProps> = ({
               <div className="pt-4 flex flex-wrap items-center gap-4">
                 <button
                   onClick={onOpenConsultation}
-                  className="premium-primary px-6 py-3 rounded-xl text-white text-xs font-bold transition-colors cursor-pointer"
+                  className="premium-primary px-6 py-3 rounded-xl text-white text-sm font-bold transition-colors cursor-pointer"
                 >
                   {language === 'bn' ? 'আজই এই ধাপ দিয়ে শুরু করুন' : 'Start Discovery Phase Today'}
                 </button>
                 {activeStepIndex < 5 && (
                   <button
                     onClick={() => setActiveStepIndex(activeStepIndex + 1)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#003B73] hover:underline cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-sm font-bold text-[#003B73] hover:underline cursor-pointer"
                   >
                     <span>পরবর্তী ধাপ দেখুন ({stepDetails[activeStepIndex + 1].step})</span>
                     <ArrowRight className="w-4 h-4" />
@@ -180,19 +180,19 @@ export const ProcessView: React.FC<ProcessViewProps> = ({
             {/* Step Handover Roles Card */}
             <div className="lg:w-5/12 w-full flex flex-col gap-4">
               <div className="premium-surface p-5 rounded-2xl border shadow-2xs">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#003B73] block mb-1">
+                <span className="text-sm font-bold uppercase tracking-wider text-[#003B73] block mb-1">
                   🎓 প্রতিষ্ঠানের ভূমিকা:
                 </span>
-                <p className="text-xs text-slate-700 leading-relaxed">
+                <p className="text-sm text-slate-700 leading-relaxed">
                   {current.institutionRole}
                 </p>
               </div>
 
               <div className="premium-surface p-5 rounded-2xl border shadow-2xs">
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">
+                <span className="text-sm font-bold uppercase tracking-wider text-emerald-700 block mb-1">
                   ⚡ CampusDev ডেলিভারেবল:
                 </span>
-                <p className="text-xs text-slate-700 leading-relaxed">
+                <p className="text-sm text-slate-700 leading-relaxed">
                   {current.campusdevDeliverable}
                 </p>
               </div>
@@ -206,7 +206,7 @@ export const ProcessView: React.FC<ProcessViewProps> = ({
             <h3 className="text-lg sm:text-xl font-bold font-heading">
               {language === 'bn' ? 'সময়মতো ডেলিভারির শতভাগ নিশ্চয়তা' : 'On-Time Launch Guarantee'}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-lg">
+            <p className="text-sm sm:text-base text-slate-300 mt-1 max-w-lg">
               {language === 'bn'
                 ? 'চুক্তিবদ্ধ নির্ধারিত কার্যদিবসের মধ্যে আপনার ওয়েবসাইট লাইভ করা হবে। বিলম্ব হলে বিশেষ ক্ষতিপূরণ সুবিধা প্রদান করা হয়।'
                 : 'Rigorous project governance ensures every milestone is delivered on schedule without compromises.'}
@@ -214,7 +214,7 @@ export const ProcessView: React.FC<ProcessViewProps> = ({
           </div>
           <button
             onClick={onOpenConsultation}
-            className="premium-primary px-6 py-3 rounded-xl text-white text-xs sm:text-sm font-bold whitespace-nowrap shadow-md cursor-pointer transition-colors"
+            className="premium-primary px-6 py-3 rounded-xl text-white text-sm font-bold whitespace-nowrap shadow-md cursor-pointer transition-colors"
           >
             {language === 'bn' ? 'ফ্রি প্ল্যানিং কনসালটেশন নিন' : 'Book Free Strategy Call'}
           </button>

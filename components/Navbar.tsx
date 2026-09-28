@@ -90,12 +90,13 @@ export const Navbar: React.FC<NavbarProps> = ({
     labelEn: string; 
     badge?: string;
     badgeColor?: string;
+    icon?: React.ReactNode;
   }[] = [
-    { id: 'home', labelBn: 'হোম', labelEn: 'Home' },
-    { id: 'services', labelBn: 'সার্ভিসেস', labelEn: 'Services' },
-    { id: 'works', labelBn: 'কাজের নমুনা', labelEn: 'Works' },
-    { id: 'demos', labelBn: 'লাইভ ডেমো', labelEn: 'Demos' },
-    { id: 'pricing', labelBn: 'প্যাকেজ', labelEn: 'Pricing' },
+    { id: 'home', labelBn: 'হোম', labelEn: 'Home', icon: <Home className="w-5 h-5 sm:w-4 sm:h-4" /> },
+    { id: 'services', labelBn: 'সার্ভিসেস', labelEn: 'Services', icon: <Briefcase className="w-5 h-5 sm:w-4 sm:h-4" /> },
+    { id: 'works', labelBn: 'কাজের নমুনা', labelEn: 'Works', icon: <Layers className="w-5 h-5 sm:w-4 sm:h-4" /> },
+    { id: 'demos', labelBn: 'লাইভ ডেমো', labelEn: 'Demos', icon: <Laptop className="w-5 h-5 sm:w-4 sm:h-4" /> },
+    { id: 'pricing', labelBn: 'প্যাকেজ', labelEn: 'Pricing', icon: <Coins className="w-5 h-5 sm:w-4 sm:h-4" /> },
   ];
 
   // Secondary items cleanly organized in "More / আরো" dropdown on desktop
@@ -158,11 +159,11 @@ export const Navbar: React.FC<NavbarProps> = ({
   // Complete list for mobile drawer
   const allNavLinks = [
     ...primaryNavLinks,
-    { id: 'admin-demo' as NavSection, labelBn: 'অ্যাডমিন ডেমো', labelEn: 'Admin Demo', badge: 'Live', badgeColor: 'bg-emerald-100 text-emerald-800' },
-    { id: 'process' as NavSection, labelBn: 'কাজের ধাপ', labelEn: 'Process' },
-    { id: 'about' as NavSection, labelBn: 'আমাদের সম্পর্কে', labelEn: 'About' },
-    { id: 'resources' as NavSection, labelBn: 'রিসোর্স ও গাইড', labelEn: 'Resources' },
-    { id: 'contact' as NavSection, labelBn: 'যোগাযোগ', labelEn: 'Contact' },
+    { id: 'admin-demo' as NavSection, labelBn: 'অ্যাডমিন ডেমো', labelEn: 'Admin Demo', badge: 'Live', badgeColor: 'bg-emerald-100 text-emerald-800', icon: <Cpu className="w-5 h-5 sm:w-4 sm:h-4" /> },
+    { id: 'process' as NavSection, labelBn: 'কাজের ধাপ', labelEn: 'Process', icon: <Clock className="w-5 h-5 sm:w-4 sm:h-4" /> },
+    { id: 'about' as NavSection, labelBn: 'আমাদের সম্পর্কে', labelEn: 'About', icon: <Building2 className="w-5 h-5 sm:w-4 sm:h-4" /> },
+    { id: 'resources' as NavSection, labelBn: 'রিসোর্স ও গাইড', labelEn: 'Resources', icon: <FileCheck className="w-5 h-5 sm:w-4 sm:h-4" /> },
+    { id: 'contact' as NavSection, labelBn: 'যোগাযোগ', labelEn: 'Contact', icon: <Mail className="w-5 h-5 sm:w-4 sm:h-4" /> },
   ];
 
   const handleNavClick = (section: NavSection) => {
@@ -188,7 +189,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       >
         {/* Top Institutional Micro-Bar (Collapsible on scroll) */}
         <div 
-          className={`w-full bg-sky-50/90 text-slate-700 text-[10px] sm:text-[11px] font-bold transition-all duration-300 overflow-hidden ${
+          className={`w-full bg-sky-50/90 text-slate-700 text-[11px] sm:text-[12px] font-bold transition-all duration-300 overflow-hidden ${
             isScrolled ? 'max-h-0 py-0 border-b-0 opacity-0' : 'max-h-12 py-1 sm:py-1.5 border-b border-sky-100/90 opacity-100'
           }`}
         >
@@ -229,7 +230,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Main Navbar Bar (Target selector: div#root > div > header#top-main-navbar > div:nth-of-type(3)) */}
         <div 
           id="navbar-main-container"
-          className="max-w-7xl mx-auto px-2.5 sm:px-5 lg:px-8 h-14 sm:h-18 lg:h-[74px] flex items-center justify-between gap-1 sm:gap-4 transition-all duration-200"
+          className="max-w-7xl mx-auto px-2.5 sm:px-5 lg:px-8 h-[60px] sm:h-18 lg:h-[74px] flex items-center justify-between gap-1 sm:gap-4 transition-all duration-200"
         >
           
           {/* Brand Logo & Educational Status Tag */}
@@ -263,7 +264,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   key={link.id}
                   id={`nav-link-${link.id}`}
                   onClick={() => handleNavClick(link.id)}
-                  className={`relative px-3 xl:px-3.5 py-1.5 rounded-xl text-xs xl:text-[13px] font-semibold transition-all duration-200 cursor-pointer flex items-center gap-1.5 whitespace-nowrap ${
+                  className={`relative px-3 xl:px-3.5 py-1.5 rounded-xl text-xs xl:text-[13px] font-semibold transition-all duration-200 cursor-pointer flex items-center gap-1.5 whitespace-nowrap overflow-hidden ${
                     isActive
                       ? 'bg-sky-50 text-[#003B73] font-extrabold shadow-xs border border-sky-200'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
@@ -274,6 +275,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                     <span className={`px-1.5 py-0.2 text-[9px] font-extrabold rounded-full uppercase tracking-wider ${link.badgeColor || 'bg-sky-100 text-[#003B73]'}`}>
                       {link.badge}
                     </span>
+                  )}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[3px] bg-[#003B73] rounded-t-full" />
                   )}
                 </button>
               );
@@ -374,7 +378,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               id="navbar-language-toggle-btn"
               onClick={onToggleLanguage}
-              className="group relative flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 rounded-full bg-slate-100 hover:bg-slate-200/80 border border-slate-200 transition-all duration-300 shadow-2xs active:scale-95 cursor-pointer flex-shrink-0 select-none overflow-hidden"
+              className="group relative flex items-center gap-1 sm:gap-1.5 p-1.5 sm:p-1.5 rounded-full bg-slate-100 hover:bg-slate-200/80 border border-slate-200 transition-all duration-300 shadow-2xs active:scale-95 cursor-pointer flex-shrink-0 select-none overflow-hidden"
               aria-label="Toggle language between Bengali and English"
               title={language === 'bn' ? 'Switch to English (ইংরেজি)' : 'বাংলা ভাষায় পরিবর্তন করুন'}
             >
@@ -448,11 +452,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               id="navbar-mobile-menu-toggle-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200/80 active:scale-95 transition-all cursor-pointer flex items-center justify-center w-8 h-8 xs:w-8.5 xs:h-8.5 sm:w-9 sm:h-9 flex-shrink-0"
+              className="lg:hidden p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200/80 active:scale-95 transition-all cursor-pointer flex items-center justify-center w-9 h-9 xs:w-8.5 xs:h-8.5 sm:w-9 sm:h-9 flex-shrink-0"
               aria-label="Toggle Navigation Menu"
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5 text-slate-900" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5 text-slate-800" />}
+              {mobileMenuOpen ? <X className="w-[18px] h-[18px] sm:w-5 sm:h-5 text-slate-900" /> : <Menu className="w-[18px] h-[18px] sm:w-5 sm:h-5 text-slate-800" />}
             </button>
           </div>
         </div>
@@ -496,13 +500,18 @@ export const Navbar: React.FC<NavbarProps> = ({
                     key={link.id}
                     id={`mobile-nav-link-${link.id}`}
                     onClick={() => handleNavClick(link.id)}
-                    className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-left text-sm font-bold transition-all cursor-pointer ${
+                    className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-left text-[15px] font-bold transition-all cursor-pointer ${
                       isActive
                         ? 'bg-[#003B73] text-white font-black border border-sky-400/40 shadow-md scale-[1.01]'
                         : 'text-slate-700 hover:text-slate-900 bg-slate-100/70 hover:bg-slate-200/70 border border-slate-200/80'
                     }`}
                   >
                     <div className="flex items-center gap-2.5">
+                      {link.icon && (
+                        <span className={isActive ? 'text-sky-200' : 'text-[#003B73]'}>
+                          {link.icon}
+                        </span>
+                      )}
                       <span className={isActive ? 'text-white font-extrabold' : 'text-slate-800 font-bold'}>
                         {language === 'bn' ? link.labelBn : link.labelEn}
                       </span>
@@ -532,7 +541,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   setMobileMenuOpen(false);
                   onOpenAudit();
                 }}
-                className="w-full flex items-center justify-between p-3.5 rounded-2xl bg-sky-50/80 hover:bg-sky-100/80 border border-sky-200/80 text-slate-900 text-xs sm:text-sm font-bold shadow-xs transition-all cursor-pointer text-left group"
+                className="w-full flex items-center justify-between p-3.5 rounded-xl bg-sky-50/80 hover:bg-sky-100/80 border border-sky-200/80 text-slate-900 text-xs sm:text-sm font-bold shadow-xs transition-all cursor-pointer text-left group"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-9.5 h-9.5 rounded-xl bg-[#003B73] text-white flex items-center justify-center flex-shrink-0 shadow-2xs">
