@@ -67,26 +67,26 @@ export const CampusDevIcon: React.FC<CampusDevIconProps> = ({
         className="relative z-10 w-full h-full p-[8%]"
       >
         <defs>
-          {/* Primary Monogram & Crest Gradient */}
+          {/* Primary Monogram & Crest Gradient — Institutional Blue */}
           <linearGradient id={gradPrimary} x1="10" y1="10" x2="90" y2="90" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#F5D0FE" />
-            <stop offset="35%" stopColor="#E879F9" />
-            <stop offset="70%" stopColor="#C084FC" />
-            <stop offset="100%" stopColor="#7C3AED" />
+            <stop offset="0%" stopColor="#EBF5FB" />
+            <stop offset="35%" stopColor="#5DADE2" />
+            <stop offset="70%" stopColor="#2E86C1" />
+            <stop offset="100%" stopColor="#003B73" />
           </linearGradient>
 
           {/* Graduation Cap Top Facet Gradient */}
           <linearGradient id={gradCap} x1="20" y1="18" x2="80" y2="48" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#FCE7F3" />
-            <stop offset="40%" stopColor="#F0ABFC" />
-            <stop offset="100%" stopColor="#A855F7" />
+            <stop offset="0%" stopColor="#F4F6F7" />
+            <stop offset="40%" stopColor="#AED6F1" />
+            <stop offset="100%" stopColor="#2E86C1" />
           </linearGradient>
 
-          {/* Cyber Cyan Accent Gradient */}
+          {/* Institutional Accent Gradient */}
           <linearGradient id={gradAccent} x1="15" y1="80" x2="85" y2="20" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#38BDF8" />
-            <stop offset="50%" stopColor="#818CF8" />
-            <stop offset="100%" stopColor="#C084FC" />
+            <stop offset="0%" stopColor="#2E86C1" />
+            <stop offset="50%" stopColor="#00529B" />
+            <stop offset="100%" stopColor="#003B73" />
           </linearGradient>
 
           {/* High Intensity Glow Filter */}
@@ -120,7 +120,7 @@ export const CampusDevIcon: React.FC<CampusDevIconProps> = ({
         {/* Diamond Under-shadow Facet */}
         <path 
           d="M27 38.5V50C37 59 63 59 73 50V38.5L50 50L27 38.5Z" 
-          fill="#581C87" 
+          fill="#0C1929" 
           fillOpacity="0.9"
         />
         {/* Cap Rim Light Edge */}
@@ -132,11 +132,11 @@ export const CampusDevIcon: React.FC<CampusDevIconProps> = ({
         {/* Graduation Tassel Cord & Golden Node */}
         <path 
           d="M50 34C60 35.5 70 39.5 76 46.5" 
-          stroke="#F5D0FE" 
+          stroke="#AED6F1" 
           strokeWidth="2.8" 
           strokeLinecap="round" 
         />
-        <circle cx="77.5" cy="49" r="3.2" fill="#38BDF8" filter={`url(#${filterGlow})`} />
+        <circle cx="77.5" cy="49" r="3.2" fill="#5DADE2" filter={`url(#${filterGlow})`} />
 
         {/* --- Flanking Code Brackets (< >) --- */}
         <path 
@@ -217,22 +217,28 @@ export const CampusDevWordmark: React.FC<{
   };
 
   const campusColor = {
-    light: 'text-white',
-    dark: 'text-slate-900',
+    light: 'text-slate-900',
+    dark: 'text-white',
     glow: 'text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]',
   }[theme];
 
+  const devGradient = {
+    light: 'bg-gradient-to-r from-[#003B73] via-[#00529B] to-[#002850] bg-clip-text text-transparent',
+    dark: 'bg-gradient-to-r from-sky-400 via-blue-300 to-sky-200 bg-clip-text text-transparent',
+    glow: 'bg-gradient-to-r from-sky-300 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]',
+  }[theme];
+
   const subtitleColor = {
-    light: 'text-slate-300/90',
-    dark: 'text-slate-500 font-semibold',
-    glow: 'text-violet-200/90',
+    light: 'text-slate-600 font-semibold',
+    dark: 'text-slate-200 font-semibold',
+    glow: 'text-sky-200/90 font-semibold',
   }[theme];
 
   return (
     <div className={`flex flex-col justify-center min-w-0 leading-none select-none ${className}`}>
       <div className={`${titleSizes[size]} truncate tracking-tight flex items-baseline gap-0.5`}>
         <span className={`${campusColor} font-heading`}>Campus</span>
-        <span className="bg-gradient-to-r from-fuchsia-400 via-violet-300 to-cyan-300 bg-clip-text text-transparent font-heading drop-shadow-2xs">
+        <span className={`${devGradient} font-heading drop-shadow-2xs`}>
           Dev
         </span>
       </div>
@@ -287,14 +293,12 @@ export const Logo: React.FC<LogoProps> = ({
         <CampusDevIcon size={iconPixelSizes[size]} interactive={interactive} />
       )}
       
-      {variant !== 'icon' && (
-        <CampusDevWordmark
-          theme={theme}
-          size={size}
-          showSubtitle={variant === 'full' && showSubtitle}
-          subtitleText={subtitleText}
-        />
-      )}
+      <CampusDevWordmark
+        theme={theme}
+        size={size}
+        showSubtitle={variant === 'full' && showSubtitle}
+        subtitleText={subtitleText}
+      />
     </div>
   );
 };

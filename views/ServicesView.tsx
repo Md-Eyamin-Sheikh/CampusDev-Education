@@ -32,11 +32,11 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-fuchsia-950/20 text-fuchsia-400 text-xs font-bold uppercase tracking-wider mb-3">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-[#003B73] text-xs font-bold uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             <span>{language === 'bn' ? 'আমাদের বিশেষায়িত সেবা' : 'Tailored Services'}</span>
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#0B1C30]">
+          <h1 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#0F172A]">
             {language === 'bn' 
               ? 'শিক্ষা প্রতিষ্ঠানের প্রতিটি স্তরের জন্য পূর্ণাঙ্গ ডিজিটাল সল্যুশন' 
               : 'Complete Digital Web Solutions for Educational Institutions'}
@@ -59,7 +59,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
             >
               {/* Left Column */}
               <div className="lg:w-5/12 flex flex-col gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-[#0e0520] text-violet-300 flex items-center justify-center shadow-md">
+                <div className="w-14 h-14 rounded-2xl bg-[#0C1929] text-blue-300 flex items-center justify-center shadow-md">
                   {srv.category === 'school' && <School className="w-7 h-7" />}
                   {srv.category === 'college' && <Building2 className="w-7 h-7" />}
                   {srv.category === 'madrasa' && <BookOpen className="w-7 h-7" />}
@@ -68,10 +68,10 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
                 </div>
 
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-fuchsia-400">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#003B73]">
                     {language === 'bn' ? srv.taglineBn : srv.taglineEn}
                   </span>
-                  <h2 className="text-xl sm:text-2xl font-bold font-heading text-[#0B1C30] mt-1">
+                  <h2 className="text-xl sm:text-2xl font-bold font-heading text-[#0F172A] mt-1">
                     {language === 'bn' ? srv.titleBn : srv.titleEn}
                   </h2>
                 </div>
@@ -80,15 +80,15 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
                   {language === 'bn' ? srv.descriptionBn : srv.descriptionEn}
                 </p>
 
-                <div className="p-3.5 rounded-xl bg-fuchsia-950/20 border border-fuchsia-500/10 text-xs">
-                  <span className="font-bold text-fuchsia-400">কাদের জন্য উপযুক্ত: </span>
+                <div className="p-3.5 rounded-xl bg-blue-50 border border-blue-100 text-xs">
+                  <span className="font-bold text-[#003B73]">কাদের জন্য উপযুক্ত: </span>
                   <span className="text-slate-700">{language === 'bn' ? srv.recommendedForBn : srv.recommendedForEn}</span>
                 </div>
 
                 <div className="pt-2 flex flex-wrap items-center gap-3">
                   <button
                     onClick={onOpenConsultation}
-                    className="px-5 py-2.5 rounded-xl bg-[#0e0520] hover:bg-[#14213d] text-white text-xs font-bold cursor-pointer transition-colors"
+                    className="px-5 py-2.5 rounded-xl bg-[#003B73] hover:bg-[#00529B] text-white text-xs font-bold cursor-pointer transition-colors"
                   >
                     {language === 'bn' ? 'ফ্রি প্ল্যানিং মিটিং বুক করুন' : 'Book Planning Meeting'}
                   </button>

@@ -1,27 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, Hind_Siliguri, Inter } from "next/font/google";
 import "./globals.css";
 import React from "react";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const hindSiliguri = Hind_Siliguri({
-  subsets: ["bengali", "latin"],
-  variable: "--font-hind-siliguri",
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
+const inter = { variable: "font-sans" };
+const plusJakartaSans = { variable: "font-heading" };
+const hindSiliguri = { variable: "font-bengali" };
 
 export const metadata: Metadata = {
   title: {
@@ -79,8 +62,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0a0312" },
-    { media: "(prefers-color-scheme: light)", color: "#0a0312" },
+    { media: "(prefers-color-scheme: dark)", color: "#0C1929" },
+    { media: "(prefers-color-scheme: light)", color: "#F8FAFC" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -98,10 +81,15 @@ export default function RootLayout({
   return (
     <html
       lang="bn"
-      className={`${spaceGrotesk.variable} ${hindSiliguri.variable} ${inter.variable} dark scroll-smooth`}
+      className={`${inter.variable} ${plusJakartaSans.variable} ${hindSiliguri.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
+        {/* Google Fonts CDN */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
         {/* ── PWA / Web App ─────────────────────── */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -130,14 +118,14 @@ export default function RootLayout({
         <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" href="/favicon.ico" />
 
         {/* ── Microsoft Tiles ───────────────────── */}
-        <meta name="msapplication-TileColor" content="#0a0312" />
+        <meta name="msapplication-TileColor" content="#0C1929" />
         <meta name="msapplication-tap-highlight" content="no" />
 
         {/* ── Theme color per OS ────────────────── */}
-        <meta name="theme-color" content="#0a0312" media="(prefers-color-scheme: dark)" />
-        <meta name="theme-color" content="#0a0312" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0C1929" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#F8FAFC" media="(prefers-color-scheme: light)" />
       </head>
-      <body className="min-h-screen bg-[#0a0312] text-white antialiased font-sans selection:bg-fuchsia-500/35 selection:text-white">
+      <body className="min-h-screen bg-[var(--color-canvas)] text-[var(--color-fg)] antialiased font-sans">
         {children}
       </body>
     </html>

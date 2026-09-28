@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Download, X } from 'lucide-react';
+import { Download, Share2, X } from 'lucide-react';
 import { CampusDevIcon } from './Logo';
 import { Language } from '../types';
 
@@ -15,25 +15,49 @@ interface PWAInstallBannerProps {
   language: Language;
 }
 
+// Detect iOS (no beforeinstallprompt — show manual instructions instead)
+function isIOS(): boolean {
+  if (typeof navigator === 'undefined') return false;
+  return /iphone|ipad|ipod/i.test(navigator.userAgent) && !(window as Window & { MSStream?: unknown }).MSStream;
+}
+
 export function PWAInstallBanner({ language }: PWAInstallBannerProps) {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [show, setShow] = useState(false);
   const [installing, setInstalling] = useState(false);
   const [dismissed, setDismissed] = useState(false);
+  const [iosMode, setIosMode] = useState(false);
 
   useEffect(() => {
-    // Don't show if already installed or previously dismissed
-    const wasDismissed = sessionStorage.getItem('pwa-banner-dismissed');
+    // ── Respect permanent dismiss (localStorage, not sessionStorage) ──
+    const wasDismissed = localStorage.getItem('pwa-banner-dismissed');
     if (wasDismissed) return;
 
-    // Check if already in standalone mode (already installed)
+    // Already installed in standalone mode
     if (window.matchMedia('(display-mode: standalone)').matches) return;
 
+    // ── Visit count logic: show on 2nd+ visit ──
+    const visitCount = parseInt(localStorage.getItem('pwa-visit-count') ?? '0', 10) + 1;
+    localStorage.setItem('pwa-visit-count', String(visitCount));
+
+    const ios = isIOS();
+    setIosMode(ios);
+
+    if (ios) {
+      // iOS: no beforeinstallprompt — show "Share → Add to Home Screen" tip after 2nd visit
+      if (visitCount >= 2) {
+        setTimeout(() => setShow(true), 15000); // after 15s on 2nd+ visit
+      }
+      return;
+    }
+
+    // ── Android/Chrome: wait for beforeinstallprompt ──
     const handler = (e: Event) => {
       e.preventDefault();
       setDeferredPrompt(e as BeforeInstallPromptEvent);
-      // Show banner after 8 seconds
-      setTimeout(() => setShow(true), 8000);
+      // Show on 2nd+ visit; on first visit wait longer (30s)
+      const delay = visitCount >= 2 ? 10000 : 30000;
+      setTimeout(() => setShow(true), delay);
     };
 
     window.addEventListener('beforeinstallprompt', handler);
@@ -55,48 +79,55 @@ export function PWAInstallBanner({ language }: PWAInstallBannerProps) {
   const handleDismiss = () => {
     setDismissed(true);
     setShow(false);
-    sessionStorage.setItem('pwa-banner-dismissed', '1');
+    // Permanently remember dismiss
+    localStorage.setItem('pwa-banner-dismissed', '1');
   };
 
   if (!show || dismissed) return null;
 
   const bn = {
     title: 'অ্যাপ ইনস্টল করুন',
-    desc: 'হোম স্ক্রিনে যোগ করুন — অফলাইনেও চলবে!',
+    desc: 'হোম স্ক্রিনে যোগ করুন — দ্রুততর ও অফলাইনেও চলবে!',
     install: 'ইনস্টল করুন',
     installing: 'ইনস্টল হচ্ছে...',
+    iosDesc: 'নিচের Share বাটন চেপে "Add to Home Screen" বেছে নিন',
   };
   const en = {
     title: 'Install App',
-    desc: 'Add to home screen — works offline too!',
+    desc: 'Add to home screen — faster & works offline!',
     install: 'Install',
     installing: 'Installing...',
+    iosDesc: 'Tap the Share button below and choose "Add to Home Screen"',
   };
   const t = language === 'bn' ? bn : en;
 
   return (
     <div className="fixed bottom-[72px] md:bottom-[72px] lg:bottom-6 left-4 right-4 z-50 max-w-sm mx-auto animate-[slideUp_0.35s_cubic-bezier(0.16,1,0.3,1)_forwards]">
-      {/* Glass banner */}
-      <div className="relative rounded-2xl overflow-hidden">
-        {/* Glow border */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-violet-500/30 via-fuchsia-500/30 to-violet-500/30 blur-sm" />
-        
-        {/* Main surface */}
-        <div className="relative flex items-center gap-3 px-4 py-3.5 bg-[rgba(18,8,34,0.92)] backdrop-blur-2xl border border-[rgba(139,92,246,0.35)] rounded-2xl shadow-[0_8px_40px_rgba(5,1,13,0.7)]">
-          {/* App icon */}
-          <CampusDevIcon size={42} />
+      {/* Solid card — no backdrop-blur for perf */}
+      <div className="relative flex items-center gap-3 px-4 py-3.5 bg-[var(--color-surface)] border border-[var(--color-line)] rounded-2xl shadow-[0_8px_32px_-8px_rgb(61_90_254/.18),0_2px_8px_rgb(15_23_42/.08)]">
 
-          {/* Text */}
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-bold text-white leading-tight">{t.title}</p>
-            <p className="text-xs text-[var(--text-muted)] leading-tight mt-0.5 truncate">{t.desc}</p>
+        {/* App icon */}
+        <CampusDevIcon size={42} />
+
+        {/* Text */}
+        <div className="flex-1 min-w-0">
+          <p className="text-sm font-bold text-[var(--color-fg)] leading-tight">{t.title}</p>
+          <p className="text-xs text-[var(--color-muted)] leading-tight mt-0.5 truncate">
+            {iosMode ? t.iosDesc : t.desc}
+          </p>
+        </div>
+
+        {/* Action button */}
+        {iosMode ? (
+          <div className="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[var(--color-brand-soft)] text-[var(--color-brand)] text-xs font-bold">
+            <Share2 className="w-3.5 h-3.5" />
+            Share
           </div>
-
-          {/* Install button */}
+        ) : (
           <button
             onClick={handleInstall}
             disabled={installing}
-            className="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white text-xs font-bold shadow-[0_0_12px_rgba(192,38,211,0.4)] hover:shadow-[0_0_20px_rgba(192,38,211,0.6)] active:scale-95 transition-all duration-150 disabled:opacity-70"
+            className="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)] text-white text-xs font-bold shadow-[0_4px_12px_rgb(61_90_254/.25)] active:scale-95 transition-all duration-150 disabled:opacity-70 min-h-0"
           >
             {installing ? (
               <svg className="animate-spin w-3.5 h-3.5" viewBox="0 0 24 24" fill="none">
@@ -108,15 +139,15 @@ export function PWAInstallBanner({ language }: PWAInstallBannerProps) {
             )}
             {installing ? t.installing : t.install}
           </button>
+        )}
 
-          {/* Dismiss */}
-          <button
-            onClick={handleDismiss}
-            className="shrink-0 p-1 rounded-lg text-[var(--text-muted)] hover:text-white hover:bg-white/10 transition-colors active:scale-90"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        </div>
+        {/* Dismiss */}
+        <button
+          onClick={handleDismiss}
+          className="shrink-0 p-1 rounded-lg text-[var(--color-muted)] hover:text-[var(--color-fg)] hover:bg-[var(--color-line)] transition-colors active:scale-90 min-h-0"
+        >
+          <X className="w-4 h-4" />
+        </button>
       </div>
     </div>
   );

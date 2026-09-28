@@ -68,6 +68,20 @@ export default function Home() {
   const touchStartX = useRef(0);
   const touchStartY = useRef(0);
 
+  // Returns true only for clear intentional horizontal swipe
+  // Guards: input elements, data-no-swipe, browser edge-back zones, dy ratio
+  const shouldHandleSwipe = useCallback(
+    (e: React.TouchEvent, startX: number, dx: number, dy: number): boolean => {
+      const el = e.target as HTMLElement;
+      if (el.closest('input, textarea, select, [data-no-swipe]')) return false;
+      // Browser edge-back gesture zones (24px each side)
+      if (startX < 24 || startX > window.innerWidth - 24) return false;
+      // Must be clearly horizontal (dx > 60, dx > 2× dy)
+      return Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 2;
+    },
+    []
+  );
+
   useServiceWorker();
 
   const handleNavigate = (section: NavSection) => {
@@ -128,11 +142,9 @@ export default function Home() {
 
   const handleTouchEnd = useCallback((e: React.TouchEvent) => {
     const dx = e.changedTouches[0].clientX - touchStartX.current;
-    const dy = Math.abs(e.changedTouches[0].clientY - touchStartY.current);
-    const SWIPE_MIN = 80;
+    const dy = e.changedTouches[0].clientY - touchStartY.current;
 
-    // Only horizontal swipe (not vertical scroll)
-    if (Math.abs(dx) < SWIPE_MIN || dy > 60) return;
+    if (!shouldHandleSwipe(e, touchStartX.current, dx, dy)) return;
 
     const idx = NAV_ORDER.indexOf(currentSection);
     if (dx < 0 && idx < NAV_ORDER.length - 1) {
@@ -142,12 +154,12 @@ export default function Home() {
       // Swipe right → previous section
       handleNavigate(NAV_ORDER[idx - 1]);
     }
-  }, [currentSection]);
+  }, [currentSection, shouldHandleSwipe]);
 
   return (
     <PullToRefresh onRefresh={handleRefresh}>
       <div
-        className="min-h-screen bg-[#0a0312] text-white flex flex-col font-sans selection:bg-fuchsia-500/35 selection:text-white"
+        className="min-h-screen bg-[var(--color-canvas)] text-[var(--color-fg)] flex flex-col font-sans"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >

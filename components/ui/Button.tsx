@@ -23,14 +23,27 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   ...props
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-primary,#0a0312)] focus-visible:ring-[var(--accent,#c026d3)] active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 rounded-lg';
-  
+  const baseClasses =
+    'inline-flex items-center justify-center font-medium transition-all duration-200 ' +
+    'focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ' +
+    'focus-visible:ring-offset-[var(--color-canvas)] focus-visible:ring-[var(--color-brand)] ' +
+    'active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50 rounded-lg';
+
   const variantClasses = {
-    primary: 'bg-[linear-gradient(110deg,#9333ea,#c026d3,#e879f9)] text-white shadow-[0_0_15px_rgba(192,38,211,0.3)] hover:shadow-[0_0_25px_rgba(192,38,211,0.5)] border-none',
-    secondary: 'bg-[rgba(139,92,246,0.08)] text-[var(--text-primary,#f0eaf8)] border border-[var(--accent-violet,#8b5cf6)]/30 hover:bg-[rgba(139,92,246,0.15)] hover:border-[var(--accent-violet,#8b5cf6)]/50 backdrop-blur-sm',
-    ghost: 'bg-transparent text-[var(--text-primary,#f0eaf8)] hover:bg-white/10 hover:text-white',
-    outline: 'bg-transparent text-[var(--text-primary,#f0eaf8)] border border-[var(--accent,#c026d3)] hover:bg-[var(--accent,#c026d3)]/10',
-    danger: 'bg-red-500/20 text-red-500 border border-red-500/50 hover:bg-red-500/30',
+    primary:
+      'bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)] text-white ' +
+      'shadow-[0_4px_14px_rgb(61_90_254/.25)] hover:shadow-[0_6px_20px_rgb(61_90_254/.35)] border-none',
+    secondary:
+      'bg-[var(--color-brand-soft)] text-[var(--color-brand)] border border-[var(--color-brand)]/20 ' +
+      'hover:bg-[var(--color-brand)]/15 hover:border-[var(--color-brand)]/35',
+    ghost:
+      'bg-transparent text-[var(--color-fg)] hover:bg-[var(--color-brand-soft)] hover:text-[var(--color-brand)]',
+    outline:
+      'bg-transparent text-[var(--color-brand)] border border-[var(--color-brand)] ' +
+      'hover:bg-[var(--color-brand-soft)]',
+    danger:
+      'bg-[var(--color-danger)]/10 text-[var(--color-danger)] border border-[var(--color-danger)]/40 ' +
+      'hover:bg-[var(--color-danger)]/20',
   };
 
   const sizeClasses = {

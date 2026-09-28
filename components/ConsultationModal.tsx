@@ -59,9 +59,9 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm overflow-y-auto">
       <div className="relative w-full max-w-xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200 overflow-hidden my-8">
         {/* Header */}
-        <div className="p-5 sm:p-6 bg-[#0e0520] text-white flex items-center justify-between">
+        <div className="p-5 sm:p-6 bg-[#0C1929] text-white flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 rounded-xl bg-violet-500/20 border border-violet-500/30 flex items-center justify-center text-violet-300">
+            <div className="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-sky-300">
               <CalendarIcon className="w-5 h-5" />
             </div>
             <div>
@@ -88,7 +88,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
               {/* Step 1: Choose Date */}
               <div>
                 <label className="flex items-center gap-1.5 text-xs font-bold text-slate-700 mb-2">
-                  <CalendarIcon className="w-4 h-4 text-fuchsia-400" />
+                  <CalendarIcon className="w-4 h-4 text-[#003B73]" />
                   <span>{language === 'bn' ? 'পছন্দের তারিখ নির্বাচন করুন:' : 'Select Preferred Date:'}</span>
                 </label>
                 <div className="flex flex-wrap gap-2">
@@ -99,7 +99,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                       onClick={() => setSelectedDate(d)}
                       className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all cursor-pointer ${
                         selectedDate === d
-                          ? 'bg-[#0e0520] text-white border-[#0e0520] shadow-xs'
+                          ? 'bg-[#0C1929] text-white border-[#0C1929] shadow-xs'
                           : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
                       }`}
                     >
@@ -112,7 +112,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
               {/* Step 2: Choose Time */}
               <div>
                 <label className="flex items-center gap-1.5 text-xs font-bold text-slate-700 mb-2">
-                  <Clock className="w-4 h-4 text-fuchsia-400" />
+                  <Clock className="w-4 h-4 text-[#003B73]" />
                   <span>{language === 'bn' ? 'সুবিধাজনক সময় নির্বাচন করুন:' : 'Select Convenient Time Slot:'}</span>
                 </label>
                 <div className="flex flex-wrap gap-2">
@@ -123,7 +123,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                       onClick={() => setSelectedTime(t)}
                       className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all cursor-pointer ${
                         selectedTime === t
-                          ? 'bg-fuchsia-600 text-white border-fuchsia-600 shadow-xs'
+                          ? 'bg-[#003B73] text-white border-[#003B73] shadow-xs'
                           : 'bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100'
                       }`}
                     >
@@ -145,7 +145,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                     placeholder="উদা: ড. মো: রফিকুল ইসলাম (অধ্যক্ষ)"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-600"
+                    className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B73]"
                   />
                 </div>
 
@@ -159,7 +159,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                     placeholder="উদা: আইডিয়াল স্কুল অ্যান্ড কলেজ"
                     value={institution}
                     onChange={(e) => setInstitution(e.target.value)}
-                    className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-600"
+                    className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B73]"
                   />
                 </div>
 
@@ -173,21 +173,21 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                     placeholder="017XXXXXXXX"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-600"
+                    className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B73]"
                   />
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-violet-50 border border-fuchsia-500/10 text-xs text-slate-700 flex items-center justify-between">
+              <div className="p-3 rounded-xl bg-blue-50 border border-blue-200/60 text-xs text-slate-700 flex items-center justify-between">
                 <span>কনসালটেশন মোড: <b>গুগল মিট / সরাসরি ফোন কল</b></span>
-                <span className="text-fuchsia-400 font-bold">সম্পূর্ণ ফ্রি</span>
+                <span className="text-[#003B73] font-bold">সম্পূর্ণ ফ্রি</span>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl bg-[#0e0520] hover:bg-[#14213d] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
+                className="w-full py-3 rounded-xl bg-[#003B73] hover:bg-[#00529B] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
               >
-                <Sparkles className="w-4 h-4 text-violet-300" />
+                <Sparkles className="w-4 h-4 text-sky-300" />
                 <span>কনসালটেশন বুকিং নিশ্চিত করুন</span>
               </button>
             </form>
@@ -198,7 +198,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
               </div>
 
               <div>
-                <h4 className="text-base font-bold text-[#0B1C30]">
+                <h4 className="text-base font-bold text-[#0F172A]">
                   বুকিং সফল হয়েছে!
                 </h4>
                 <p className="text-xs text-slate-600 max-w-sm mt-1">
@@ -214,7 +214,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
 
               <button
                 onClick={onClose}
-                className="px-6 py-2 rounded-xl bg-[#0e0520] text-white text-xs font-bold cursor-pointer"
+                className="px-6 py-2 rounded-xl bg-[#0C1929] text-white text-xs font-bold cursor-pointer hover:bg-[#003B73]"
               >
                 সম্পন্ন
               </button>

@@ -40,7 +40,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
         isVisible ? 'translate-y-0' : 'translate-y-full'
       }`}
     >
-      <div className="flex items-center justify-around px-1.5 py-1">
+      <div className="flex items-center justify-around px-1.5 py-1.5">
         {items.map((item) => {
           const isActive = currentSection === item.id;
           return (
@@ -51,20 +51,22 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                 onNavigate(item.id);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className={`flex flex-col items-center justify-center min-w-[50px] py-1 px-1 rounded-xl transition-all active:scale-90 cursor-pointer ${
+              className={`flex flex-col items-center justify-center min-w-[52px] py-1 px-1.5 rounded-xl transition-all active:scale-90 cursor-pointer ${
                 isActive 
-                  ? 'text-fuchsia-400' 
+                  ? 'text-[#003B73]' 
                   : 'text-slate-500 hover:text-slate-800'
               }`}
             >
-              <div className={`p-1 rounded-lg transition-transform ${isActive ? 'scale-105' : ''}`}>
+              <div className={`p-1.5 rounded-xl transition-all ${
+                isActive ? 'bg-sky-100/90 text-[#003B73] border border-sky-200/80 shadow-2xs scale-105' : 'bg-transparent'
+              }`}>
                 {item.icon}
               </div>
-              <span className={`text-[10px] tracking-tight ${isActive ? 'font-black text-[#0B1C30]' : 'font-medium text-slate-500'}`}>
+              <span className={`text-[10px] tracking-tight mt-0.5 ${isActive ? 'font-black text-[#003B73]' : 'font-semibold text-slate-500'}`}>
                 {language === 'bn' ? item.labelBn : item.labelEn}
               </span>
               {isActive && (
-                <span className="w-1 h-1 rounded-full bg-fuchsia-400 mt-0.5" />
+                <span className="w-1 h-1 rounded-full bg-[#003B73] mt-0.5" />
               )}
             </button>
           );
@@ -74,12 +76,12 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
         <button
           id="mobile-bottom-nav-consult-btn"
           onClick={onOpenConsultation}
-          className="flex flex-col items-center justify-center min-w-[50px] py-1 px-1 text-violet-400 transition-all active:scale-90 cursor-pointer group"
+          className="flex flex-col items-center justify-center min-w-[52px] py-1 px-1.5 transition-all active:scale-90 cursor-pointer group"
         >
-          <div className="p-1.5 rounded-full bg-gradient-to-tr from-[#0e0520] to-fuchsia-400 text-violet-300 shadow-sm group-hover:scale-105 transition-transform">
-            <Sparkles className="w-4 h-4" />
+          <div className="p-1.5 rounded-full bg-[#003B73] text-white shadow-md group-hover:bg-[#00529B] group-hover:scale-105 transition-all border border-sky-400/30">
+            <Sparkles className="w-4 h-4 text-sky-200" />
           </div>
-          <span className="text-[10px] tracking-tight font-black text-[#0B1C30] mt-0.5">
+          <span className="text-[10px] tracking-tight font-black text-[#003B73] mt-0.5">
             {language === 'bn' ? 'পরামর্শ' : 'Consult'}
           </span>
         </button>

@@ -49,8 +49,8 @@ export const TabletBottomNav: React.FC<TabletBottomNavProps> = ({
         isVisible ? 'translate-y-0' : 'translate-y-full'
       }`}
     >
-      {/* Glass blur backdrop */}
-      <div className="absolute inset-0 bg-[rgba(10,3,18,0.88)] backdrop-blur-2xl border-t border-[rgba(139,92,246,0.18)] shadow-[0_-8px_40px_rgba(5,1,13,0.5)]" />
+      {/* Glass blur backdrop (Light Theme) */}
+      <div className="absolute inset-0 bg-white/95 backdrop-blur-2xl border-t border-slate-200/90 shadow-[0_-8px_30px_rgba(15,23,42,0.08)]" />
 
       {/* Content */}
       <div
@@ -71,24 +71,24 @@ export const TabletBottomNav: React.FC<TabletBottomNavProps> = ({
                 }}
                 className={`relative flex flex-col items-center justify-center min-w-[60px] py-1.5 px-2 rounded-xl transition-all duration-200 active:scale-90 cursor-pointer group shrink-0 ${
                   isActive
-                    ? 'text-fuchsia-400'
-                    : 'text-[var(--text-muted)] hover:text-[var(--text-secondary)]'
+                    ? 'text-[#003B73]'
+                    : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
-                {/* Active background glow */}
+                {/* Active background highlight */}
                 {isActive && (
-                  <span className="absolute inset-0 rounded-xl bg-[rgba(192,38,211,0.12)] border border-[rgba(192,38,211,0.25)]" />
+                  <span className="absolute inset-0 rounded-xl bg-sky-100/90 border border-sky-200/80 shadow-2xs" />
                 )}
 
                 {/* Icon */}
-                <span className={`relative z-10 transition-transform duration-200 ${isActive ? 'scale-110' : 'group-hover:scale-105'}`}>
+                <span className={`relative z-10 transition-transform duration-200 ${isActive ? 'scale-110 text-[#003B73]' : 'group-hover:scale-105 text-slate-600'}`}>
                   {item.icon}
                 </span>
 
                 {/* Label */}
                 <span
                   className={`relative z-10 text-[10px] mt-0.5 tracking-tight leading-none ${
-                    isActive ? 'font-bold text-fuchsia-300' : 'font-medium'
+                    isActive ? 'font-black text-[#003B73]' : 'font-semibold text-slate-600'
                   }`}
                 >
                   {language === 'bn' ? item.labelBn : item.labelEn}
@@ -96,7 +96,7 @@ export const TabletBottomNav: React.FC<TabletBottomNavProps> = ({
 
                 {/* Active dot indicator */}
                 {isActive && (
-                  <span className="relative z-10 w-1 h-1 rounded-full bg-fuchsia-400 mt-0.5 shadow-[0_0_4px_rgba(232,121,249,0.8)]" />
+                  <span className="relative z-10 w-1 h-1 rounded-full bg-[#003B73] mt-0.5" />
                 )}
               </button>
             );
@@ -104,7 +104,7 @@ export const TabletBottomNav: React.FC<TabletBottomNavProps> = ({
         </div>
 
         {/* Divider */}
-        <div className="h-10 w-px bg-[rgba(139,92,246,0.2)] shrink-0 mx-1" />
+        <div className="h-10 w-px bg-slate-200 shrink-0 mx-1" />
 
         {/* Consultation CTA — always visible */}
         <button
@@ -112,15 +112,15 @@ export const TabletBottomNav: React.FC<TabletBottomNavProps> = ({
           onClick={onOpenConsultation}
           className="relative flex flex-col items-center justify-center min-w-[64px] py-1.5 px-2 rounded-xl cursor-pointer group shrink-0 active:scale-90 transition-all duration-200"
         >
-          {/* Glow background */}
-          <span className="absolute inset-0 rounded-xl bg-gradient-to-tr from-violet-900/60 to-fuchsia-700/30 border border-fuchsia-500/30 shine-effect" />
+          {/* Background */}
+          <span className="absolute inset-0 rounded-xl bg-sky-50 border border-sky-200" />
 
           {/* Icon with gradient ring */}
-          <span className="relative z-10 p-1.5 rounded-full bg-gradient-to-tr from-violet-700 to-fuchsia-500 shadow-[0_0_12px_rgba(192,38,211,0.5)] group-hover:shadow-[0_0_20px_rgba(192,38,211,0.7)] transition-shadow duration-200">
-            <Sparkles className="w-4 h-4 text-white" />
+          <span className="relative z-10 p-1.5 rounded-full bg-[#003B73] text-white shadow-xs group-hover:bg-[#00529B] transition-colors duration-200">
+            <Sparkles className="w-4 h-4 text-sky-200" />
           </span>
 
-          <span className="relative z-10 text-[10px] mt-0.5 font-bold text-fuchsia-300 leading-none">
+          <span className="relative z-10 text-[10px] mt-0.5 font-black text-[#003B73] leading-none">
             {language === 'bn' ? 'পরামর্শ' : 'Consult'}
           </span>
         </button>

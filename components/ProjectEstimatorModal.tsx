@@ -86,9 +86,9 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm overflow-y-auto">
       <div className="relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200 overflow-hidden my-8">
         {/* Header */}
-        <div className="p-5 sm:p-6 bg-[#0e0520] text-white flex items-center justify-between">
+        <div className="p-5 sm:p-6 bg-[#0C1929] text-white flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 rounded-xl bg-violet-500/20 border border-violet-500/30 flex items-center justify-center text-violet-300">
+            <div className="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-sky-300">
               <Calculator className="w-5 h-5" />
             </div>
             <div>
@@ -115,14 +115,14 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
               <div key={s} className="flex items-center gap-1.5">
                 <span className={`w-6 h-6 rounded-full flex items-center justify-center font-bold text-[11px] ${
                   step === s 
-                    ? 'bg-[#0e0520] text-white' 
+                    ? 'bg-[#0C1929] text-white' 
                     : step > s 
                       ? 'bg-emerald-100 text-emerald-700' 
                       : 'bg-slate-200 text-slate-500'
                 }`}>
                   {step > s ? '✓' : s}
                 </span>
-                <span className={`hidden sm:inline font-semibold ${step === s ? 'text-[#0B1C30]' : 'text-slate-400'}`}>
+                <span className={`hidden sm:inline font-semibold ${step === s ? 'text-[#0F172A]' : 'text-slate-400'}`}>
                   {s === 1 ? 'প্রতিষ্ঠান' : s === 2 ? 'ধরন' : s === 3 ? 'ফিচারস' : 'যোগাযোগ'}
                 </span>
                 {s < 4 && <span className="text-slate-300 mx-1">→</span>}
@@ -130,7 +130,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
             ))}
           </div>
 
-          <div className="text-right font-bold text-fuchsia-400 font-mono">
+          <div className="text-right font-bold text-[#003B73] font-mono">
             ৳{calculatedPrice.toLocaleString()}
           </div>
         </div>
@@ -143,7 +143,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
               {step === 1 && (
                 <div className="flex flex-col gap-4">
                   <div>
-                    <h4 className="text-sm font-bold text-[#0B1C30]">
+                    <h4 className="text-sm font-bold text-[#0F172A]">
                       ধাপ ১: আপনার প্রতিষ্ঠানের ধরন নির্বাচন করুন
                     </h4>
                     <p className="text-xs text-slate-500">
@@ -153,10 +153,10 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
 
                   <div className="grid grid-cols-2 gap-3 pt-2">
                     {[
-                      { id: 'school', title: 'স্কুল / হাই স্কুল', desc: 'মডেল স্কুল, কিন্ডারগার্টেন ও মাধ্যমিক', icon: <School className="w-5 h-5 text-fuchsia-400" /> },
-                      { id: 'college', title: 'কলেজ / মহাবিদ্যালয়', desc: 'উচ্চ মাধ্যমিক, ডিগ্রি ও অনার্স কলেজ', icon: <Building2 className="w-5 h-5 text-fuchsia-400" /> },
-                      { id: 'madrasa', title: 'মাদ্রাসা ও ইসলামিক কমপ্লেক্স', desc: 'কওমি, আলিয়া, হিফজ ও কামিল মাদ্রাসা', icon: <BookOpen className="w-5 h-5 text-fuchsia-400" /> },
-                      { id: 'coaching', title: 'কোচিং / অন্যান্য একাডেমি', desc: 'এডমিশন কোচিং, একাডেমি ও ট্রেনিং ইনস্টিটিউট', icon: <Layers className="w-5 h-5 text-fuchsia-400" /> },
+                      { id: 'school', title: 'স্কুল / হাই স্কুল', desc: 'মডেল স্কুল, কিন্ডারগার্টেন ও মাধ্যমিক', icon: <School className="w-5 h-5 text-[#003B73]" /> },
+                      { id: 'college', title: 'কলেজ / মহাবিদ্যালয়', desc: 'উচ্চ মাধ্যমিক, ডিগ্রি ও অনার্স কলেজ', icon: <Building2 className="w-5 h-5 text-[#003B73]" /> },
+                      { id: 'madrasa', title: 'মাদ্রাসা ও ইসলামিক কমপ্লেক্স', desc: 'কওমি, আলিয়া, হিফজ ও কামিল মাদ্রাসা', icon: <BookOpen className="w-5 h-5 text-[#003B73]" /> },
+                      { id: 'coaching', title: 'কোচিং / অন্যান্য একাডেমি', desc: 'এডমিশন কোচিং, একাডেমি ও ট্রেনিং ইনস্টিটিউট', icon: <Layers className="w-5 h-5 text-[#003B73]" /> },
                     ].map((item) => (
                       <button
                         key={item.id}
@@ -164,7 +164,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
                         onClick={() => setInstitutionType(item.id as any)}
                         className={`p-4 rounded-xl border-2 text-left transition-all cursor-pointer flex flex-col gap-2 ${
                           institutionType === item.id
-                            ? 'border-fuchsia-600 bg-fuchsia-950/20 shadow-sm'
+                            ? 'border-[#003B73] bg-blue-50/80 shadow-sm'
                             : 'border-slate-200 hover:border-slate-300 bg-white'
                         }`}
                       >
@@ -172,7 +172,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
                           {item.icon}
                         </div>
                         <div>
-                          <p className="text-xs font-bold text-[#0B1C30]">{item.title}</p>
+                          <p className="text-xs font-bold text-[#0F172A]">{item.title}</p>
                           <p className="text-[11px] text-slate-500 mt-0.5">{item.desc}</p>
                         </div>
                       </button>
@@ -188,7 +188,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
                       placeholder="উদা: আইডিয়াল মডেল হাই স্কুল..."
                       value={institutionName}
                       onChange={(e) => setInstitutionName(e.target.value)}
-                      className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-600"
+                      className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B73]"
                     />
                   </div>
 
@@ -196,7 +196,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setStep(2)}
-                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#0e0520] text-white text-xs font-bold hover:bg-[#14213d] cursor-pointer"
+                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#0C1929] text-white text-xs font-bold hover:bg-[#003B73] cursor-pointer"
                     >
                       <span>পরবর্তী ধাপ</span>
                       <ArrowRight className="w-4 h-4" />
@@ -209,7 +209,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
               {step === 2 && (
                 <div className="flex flex-col gap-4">
                   <div>
-                    <h4 className="text-sm font-bold text-[#0B1C30]">
+                    <h4 className="text-sm font-bold text-[#0F172A]">
                       ধাপ ২: ওয়েবসাইটের পরিধি ও প্যাকেজ নির্বাচন করুন
                     </h4>
                     <p className="text-xs text-slate-500">
@@ -229,13 +229,13 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
                         onClick={() => setWebsiteType(p.id as any)}
                         className={`p-4 rounded-xl border-2 text-left transition-all cursor-pointer flex flex-col justify-between ${
                           websiteType === p.id
-                            ? 'border-fuchsia-600 bg-fuchsia-950/20 shadow-sm'
+                            ? 'border-[#003B73] bg-blue-50/80 shadow-sm'
                             : 'border-slate-200 hover:border-slate-300 bg-white'
                         }`}
                       >
                         <div>
-                          <p className="text-xs font-bold text-[#0B1C30]">{p.title}</p>
-                          <p className="text-sm font-bold text-fuchsia-400 font-mono mt-1">{p.price}</p>
+                          <p className="text-xs font-bold text-[#0F172A]">{p.title}</p>
+                          <p className="text-sm font-bold text-[#003B73] font-mono mt-1">{p.price}</p>
                           <p className="text-[11px] text-slate-500 mt-2">{p.desc}</p>
                         </div>
                         <div className="pt-3 border-t border-slate-200/60 mt-3">
@@ -258,7 +258,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setStep(3)}
-                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#0e0520] text-white text-xs font-bold hover:bg-[#14213d] cursor-pointer"
+                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#0C1929] text-white text-xs font-bold hover:bg-[#003B73] cursor-pointer"
                     >
                       <span>পরবর্তী ধাপ</span>
                       <ArrowRight className="w-4 h-4" />
@@ -271,7 +271,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
               {step === 3 && (
                 <div className="flex flex-col gap-4">
                   <div>
-                    <h4 className="text-sm font-bold text-[#0B1C30]">
+                    <h4 className="text-sm font-bold text-[#0F172A]">
                       ধাপ ৩: প্রয়োজনীয় ফিচারসমূহ নির্বাচন করুন
                     </h4>
                     <p className="text-xs text-slate-500">
@@ -299,13 +299,13 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
                           onClick={() => toggleFeature(feat.id)}
                           className={`p-3 rounded-xl border text-left text-xs font-semibold flex items-center justify-between transition-colors cursor-pointer ${
                             isChecked
-                              ? 'border-fuchsia-600 bg-fuchsia-950/20 text-[#0B1C30]'
+                              ? 'border-[#003B73] bg-blue-50/80 text-[#0F172A]'
                               : 'border-slate-200 text-slate-600 hover:border-slate-300'
                           }`}
                         >
                           <span>{feat.label}</span>
                           <span className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] ${
-                            isChecked ? 'bg-fuchsia-600 text-white' : 'border border-slate-300'
+                            isChecked ? 'bg-[#003B73] text-white' : 'border border-slate-300'
                           }`}>
                             {isChecked && '✓'}
                           </span>
@@ -327,7 +327,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setStep(4)}
-                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#0e0520] text-white text-xs font-bold hover:bg-[#14213d] cursor-pointer"
+                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#0C1929] text-white text-xs font-bold hover:bg-[#003B73] cursor-pointer"
                     >
                       <span>পরবর্তী ধাপ</span>
                       <ArrowRight className="w-4 h-4" />
@@ -340,7 +340,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
               {step === 4 && (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                   <div>
-                    <h4 className="text-sm font-bold text-[#0B1C30]">
+                    <h4 className="text-sm font-bold text-[#0F172A]">
                       ধাপ ৪: যোগাযোগের বিবরণ প্রদান করুন
                     </h4>
                     <p className="text-xs text-slate-500">
@@ -352,7 +352,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
                   <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                     <div>
                       <p className="text-[11px] text-slate-400">আনুমানিক প্রজেক্ট বাজেট:</p>
-                      <p className="text-xl font-bold font-heading text-fuchsia-400">
+                      <p className="text-xl font-bold font-heading text-[#003B73]">
                         ৳{calculatedPrice.toLocaleString()}
                       </p>
                     </div>
@@ -375,7 +375,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
                         placeholder="উদা: ড. মো: রফিকুল ইসলাম (অধ্যক্ষ)"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-600"
+                        className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B73]"
                       />
                     </div>
 
@@ -389,7 +389,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
                         placeholder="017XXXXXXXX"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-600"
+                        className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B73]"
                       />
                     </div>
                   </div>
@@ -403,7 +403,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
                       placeholder="01XXXXXXXXX"
                       value={whatsapp}
                       onChange={(e) => setWhatsapp(e.target.value)}
-                      className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-fuchsia-600"
+                      className="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#003B73]"
                     />
                   </div>
 
@@ -419,7 +419,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
 
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-fuchsia-600 text-white text-xs font-bold hover:bg-fuchsia-500 shadow-sm cursor-pointer"
+                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#003B73] text-white text-xs font-bold hover:bg-[#00529B] shadow-sm cursor-pointer"
                     >
                       <Sparkles className="w-4 h-4 text-white" />
                       <span>এস্টিমেট সাবমিট করুন</span>
@@ -436,7 +436,7 @@ export const ProjectEstimatorModal: React.FC<ProjectEstimatorModalProps> = ({
               </div>
 
               <div>
-                <h4 className="text-base font-bold text-[#0B1C30]">
+                <h4 className="text-base font-bold text-[#0F172A]">
                   ধন্যবাদ, {name || 'শ্রদ্ধেয় গ্রাহক'}!
                 </h4>
                 <p className="text-xs text-slate-600 max-w-sm mt-1">

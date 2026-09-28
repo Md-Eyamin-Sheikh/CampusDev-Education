@@ -2,15 +2,13 @@
 
 <div align="center">
 
-![CampusDev Banner](https://img.shields.io/badge/CampusDev-Education%20Web%20Solutions-8b5cf6?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![CampusDev Banner](https://img.shields.io/badge/CampusDev-Education%20Web%20Solutions-3D5AFE?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-16.3.5-black?style=for-the-badge&logo=nextdotjs)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![PWA Ready](https://img.shields.io/badge/PWA-Ready-10B981?style=for-the-badge&logo=pwa&logoColor=white)
 
 **বাংলাদেশের স্কুল, কলেজ ও মাদ্রাসার জন্য আধুনিক, প্রিমিয়াম ও PWA-ready নেটিভ অ্যাপ ফিল সহ ওয়েব অ্যাপ্লিকেশন।**
-
-[Live Demo](#) · [Documentation](#প্রজেক্ট-স্ট্রাকচার) · [Report Bug](#) · [Request Feature](#)
 
 </div>
 
@@ -53,7 +51,8 @@
 
 ### ⚡ Animation & Page Transition
 - 🌈 **Zero Reload Page Transitions (`PageTransition.tsx`)** — Next.js App Router-এ পেজ পরিবর্তনের সময় মসৃণ স্কেল + ফেড ট্রানজিশন।
-- ⚡ **Dark Glassmorphism থিম** — গভীর বেগুনি/ম্যাজেন্টা প্যালেট, Cyber Grid ব্যাকগ্রাউন্ড ও Neon Glow।
+- ⚡ **Institutional Blue Light Canvas + Dark Drawer Theme** — সফট Ice-Blue / White Hero Canvas, গভীর `#003B73` / `#0C1929` রয়্যাল ব্লু নেভিগেশন ও হাই-কনট্রাস্ট ক্রিস্টাল ক্লিয়ার রিডিবিলিটি।
+- 👁️ **WCAG AAA Readability** — ডার্ক নেভ বার, মোবাইল ড্রয়ার মেনু ও কার্ডের জন্য ১০০% দৃশ্যমান টেক্সট।
 - 🖱️ **Micro-animations** — Hover, Press, Active Scale (`active:scale-95`), Safe Area Insets (`pt-safe`, `pb-safe`).
 
 ### 🚀 পারফরম্যান্স ও লোডিং Optimizations
@@ -89,7 +88,7 @@ Language           →  TypeScript 5.x
 Styling            →  Tailwind CSS v4 + Custom CSS Variables
 Icons              →  Lucide React
 Service Worker     →  Custom PWA Service Worker (sw.js)
-Fonts              →  Space Grotesk + Hind Siliguri + Inter (Google Fonts)
+Fonts              →  Inter + Hind Siliguri (Google Fonts)
 Build Tool         →  Next.js Turbopack / Webpack
 Package Manager    →  npm
 ```
@@ -157,7 +156,7 @@ next-app/
 ## 🚀 কিভাবে চালাবেন
 
 ### পূর্বশর্ত
-- Node.js 18+ বা 20+
+- Node.js **20.9+** (Next.js 16 এর ন্যূনতম প্রয়োজনীয়তা)
 - npm বা yarn
 
 ### ইনস্টলেশন
@@ -202,9 +201,10 @@ npx tsc --noEmit
 NEXT_PUBLIC_SITE_URL=https://campusdev.com.bd
 
 # WhatsApp নম্বর (যোগাযোগ বাটনের জন্য)
-NEXT_PUBLIC_WHATSAPP_NUMBER=+8801XXXXXXXXX
+# wa.me লিংকে + ছাড়া লিখতে হয়: 880XXXXXXXXXX
+NEXT_PUBLIC_WHATSAPP_NUMBER=8801XXXXXXXXX
 
-# Email (ফর্ম সাবমিশনের জন্য)
+# Email (ফর্ম সাবমিশনের জন্য — শুধু display; সাবমিশন সার্ভারে হওয়া উচিত)
 NEXT_PUBLIC_CONTACT_EMAIL=info@campusdev.com.bd
 ```
 
@@ -249,12 +249,28 @@ pm2 startup
 
 ---
 
+## 🌐 সমর্থিত ব্রাউজার
+
+Tailwind CSS v4 আধুনিক CSS features (`@property`, `color-mix()`) ব্যবহার করে।
+
+| ব্রাউজার | ন্যূনতম সংস্করণ |
+|---------|----------------|
+| Chrome / Edge | 111+ |
+| Safari | 16.4+ |
+| Firefox | 128+ |
+
+> **বাংলাদেশের পুরনো Android ফোন** — BrowserStack বা একটি পুরনো ডিভাইসে একবার টেস্ট করার পরামর্শ দেওয়া হচ্ছে।
+
+---
+
 ## 📄 লাইসেন্স
 
 ```
-Apache-2.0 License
-© 2026 CampusDev — All rights reserved
+UNLICENSED — মালিকানাধীন সফটওয়্যার
+© 2026 CampusDev — সর্বস্বত্ব সংরক্ষিত
 ```
+
+এই রিপোজিটরি private। Apache-2.0 প্রযোজ্য নয়।
 
 ---
 

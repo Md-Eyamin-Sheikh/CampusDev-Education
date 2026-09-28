@@ -111,11 +111,11 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-fuchsia-950/30 text-fuchsia-400 text-xs font-bold uppercase tracking-wider mb-3">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#003B73] border border-blue-200/60 text-xs font-bold uppercase tracking-wider mb-3">
             <BookOpen className="w-3.5 h-3.5" />
             <span>{language === 'bn' ? 'রিসোর্স ও নলেজ হাব' : 'Resources & Insights'}</span>
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#0B1C30]">
+          <h1 className="text-3xl sm:text-4xl font-extrabold font-heading text-[#0F172A]">
             {language === 'bn' 
               ? 'শিক্ষা প্রতিষ্ঠানের ডিজিটাল রূপান্তরের সেরা গাইডলাইন' 
               : 'Educational Technology Insights & Free Resources'}
@@ -132,7 +132,7 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
               onClick={() => setActiveTab('articles')}
               className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 activeTab === 'articles'
-                  ? 'bg-[#0e0520] text-white shadow-xs'
+                  ? 'bg-[#0C1929] text-white shadow-xs'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -142,7 +142,7 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
               onClick={() => setActiveTab('tools')}
               className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 activeTab === 'tools'
-                  ? 'bg-[#0e0520] text-white shadow-xs'
+                  ? 'bg-[#0C1929] text-white shadow-xs'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
@@ -170,7 +170,7 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
               >
                 <div>
                   <div className="flex items-center justify-between text-xs text-slate-400 mb-3">
-                    <span className="px-2.5 py-0.5 rounded-full bg-fuchsia-950/20 text-fuchsia-400 font-bold">
+                    <span className="px-2.5 py-0.5 rounded-full bg-blue-50 text-[#003B73] font-bold">
                       {art.category}
                     </span>
                     <span className="flex items-center gap-1">
@@ -179,7 +179,7 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
                     </span>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-bold font-heading text-[#0B1C30] mb-2 leading-snug">
+                  <h3 className="text-base sm:text-lg font-bold font-heading text-[#0F172A] mb-2 leading-snug">
                     {language === 'bn' ? art.titleBn : art.titleEn}
                   </h3>
 
@@ -192,7 +192,7 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
                   <span className="text-xs text-slate-400">{art.date}</span>
                   <button
                     onClick={onOpenAudit}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-fuchsia-400 hover:underline cursor-pointer"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#003B73] hover:underline cursor-pointer"
                   >
                     <span>{language === 'bn' ? 'ওয়েবসাইট অডিট করে দেখুন' : 'Audit Your School Site'}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -210,7 +210,7 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
                 className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-2xs hover:shadow-md transition-shadow flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-fuchsia-950/20 text-fuchsia-400 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#003B73] flex items-center justify-center mb-4 border border-blue-100">
                     <FileText className="w-6 h-6" />
                   </div>
 
@@ -218,7 +218,7 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
                     {res.format} • {res.fileSize}
                   </span>
 
-                  <h3 className="text-base font-bold font-heading text-[#0B1C30] mt-1 mb-2">
+                  <h3 className="text-base font-bold font-heading text-[#0F172A] mt-1 mb-2">
                     {language === 'bn' ? res.titleBn : res.titleEn}
                   </h3>
 
@@ -229,9 +229,9 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
 
                 <button
                   onClick={() => handleDownload(res.id, language === 'bn' ? res.titleBn : res.titleEn)}
-                  className="w-full py-3 rounded-xl bg-[#0e0520] hover:bg-[#14213d] text-white text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                  className="w-full py-3 rounded-xl bg-[#0C1929] hover:bg-[#003B73] text-white text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer"
                 >
-                  <Download className="w-4 h-4 text-violet-300" />
+                  <Download className="w-4 h-4 text-sky-300" />
                   <span>{language === 'bn' ? 'ফ্রি ডাউনলোড করুন' : 'Free Download'}</span>
                 </button>
               </div>
@@ -240,9 +240,9 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
         )}
 
         {/* Audit Callout Banner */}
-        <div className="p-8 rounded-3xl bg-[#0e0520] text-white flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="p-8 rounded-3xl bg-[#0C1929] text-white flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-violet-300">
+            <span className="text-xs font-bold uppercase tracking-wider text-sky-300">
               💡 ফ্রি সেলফ-ডায়াগনস্টিক টুল
             </span>
             <h3 className="text-lg sm:text-xl font-bold font-heading mt-1">
@@ -258,7 +258,7 @@ export const BlogResourcesView: React.FC<BlogResourcesViewProps> = ({
           </div>
           <button
             onClick={onOpenAudit}
-            className="px-6 py-3.5 rounded-xl bg-fuchsia-600 hover:bg-fuchsia-500 text-white text-xs sm:text-sm font-bold whitespace-nowrap shadow-md cursor-pointer transition-colors flex items-center gap-2"
+            className="px-6 py-3.5 rounded-xl bg-[#003B73] hover:bg-[#00529B] text-white text-xs sm:text-sm font-bold whitespace-nowrap shadow-md cursor-pointer transition-colors flex items-center gap-2"
           >
             <Zap className="w-4 h-4" />
             <span>{language === 'bn' ? 'ফ্রি ওয়েবসাইট অডিট টেস্ট করুন' : 'Run Free Speed Audit'}</span>

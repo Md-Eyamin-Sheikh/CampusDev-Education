@@ -35,13 +35,13 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/75 backdrop-blur-sm overflow-y-auto">
       <div className="relative w-full max-w-4xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200 overflow-hidden my-6 max-h-[92vh] flex flex-col">
         {/* Sticky Header with Close Button */}
-        <div className="p-4 sm:p-6 bg-[#0e0520] text-white flex items-center justify-between flex-shrink-0">
+        <div className="p-4 sm:p-6 bg-[#0C1929] text-white flex items-center justify-between flex-shrink-0">
           <div className="flex items-center gap-3">
-            <span className="px-2.5 py-1 rounded-full bg-violet-500/20 text-violet-300 text-[11px] font-bold uppercase tracking-wider">
+            <span className="px-2.5 py-1 rounded-full bg-blue-500/20 text-sky-300 text-[11px] font-bold uppercase tracking-wider">
               {language === 'bn' ? caseStudy.categoryLabelBn : caseStudy.categoryLabelEn}
             </span>
             <div className="flex items-center gap-1.5 text-xs text-slate-300">
-              <MapPin className="w-3.5 h-3.5 text-violet-300" />
+              <MapPin className="w-3.5 h-3.5 text-sky-300" />
               <span>{language === 'bn' ? caseStudy.locationBn : caseStudy.locationEn}</span>
             </div>
           </div>
@@ -62,7 +62,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               alt={caseStudy.titleEn}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0e0520] via-[#0e0520]/40 to-transparent flex flex-col justify-end p-6 sm:p-8 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0C1929] via-[#0C1929]/40 to-transparent flex flex-col justify-end p-6 sm:p-8 text-white">
               <h2 className="text-xl sm:text-3xl font-extrabold font-heading text-balance">
                 {language === 'bn' ? caseStudy.titleBn : caseStudy.titleEn}
               </h2>
@@ -82,19 +82,19 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             </div>
             <div className="text-center">
               <p className="text-xs text-slate-500 font-medium">Mobile Usability</p>
-              <p className="text-2xl font-extrabold font-heading text-fuchsia-400">
+              <p className="text-2xl font-extrabold font-heading text-[#003B73]">
                 {caseStudy.performanceMetrics.mobileIndex}%
               </p>
             </div>
             <div className="text-center">
               <p className="text-xs text-slate-500 font-medium">Page Load Speed</p>
-              <p className="text-2xl font-extrabold font-heading text-[#0B1C30]">
+              <p className="text-2xl font-extrabold font-heading text-[#0F172A]">
                 {caseStudy.performanceMetrics.loadTime}
               </p>
             </div>
             <div className="text-center">
               <p className="text-xs text-slate-500 font-medium">Cloud Uptime</p>
-              <p className="text-2xl font-extrabold font-heading text-indigo-600">
+              <p className="text-2xl font-extrabold font-heading text-[#00529B]">
                 {caseStudy.performanceMetrics.uptime}
               </p>
             </div>
@@ -123,13 +123,13 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
           {/* Key Strategic Goals */}
           <div>
-            <h4 className="text-sm sm:text-base font-bold text-[#0B1C30] mb-3">
+            <h4 className="text-sm sm:text-base font-bold text-[#0F172A] mb-3">
               {language === 'bn' ? 'প্রজেক্টের প্রধান লক্ষ্যসমূহ:' : 'Key Project Objectives:'}
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {(language === 'bn' ? caseStudy.goalsBn : caseStudy.goalsEn).map((g, idx) => (
                 <div key={idx} className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 text-fuchsia-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-4 h-4 text-[#003B73] flex-shrink-0 mt-0.5" />
                   <span className="font-semibold text-slate-800">{g}</span>
                 </div>
               ))}
@@ -137,10 +137,10 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
           </div>
 
           {/* Admin System & Tech Architecture */}
-          <div className="p-6 rounded-2xl bg-[#0e0520] text-white space-y-4">
+          <div className="p-6 rounded-2xl bg-[#0C1929] text-white space-y-4">
             <div className="flex items-center justify-between">
               <h4 className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
-                <Layers className="w-4 h-4 text-violet-300" />
+                <Layers className="w-4 h-4 text-sky-300" />
                 <span>{language === 'bn' ? 'অ্যাডমিন সিস্টেম ও প্রযুক্তি কাঠামো' : 'Admin System & Architecture'}</span>
               </h4>
               <div className="flex items-center gap-1.5">
@@ -163,7 +163,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
           {/* Quantified Business Results */}
           <div>
-            <h4 className="text-sm sm:text-base font-bold text-[#0B1C30] mb-3 flex items-center gap-2">
+            <h4 className="text-sm sm:text-base font-bold text-[#0F172A] mb-3 flex items-center gap-2">
               <TrendingUp className="w-4 h-4 text-emerald-600" />
               <span>{language === 'bn' ? 'বাস্তব ফলাফল ও অর্জন (Quantified Results):' : 'Quantified Results:'}</span>
             </h4>
@@ -178,13 +178,13 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
           {/* Client Testimonial */}
           {caseStudy.testimonial && (
-            <div className="p-6 rounded-2xl bg-fuchsia-950/20 border border-fuchsia-500/20 relative">
-              <Quote className="w-8 h-8 text-violet-200 absolute top-4 right-4" />
+            <div className="p-6 rounded-2xl bg-blue-50 border border-blue-200/60 relative">
+              <Quote className="w-8 h-8 text-blue-300/40 absolute top-4 right-4" />
               <p className="text-xs sm:text-sm text-slate-700 italic leading-relaxed mb-4">
                 "{language === 'bn' ? caseStudy.testimonial.quoteBn : caseStudy.testimonial.quoteEn}"
               </p>
               <div>
-                <p className="text-xs font-bold text-[#0B1C30]">
+                <p className="text-xs font-bold text-[#0F172A]">
                   {language === 'bn' ? caseStudy.testimonial.authorBn : caseStudy.testimonial.authorEn}
                 </p>
                 <p className="text-[11px] text-slate-500">
@@ -206,10 +206,10 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                 onClose();
                 onOpenConsultation();
               }}
-              className="px-6 py-3 rounded-xl bg-[#0e0520] hover:bg-[#14213d] text-white text-xs font-bold transition-all cursor-pointer flex items-center gap-2"
+              className="px-6 py-3 rounded-xl bg-[#003B73] hover:bg-[#00529B] text-white text-xs font-bold transition-all cursor-pointer flex items-center gap-2"
             >
               <span>{language === 'bn' ? 'ফ্রি কনসালটেশন বুক করুন' : 'Book Free Consultation'}</span>
-              <ArrowRight className="w-4 h-4 text-violet-300" />
+              <ArrowRight className="w-4 h-4 text-sky-300" />
             </button>
           </div>
         </div>

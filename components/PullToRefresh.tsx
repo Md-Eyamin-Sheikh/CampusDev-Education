@@ -84,10 +84,10 @@ export function PullToRefresh({ onRefresh, children, threshold = 72 }: PullToRef
           }}
         >
           <div
-            className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold shadow-[0_4px_20px_rgba(192,38,211,0.3)] transition-colors duration-200 ${
+            className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold shadow-[0_4px_20px_rgba(0,59,115,0.3)] transition-colors duration-200 ${
               state === 'ready' || state === 'refreshing'
-                ? 'bg-gradient-to-r from-violet-600 to-fuchsia-500 text-white'
-                : 'bg-[rgba(26,13,46,0.9)] border border-[var(--border)] text-[var(--text-secondary)]'
+                ? 'bg-gradient-to-r from-[#003B73] to-[#00529B] text-white'
+                : 'bg-[rgba(12,25,41,0.9)] border border-[var(--border)] text-[var(--text-secondary)]'
             }`}
           >
             <div

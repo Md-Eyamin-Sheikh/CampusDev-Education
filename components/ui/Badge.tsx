@@ -20,8 +20,8 @@ export const Badge: React.FC<BadgeProps> = ({
   const baseClasses = 'inline-flex items-center font-medium rounded-full transition-colors backdrop-blur-sm';
   
   const variantClasses = {
-    default: 'bg-white/10 text-[var(--text-primary,#f0eaf8)] border border-white/20',
-    primary: 'bg-[var(--accent-violet,#8b5cf6)]/15 text-[var(--accent-violet,#8b5cf6)] border border-[var(--accent-violet,#8b5cf6)]/30',
+    default: 'bg-white/10 text-[var(--text-primary,#f8fafc)] border border-white/20',
+    primary: 'bg-[var(--color-brand,#003B73)]/15 text-[var(--color-brand,#003B73)] border border-[var(--color-brand,#003B73)]/30',
     success: 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30',
     warning: 'bg-amber-500/15 text-amber-400 border border-amber-500/30',
     danger: 'bg-red-500/15 text-red-400 border border-red-500/30',
