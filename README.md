@@ -2,13 +2,18 @@
 
 <div align="center">
 
-![CampusDev Banner](https://img.shields.io/badge/CampusDev-Education%20Web%20Solutions-3D5AFE?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![CampusDev Banner](https://img.shields.io/badge/CampusDev-Education%20Web%20Solutions-003B73?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-16.3.5-black?style=for-the-badge&logo=nextdotjs)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 ![PWA Ready](https://img.shields.io/badge/PWA-Ready-10B981?style=for-the-badge&logo=pwa&logoColor=white)
 
 **বাংলাদেশের স্কুল, কলেজ ও মাদ্রাসার জন্য আধুনিক, প্রিমিয়াম ও PWA-ready নেটিভ অ্যাপ ফিল সহ ওয়েব অ্যাপ্লিকেশন।**
+
+---
+
+### 🖥️ 📱 Multi-Device Admin Panel Showcase
+![CampusDev Multi-Device Admin Panel Showcase](./public/hero-devices.png)
 
 </div>
 
@@ -17,6 +22,7 @@
 ## 📋 বিষয়সূচি
 
 - [প্রজেক্ট সম্পর্কে](#-প্রজেক্ট-সম্পর্কে)
+- [প্রিমিয়াম হিরো সেকশন ও ডিভাইস শোকেস](#-প্রিমিয়াম-হিরো-সেকশন-ও-ডিভাইস-শোকেস)
 - [নেটিভ অ্যাপ ফিল ও ফিচারসমূহ](#-নেটিভ-অ্যাপ-ফিল-ও-ফিচারসমূহ)
 - [টেকনোলজি স্ট্যাক](#-টেকনোলজি-স্ট্যাক)
 - [প্রজেক্ট স্ট্রাকচার](#-প্রজেক্ট-স্ট্রাকচার)
@@ -32,11 +38,22 @@
 
 **CampusDev** হলো বাংলাদেশের শিক্ষা প্রতিষ্ঠানগুলোর জন্য একটি সম্পূর্ণ ডিজিটাল ওয়েব সল্যুশন। এই প্রজেক্টে রয়েছে:
 
-- 🏫 **স্কুল, কলেজ, মাদ্রাসা** — সকল ধরনের শিক্ষাপ্রতিষ্ঠানের জন্য কাস্টম ওয়েবসাইট
-- 📊 **অ্যাডমিন ড্যাশবোর্ড** — সম্পূর্ণ শিক্ষা ব্যবস্থাপনা প্যানেল
-- 📱 **মোবাইল ও ট্যাবলেট নেটিভ অ্যাপ ফিল** — Instagram/Facebook অ্যাপের মতো অভিজ্ঞাত তৈরি
-- 🌐 **দ্বি-ভাষিক** — বাংলা এবং ইংরেজি সম্পূর্ণ সমর্থন
+- 🏫 **স্কুল, কলেজ, মাদ্রাসা** — সকল ধরনের শিক্ষাপ্রতিষ্ঠানের জন্য কাস্টম ওয়েবসাইট ও ডাইনামিক ফিল্টারিং
+- 📊 **অ্যাডমিন ড্যাশবোর্ড** — সম্পূর্ণ শিক্ষা ব্যবস্থাপনা প্যানেল (রেসাল্ট, ফি, নোটিশ, হাজিরা, অনলাইন ভর্তি)
+- 📱 **মোবাইল, ট্যাবলেট ও ডেস্কটপ নেটিভ অ্যাপ ফিল** — সকল ডিভাইসে মসৃণ রেসপন্সিভ অভিজ্ঞতা
+- 🌐 **দ্বি-ভাষিক সমর্থন** — সম্পূর্ণ বাংলা এবং ইংরেজি ইন্টারফেস সুইচ
 - 🔒 **PWA ও অফলাইন সুবিধা** — সার্ভিস ওয়ার্কার সহ মোবাইলে ইনস্টলযোগ্য অ্যাপ
+
+---
+
+## 🎨 প্রিমিয়াম হিরো সেকশন ও ডিভাইস শোকেস
+
+- 🖼️ **Multi-Device Responsive Showcase (`/hero-devices.png`)**: ডেস্কটপ মনিটর, ল্যাপটপ, ট্যাবলেট এবং স্মার্টফোনে অ্যাডমিন প্যানেল প্রদর্শনের হাই-রেজুলিউশন ডিভাইস ভিজ্যুয়াল।
+- 🏫 **Interactive Institution Switcher**: স্কুল, কলেজ এবং মাদ্রাসা — প্রতিষ্ঠানের ধরন অনুযায়ী কাস্টমাইজড হেডলাইন ও ডাইনামিক লাইভ প্রিভিউ।
+- 📊 **Floating Live Metric Cards**:
+  - ⚡ `Core Web Vitals` - **99.8% Optimized**
+  - 🔒 `Security & Backup` - **SSL + Auto Backup**
+- 🤝 **Institutional Social Proof**: ২৫০+ বাংলাদেশি শিক্ষা প্রতিষ্ঠান প্রধানদের আস্থা ও নির্ভরতার স্মারক।
 
 ---
 
@@ -62,7 +79,7 @@
 ### পেজ ও সেকশনসমূহ
 | পেজ | বিবরণ |
 |-----|--------|
-| 🏠 Home | হিরো সেকশন, সার্ভিস প্রিভিউ, টেস্টিমোনিয়াল, FAQ |
+| 🏠 Home | স্প্লিট-লেআউট হিরো, ডিভাইস শোকেস, সার্ভিস প্রিভিউ, টেস্টিমোনিয়াল, FAQ |
 | 🛠️ Services | সকল সার্ভিস বিস্তারিত — স্কুল, কলেজ, মাদ্রাসা |
 | 💼 Works | কেস স্টাডি ও পোর্টফোলিও |
 | 🖥️ Demos | লাইভ ইন্টারঅ্যাক্টিভ অ্যাডমিন ডেমো |
@@ -85,7 +102,7 @@
 ```
 Frontend Framework  →  Next.js 16.3.5 (App Router - Turbopack)
 Language           →  TypeScript 5.x
-Styling            →  Tailwind CSS v4 + Custom CSS Variables
+Styling            →  Tailwind CSS v4 + Custom CSS Variables & Animations
 Icons              →  Lucide React
 Service Worker     →  Custom PWA Service Worker (sw.js)
 Fonts              →  Inter + Hind Siliguri (Google Fonts)
@@ -129,7 +146,7 @@ next-app/
 │   └── CaseStudyModal.tsx      # Portfolio case study viewer
 │
 ├── views/                      # Page-level view components (Dynamic Imports)
-│   ├── HomeView.tsx            # Homepage (hero, services, testimonials)
+│   ├── HomeView.tsx            # Homepage (Hero with device showcase, services, testimonials)
 │   ├── ServicesView.tsx        # Services listing
 │   ├── WorksView.tsx           # Portfolio & case studies
 │   ├── DemosView.tsx           # Admin demo showcase
@@ -143,6 +160,7 @@ next-app/
 │   └── content.ts              # Multi-language content dictionary (BN/EN)
 │
 ├── public/
+│   ├── hero-devices.png        # Multi-device admin showcase image
 │   ├── manifest.json           # PWA web app manifest
 │   └── sw.js                   # Service Worker script
 ├── types.ts                    # TypeScript interfaces & types
@@ -201,10 +219,9 @@ npx tsc --noEmit
 NEXT_PUBLIC_SITE_URL=https://campusdev.com.bd
 
 # WhatsApp নম্বর (যোগাযোগ বাটনের জন্য)
-# wa.me লিংকে + ছাড়া লিখতে হয়: 880XXXXXXXXXX
 NEXT_PUBLIC_WHATSAPP_NUMBER=8801XXXXXXXXX
 
-# Email (ফর্ম সাবমিশনের জন্য — শুধু display; সাবমিশন সার্ভারে হওয়া উচিত)
+# Email (ফর্ম সাবমিশনের জন্য)
 NEXT_PUBLIC_CONTACT_EMAIL=info@campusdev.com.bd
 ```
 
@@ -259,8 +276,6 @@ Tailwind CSS v4 আধুনিক CSS features (`@property`, `color-mix()`) ব
 | Safari | 16.4+ |
 | Firefox | 128+ |
 
-> **বাংলাদেশের পুরনো Android ফোন** — BrowserStack বা একটি পুরনো ডিভাইসে একবার টেস্ট করার পরামর্শ দেওয়া হচ্ছে।
-
 ---
 
 ## 📄 লাইসেন্স
@@ -270,7 +285,7 @@ UNLICENSED — মালিকানাধীন সফটওয়্যার
 © 2026 CampusDev — সর্বস্বত্ব সংরক্ষিত
 ```
 
-এই রিপোজিটরি private। Apache-2.0 প্রযোজ্য নয়।
+এই রিপোজিটরি private।
 
 ---
 

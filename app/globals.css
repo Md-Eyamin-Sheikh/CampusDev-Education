@@ -110,6 +110,12 @@
     #0C1929;
 }
 
+/* ── Floating animation for hero metric cards ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
 /* ====== BASE ====== */
 @layer base {
   html {
