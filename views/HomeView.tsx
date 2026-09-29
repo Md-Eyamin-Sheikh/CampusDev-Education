@@ -229,24 +229,6 @@ export const HomeView: React.FC<HomeViewProps> = ({
               </button>
             </div>
 
-            {/* Trust strip */}
-            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 lg:gap-7 px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl bg-white border border-slate-200 shadow-xs text-[11px] sm:text-sm font-bold text-slate-700 mb-6 sm:mb-10">
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 flex-shrink-0" />
-                <span>{language === 'bn' ? '৫০+ সফল প্রতিষ্ঠান' : '50+ Campuses'}</span>
-              </div>
-              <div className="hidden sm:block w-1 h-1 rounded-full bg-slate-300" />
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 flex-shrink-0" />
-                <span>{language === 'bn' ? '০.৮ সেকেন্ড ফাস্ট লোডিং' : '0.8s Fast Loading'}</span>
-              </div>
-              <div className="hidden sm:block w-1 h-1 rounded-full bg-slate-300" />
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 flex-shrink-0" />
-                <span>{language === 'bn' ? 'শিক্ষা বোর্ড কমপ্লায়েন্ট' : 'Board Compliant'}</span>
-              </div>
-            </div>
-
             {/* Interactive Tabs (School / College / Madrasa / Admin) */}
             <div className="w-full max-w-xl lg:max-w-2xl mx-auto mb-4 sm:mb-6 px-1">
               <div className="flex items-center justify-between text-xs font-bold text-slate-700 mb-2 px-1">
