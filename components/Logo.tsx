@@ -67,26 +67,26 @@ export const CampusDevIcon: React.FC<CampusDevIconProps> = ({
         className="relative z-10 w-full h-full p-[8%]"
       >
         <defs>
-          {/* Primary Monogram & Crest Gradient — Institutional Blue */}
+          {/* Primary Monogram & Crest Gradient — Academic Green */}
           <linearGradient id={gradPrimary} x1="10" y1="10" x2="90" y2="90" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#EBF5FB" />
-            <stop offset="35%" stopColor="#5DADE2" />
-            <stop offset="70%" stopColor="#2E86C1" />
-            <stop offset="100%" stopColor="#003B73" />
+            <stop offset="0%" stopColor="#e7f2ea" />
+            <stop offset="35%" stopColor="#cfe4d6" />
+            <stop offset="70%" stopColor="#1e7a50" />
+            <stop offset="100%" stopColor="#14342b" />
           </linearGradient>
 
-          {/* Graduation Cap Top Facet Gradient */}
+          {/* Graduation Cap Top Facet Gradient — Gold / Green */}
           <linearGradient id={gradCap} x1="20" y1="18" x2="80" y2="48" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#F4F6F7" />
-            <stop offset="40%" stopColor="#AED6F1" />
-            <stop offset="100%" stopColor="#2E86C1" />
+            <stop offset="0%" stopColor="#f2a93b" />
+            <stop offset="60%" stopColor="#1e7a50" />
+            <stop offset="100%" stopColor="#14342b" />
           </linearGradient>
 
           {/* Institutional Accent Gradient */}
           <linearGradient id={gradAccent} x1="15" y1="80" x2="85" y2="20" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#2E86C1" />
-            <stop offset="50%" stopColor="#00529B" />
-            <stop offset="100%" stopColor="#003B73" />
+            <stop offset="0%" stopColor="#1e7a50" />
+            <stop offset="50%" stopColor="#17663f" />
+            <stop offset="100%" stopColor="#f2a93b" />
           </linearGradient>
 
           {/* High Intensity Glow Filter */}

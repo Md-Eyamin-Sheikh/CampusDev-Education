@@ -280,50 +280,6 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
           </div>
 
-          {/* ── Bottom Feature Cards Row ──────────────────────────────── */}
-          <div className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-left">
-            <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex items-center gap-4">
-              <div className="w-11 h-11 rounded-xl bg-blue-50 text-[#003B73] flex items-center justify-center flex-shrink-0">
-                <Zap className="w-5 h-5" />
-              </div>
-              <div>
-                <h6 className="text-sm font-bold text-[#0F172A]">
-                  {language === 'bn' ? '০.৮ সেকেন্ড ফাস্ট লোডিং' : '0.8s Fast Loading'}
-                </h6>
-                <p className="text-xs text-slate-500 mt-0.5">
-                  {language === 'bn' ? 'দুর্বল ২G/৩G ইন্টারনেটেও নিমেষে ওপেন হয়' : 'Loads instantly even on slow 2G/3G networks'}
-                </p>
-              </div>
-            </div>
-
-            <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex items-center gap-4">
-              <div className="w-11 h-11 rounded-xl bg-blue-50 text-[#003B73] flex items-center justify-center flex-shrink-0">
-                <Smartphone className="w-5 h-5" />
-              </div>
-              <div>
-                <h6 className="text-sm font-bold text-[#0F172A]">
-                  {language === 'bn' ? '১০০% মোবাইল অ্যাপ ফিল' : '100% Mobile App Feel'}
-                </h6>
-                <p className="text-xs text-slate-500 mt-0.5">
-                  {language === 'bn' ? 'অভিভাবক ও শিক্ষকদের জন্য সেরা ইন্টারফেস' : 'Best interface for parents and teachers'}
-                </p>
-              </div>
-            </div>
-
-            <div className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex items-center gap-4">
-              <div className="w-11 h-11 rounded-xl bg-blue-50 text-[#003B73] flex items-center justify-center flex-shrink-0">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <div>
-                <h6 className="text-sm font-bold text-[#0F172A]">
-                  {language === 'bn' ? 'বোর্ড ও সরকারি স্ট্যান্ডার্ড' : 'Board & Govt Standard'}
-                </h6>
-                <p className="text-xs text-slate-500 mt-0.5">
-                  {language === 'bn' ? 'নিরাপদ হোস্টিং ও সম্পূর্ণ অটোমেটিক ব্যাকআপ' : 'Secure hosting with full automatic backup'}
-                </p>
-              </div>
-            </div>
-          </div>
 
         </div>
       </section>
@@ -392,35 +348,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
             ))}
           </div>
 
-          {/* Impact Stats Banner */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#0C1929] border border-blue-900/50 text-white shadow-xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div>
-                <span className="text-2xl sm:text-4xl font-extrabold font-heading text-sky-300">৫০+</span>
-                <p className="text-sm text-slate-300 mt-1">
-                  {language === 'bn' ? 'শিক্ষা প্রতিষ্ঠান পরিচালিত' : 'Institutions Onboarded'}
-                </p>
-              </div>
-              <div>
-                <span className="text-2xl sm:text-4xl font-extrabold font-heading text-white">১,২০,০০০+</span>
-                <p className="text-sm text-slate-300 mt-1">
-                  {language === 'bn' ? 'শিক্ষার্থী ট্র্যাকিং ও রেজাল্ট' : 'Students & Marks Tracked'}
-                </p>
-              </div>
-              <div>
-                <span className="text-2xl sm:text-4xl font-extrabold font-heading text-sky-300">৯৯.৯%</span>
-                <p className="text-sm text-slate-300 mt-1">
-                  {language === 'bn' ? 'নিশ্চিত ক্লাউড আপটাইম' : 'Cloud Uptime Guarantee'}
-                </p>
-              </div>
-              <div>
-                <span className="text-2xl sm:text-4xl font-extrabold font-heading text-white">২.৫x</span>
-                <p className="text-sm text-slate-300 mt-1">
-                  {language === 'bn' ? 'দ্রুত পেজ লোডিং স্পিড' : 'Faster Page Speed'}
-                </p>
-              </div>
-            </div>
-          </div>
+         
         </div>
       </section>
 

@@ -187,44 +187,8 @@ export const Navbar: React.FC<NavbarProps> = ({
         }`}
       >
         {/* Top Institutional Micro-Bar (Collapsible on scroll) */}
-        <div 
-          className={`w-full bg-[#071320]/95 text-slate-200 text-[11px] sm:text-[12px] font-bold transition-all duration-300 overflow-hidden ${
-            isScrolled ? 'max-h-0 py-0 border-b-0 opacity-0' : 'max-h-12 py-1.5 border-b border-sky-500/15 opacity-100'
-          }`}
-        >
-          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
-            {/* Left Trust Statement */}
-            <div className="flex items-center gap-1.5 sm:gap-2.5 truncate min-w-0">
-              <span className="inline-flex items-center gap-1.5 text-white font-bold truncate">
-                <ShieldCheck className="w-3.5 h-3.5 flex-shrink-0 text-emerald-400" />
-                <span className="truncate">{language === 'bn' ? 'শিক্ষা বোর্ড ও সরকারি স্ট্যান্ডার্ড অনুসারী' : 'Education Board Web Standards Compliant'}</span>
-              </span>
-              <span className="hidden md:inline text-sky-800">|</span>
-              <span className="hidden md:inline text-slate-300 font-semibold truncate">
-                {language === 'bn' ? '৫০+ শিক্ষা প্রতিষ্ঠানে সফলভাবে বাস্তবায়িত' : 'Trusted by 50+ Educational Institutions in Bangladesh'}
-              </span>
-            </div>
+        
 
-            {/* Right Quick Contacts */}
-            <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0 text-slate-200">
-              <a 
-                href="tel:+8801700000000" 
-                className="hidden sm:inline-flex items-center gap-1.5 text-sky-300 hover:text-white transition-colors"
-              >
-                <Phone className="w-3 h-3 text-sky-400" />
-                <span className="font-mono font-bold text-slate-100">+880 1700-000000</span>
-              </a>
-              <span className="hidden sm:inline text-sky-800">|</span>
-              <div className="flex items-center gap-1.5 text-emerald-400 font-extrabold">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-                <span className="text-[10px] uppercase tracking-wider">{language === 'bn' ? 'সাপোর্ট ২৪/৭' : '24/7 Support'}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Top subtle radiant gradient hair-line */}
-        <div className="w-full h-[2px] bg-gradient-to-r from-sky-400 via-[#00529B] to-emerald-400" />
 
         {/* Main Navbar Bar */}
         <div 

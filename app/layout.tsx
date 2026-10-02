@@ -62,8 +62,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0C1929" },
-    { media: "(prefers-color-scheme: light)", color: "#F8FAFC" },
+    { media: "(prefers-color-scheme: dark)", color: "#14342b" },
+    { media: "(prefers-color-scheme: light)", color: "#f4f6f2" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -85,10 +85,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* Google Fonts CDN */}
+        {/* Google Fonts CDN for Bricolage Grotesque & Mulish */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
         {/* ── PWA / Web App ─────────────────────── */}
         <meta name="mobile-web-app-capable" content="yes" />
@@ -103,31 +103,18 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="167x167" href="/favicon.ico" />
 
-        {/* ── Apple Splash Screens (portrait) ─── */}
-        {/* iPhone SE */}
-        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="/favicon.ico" />
-        {/* iPhone X/XS/11 Pro */}
-        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="/favicon.ico" />
-        {/* iPhone XR/11 */}
-        <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" href="/favicon.ico" />
-        {/* iPhone 12/13/14 Pro Max */}
-        <link rel="apple-touch-startup-image" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3)" href="/favicon.ico" />
-        {/* iPad */}
-        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" href="/favicon.ico" />
-        {/* iPad Pro 11" */}
-        <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" href="/favicon.ico" />
-
         {/* ── Microsoft Tiles ───────────────────── */}
-        <meta name="msapplication-TileColor" content="#0C1929" />
+        <meta name="msapplication-TileColor" content="#14342b" />
         <meta name="msapplication-tap-highlight" content="no" />
 
         {/* ── Theme color per OS ────────────────── */}
-        <meta name="theme-color" content="#0C1929" media="(prefers-color-scheme: dark)" />
-        <meta name="theme-color" content="#F8FAFC" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#14342b" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#f4f6f2" media="(prefers-color-scheme: light)" />
       </head>
-      <body className="min-h-screen bg-[var(--color-canvas)] text-[var(--color-fg)] antialiased font-sans">
+      <body className="min-h-screen bg-[var(--paper)] text-[var(--ink-soft)] antialiased font-sans">
         {children}
       </body>
     </html>
   );
 }
+

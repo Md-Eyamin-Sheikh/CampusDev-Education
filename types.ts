@@ -2,18 +2,12 @@ export type Language = 'bn' | 'en';
 
 export type NavSection = 
   | 'home' 
-  | 'services' 
-  | 'works' 
-  | 'demos' 
-  | 'admin-demo' 
-  | 'pricing' 
-  | 'process' 
-  | 'about' 
-  | 'testimonials' 
-  | 'blog' 
-  | 'resources' 
-  | 'audit' 
-  | 'maintenance' 
+  | 'courses'
+  | 'categories'
+  | 'instructors'
+  | 'about'
+  | 'pricing'
+  | 'teach'
   | 'contact';
 
 export interface ServiceItem {
