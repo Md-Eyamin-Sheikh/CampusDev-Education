@@ -1,8 +1,8 @@
-# 🎓 CampusDev — শিক্ষা প্রতিষ্ঠানের প্রিমিয়াম ওয়েব সল্যুশন
+# 🎓 EduWeb — শিক্ষা প্রতিষ্ঠানের প্রিমিয়াম ওয়েব সল্যুশন
 
 <div align="center">
 
-![CampusDev Banner](https://img.shields.io/badge/CampusDev-Education%20Web%20Solutions-003B73?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![EduWeb Banner](https://img.shields.io/badge/EduWeb-Education%20%26%20Web%20Technology-003B73?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-16.3.5-black?style=for-the-badge&logo=nextdotjs)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
@@ -10,10 +10,13 @@
 
 **বাংলাদেশের স্কুল, কলেজ ও মাদ্রাসার জন্য আধুনিক, প্রিমিয়াম ও PWA-ready নেটিভ অ্যাপ ফিল সহ ওয়েব অ্যাপ্লিকেশন।**
 
+> **EduWeb** নামটির ভেতরে দুটি মূল স্তম্ভ রয়েছে —
+> 📚 **Education (শিক্ষা)** এবং 🌐 **Web / Technology (প্রযুক্তি)**
+
 ---
 
 ### 🖥️ 📱 Multi-Device Admin Panel Showcase
-![CampusDev Multi-Device Admin Panel Showcase](./public/hero-devices.png)
+![EduWeb Multi-Device Admin Panel Showcase](./public/hero-devices.png)
 
 </div>
 
@@ -22,6 +25,7 @@
 ## 📋 বিষয়সূচি
 
 - [প্রজেক্ট সম্পর্কে](#-প্রজেক্ট-সম্পর্কে)
+- [ব্র্যান্ড পরিচয়](#-ব্র্যান্ড-পরিচয়)
 - [প্রিমিয়াম হিরো সেকশন ও ডিভাইস শোকেস](#-প্রিমিয়াম-হিরো-সেকশন-ও-ডিভাইস-শোকেস)
 - [নেটিভ অ্যাপ ফিল ও ফিচারসমূহ](#-নেটিভ-অ্যাপ-ফিল-ও-ফিচারসমূহ)
 - [টেকনোলজি স্ট্যাক](#-টেকনোলজি-স্ট্যাক)
@@ -36,7 +40,7 @@
 
 ## 🌟 প্রজেক্ট সম্পর্কে
 
-**CampusDev** হলো বাংলাদেশের শিক্ষা প্রতিষ্ঠানগুলোর জন্য একটি সম্পূর্ণ ডিজিটাল ওয়েব সল্যুশন। এই প্রজেক্টে রয়েছে:
+**EduWeb** হলো বাংলাদেশের শিক্ষা প্রতিষ্ঠানগুলোর জন্য একটি সম্পূর্ণ ডিজিটাল ওয়েব সল্যুশন। এই প্রজেক্টে রয়েছে:
 
 - 🏫 **স্কুল, কলেজ, মাদ্রাসা** — সকল ধরনের শিক্ষাপ্রতিষ্ঠানের জন্য কাস্টম ওয়েবসাইট ও ডাইনামিক ফিল্টারিং
 - 📊 **অ্যাডমিন ড্যাশবোর্ড** — সম্পূর্ণ শিক্ষা ব্যবস্থাপনা প্যানেল (রেসাল্ট, ফি, নোটিশ, হাজিরা, অনলাইন ভর্তি)
@@ -46,12 +50,23 @@
 
 ---
 
+## 🏷️ ব্র্যান্ড পরিচয়
+
+| স্তম্ভ | পূর্ণ রূপ | অর্থ |
+|--------|-----------|------|
+| 📚 **Edu** | Education | শিক্ষা — বাংলাদেশের সকল শিক্ষাপ্রতিষ্ঠানের সেবায় নিবেদিত |
+| 🌐 **Web** | Web / Technology | প্রযুক্তি — আধুনিক ওয়েব টেকনোলজি দ্বারা চালিত |
+
+**EduWeb** = **শিক্ষা** ✕ **প্রযুক্তি** — এই দুটি মূল শক্তির সমন্বয়েই আমাদের পরিচয়।
+
+---
+
 ## 🎨 প্রিমিয়াম ডার্ক-থিম হিরো সেকশন ও ডিভাইস শোকেস
 
-- 🖼️ **Dark Luxury Device Showcase (`/hero-devices.png`)**: ডিপ নেভি ব্লু ব্যাকগ্রাউন্ড `#030A1D` এবং সাইয়ান গ্র্যাডিয়েন্ট ব্লু লাইটিং সহ ল্যাপটপ, ট্যাবলেট ও স্মার্টফোন ডিভাইস শোকেস।
-- ⚡ **Cyan Glow Typography**: `ডিজিটালে আরও আধুনিক` গ্র্যাডিয়েন্ট সাইয়ান নিয়ন গ্লো টেক্সট এবং `⚡ শিক্ষা প্রতিষ্ঠানের জন্য আধুনিক ওয়েব সমাধান` পিল ট্যাগ।
-- 🚀 **ডুয়াল অ্যাকশন বাটন**:
-  - `এখনই শুরু করুন →` — সাইয়ান-ব্লু গ্র্যাডিয়েন্ট শাইনিং বাটন
+- 🖼️ **Dark Luxury Device Showcase (`/hero-devices.png`)**: ডিপ নেভি ব্লু ব্যাকগ্রাউন্ড `#030A1D` এবং সাইয়ান গ্র্যাডিয়েন্ট ব্লু লাইটিং সহ ল্যাপটপ, ট্যাবলেট ও স্মার্টফোন ডিভাইস শোকেস।
+- ⚡ **Cyan Glow Typography**: `ডিজিটালে আরও আধুনিক` গ্র্যাডিয়েন্ট সাইয়ান নিয়ন গ্লো টেক্সট এবং `⚡ শিক্ষা প্রতিষ্ঠানের জন্য আধুনিক ওয়েব সমাধান` পিল ট্যাগ।
+- 🚀 **ডুয়াল অ্যাকশন বাটন**:
+  - `এখনই শুরু করুন →` — সাইয়ান-ব্লু গ্র্যাডিয়েন্ট শাইনিং বাটন
   - `▶ ডেমো দেখুন` — গ্লাস ট্রান্সলুসেন্ট ডেমো বাটন
 - 📊 **৩টি লাইভ স্ট্যাট ইন্ডিকেটর**:
   - ⚡ `2.4x` দ্রুত লোডিং গতি
@@ -70,14 +85,14 @@
 ### 📱 App Shell ও নেভিগেশন স্ট্রাকচার
 - 📱 **Mobile Bottom Tab Bar (`MobileBottomNav.tsx`)** — মোবাইলে স্ক্রিনের নিচে ফিক্সড নেভিগেশন বার (Home, Services, Demos, Pricing, Contact)।
 - 📟 **Tablet Bottom Navigation (`TabletBottomNav.tsx`)** — ট্যাবলেট ডিভাইসে স্পেশাল ৬-ট্যাব নেভিগেশন বার সহ ভিজ্যুয়াল অ্যাক্টিভ ইনডিকেটর।
-- 🔝 **Scroll Shrinking Top Bar (`Navbar.tsx`)** — স্ক্রোল করলে উপরে অটোমেটিক shrink/hide হওয়া প্রিমিয়াম গ্লাস বার।
+- 🔝 **Scroll Shrinking Top Bar (`Navbar.tsx`)** — স্ক্রোল করলে উপরে অটোমেটিক shrink/hide হওয়া প্রিমিয়াম গ্লাস বার।
 - 🔄 **Pull-to-Refresh (`PullToRefresh.tsx`)** — স্পর্শে টেনে নিচে নামালে রাবার-ব্যান্ড ইফেক্ট সহ পেজ রিফ্রেশ ফিচার।
 - 👈👉 **Horizontal Swipe Gestures** — ডানে বা বামে সোয়াইপ করে এক পেজ থেকে অন্য পেজে যাওয়া।
 
 ### ⚡ Animation & Page Transition
 - 🌈 **Zero Reload Page Transitions (`PageTransition.tsx`)** — Next.js App Router-এ পেজ পরিবর্তনের সময় মসৃণ স্কেল + ফেড ট্রানজিশন।
-- ⚡ **Institutional Blue Light Canvas + Dark Drawer Theme** — সফট Ice-Blue / White Hero Canvas, গভীর `#003B73` / `#0C1929` রয়্যাল ব্লু নেভিগেশন ও হাই-কনট্রাস্ট ক্রিস্টাল ক্লিয়ার রিডিবিলিটি।
-- 👁️ **WCAG AAA Readability** — ডার্ক নেভ বার, মোবাইল ড্রয়ার মেনু ও কার্ডের জন্য ১০০% দৃশ্যমান টেক্সট।
+- ⚡ **Institutional Blue Light Canvas + Dark Drawer Theme** — সফট Ice-Blue / White Hero Canvas, গভীর `#003B73` / `#0C1929` রয়্যাল ব্লু নেভিগেশন ও হাই-কনট্রাস্ট ক্রিস্টাল ক্লিয়ার রিডিবিলিটি।
+- 👁️ **WCAG AAA Readability** — ডার্ক নেভ বার, মোবাইল ড্রয়ার মেনু ও কার্ডের জন্য ১০০% দৃশ্যমান টেক্সট।
 - 🖱️ **Micro-animations** — Hover, Press, Active Scale (`active:scale-95`), Safe Area Insets (`pt-safe`, `pb-safe`).
 
 ### 🚀 পারফরম্যান্স ও লোডিং Optimizations
@@ -146,7 +161,7 @@ next-app/
 │   ├── PullToRefresh.tsx       # Touch pull-to-refresh component
 │   ├── PWAInstallBanner.tsx    # Native-like PWA install prompt banner
 │   ├── Footer.tsx              # Full institutional footer
-│   ├── Logo.tsx                # CampusDev logo component
+│   ├── Logo.tsx                # EduWeb logo component
 │   ├── AdminDemoInteractive.tsx # Live admin panel demo
 │   ├── WebsiteAuditModal.tsx   # Website audit tool
 │   ├── ProjectEstimatorModal.tsx # Cost estimator
@@ -168,6 +183,7 @@ next-app/
 │   └── content.ts              # Multi-language content dictionary (BN/EN)
 │
 ├── public/
+│   ├── EduWebLogo.png          # Official EduWeb brand logo
 │   ├── hero-devices.png        # Multi-device admin showcase image
 │   ├── manifest.json           # PWA web app manifest
 │   └── sw.js                   # Service Worker script
@@ -224,13 +240,13 @@ npx tsc --noEmit
 
 ```env
 # সাইটের URL
-NEXT_PUBLIC_SITE_URL=https://campusdev.com.bd
+NEXT_PUBLIC_SITE_URL=https://eduweb.com.bd
 
 # WhatsApp নম্বর (যোগাযোগ বাটনের জন্য)
 NEXT_PUBLIC_WHATSAPP_NUMBER=8801XXXXXXXXX
 
 # Email (ফর্ম সাবমিশনের জন্য)
-NEXT_PUBLIC_CONTACT_EMAIL=info@campusdev.com.bd
+NEXT_PUBLIC_CONTACT_EMAIL=info@eduweb.com.bd
 ```
 
 ---
@@ -255,7 +271,7 @@ npm run build
 
 # PM2 দিয়ে চালু করুন
 npm install -g pm2
-pm2 start npm --name "campusdev" -- start
+pm2 start npm --name "eduweb" -- start
 pm2 save
 pm2 startup
 ```
@@ -290,7 +306,7 @@ Tailwind CSS v4 আধুনিক CSS features (`@property`, `color-mix()`) ব
 
 ```
 UNLICENSED — মালিকানাধীন সফটওয়্যার
-© 2026 CampusDev — সর্বস্বত্ব সংরক্ষিত
+© 2026 EduWeb — সর্বস্বত্ব সংরক্ষিত
 ```
 
 এই রিপোজিটরি private।
@@ -299,8 +315,10 @@ UNLICENSED — মালিকানাধীন সফটওয়্যার
 
 <div align="center">
 
-**Made with ❤️ by CampusDev Team**
+**Made with ❤️ by EduWeb Team**
 
 *বাংলাদেশের শিক্ষা প্রতিষ্ঠানের ডিজিটাল রূপান্তরে আমরা প্রতিশ্রুতিবদ্ধ*
+
+📚 **Education** ✕ 🌐 **Web Technology** = **EduWeb**
 
 </div>

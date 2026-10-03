@@ -110,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#f2a93b]" />
-                <span>contact@campusdev.com.bd</span>
+                <span>contact@eduweb.com.bd</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#f2a93b]" />
@@ -247,7 +247,7 @@ export const Footer: React.FC<FooterProps> = ({
                 : 'Every partner institution features our signature verification stamp:'}
             </span>
             <span className="font-semibold text-white px-2.5 py-1 rounded bg-[#1e7a50] border border-white/20">
-              Powered by CampusDev
+              Powered by EduWeb
             </span>
           </div>
           <button 
@@ -261,7 +261,7 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Bottom Bar: Copyright, Status, and Bangladesh tag */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-300 text-center md:text-left">
           <div>
-            © {currentYear} CampusDev. Built exclusively for Educational Institutions in Bangladesh.
+            © {currentYear} EduWeb. Built exclusively for Educational Institutions in Bangladesh.
           </div>
 
           <div className="flex items-center gap-6">

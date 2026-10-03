@@ -1,6 +1,6 @@
 {
-  "name": "CampusDev",
-  "short_name": "CampusDev",
+  "name": "EduWeb",
+  "short_name": "EduWeb",
   "description": "শিক্ষা প্রতিষ্ঠানের জন্য প্রিমিয়াম ওয়েব সল্যুশন",
   "start_url": "/",
   "display": "standalone",
@@ -35,7 +35,7 @@
       "sizes": "390x844",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "CampusDev Mobile"
+      "label": "EduWeb Mobile"
     }
   ],
   "shortcuts": [
