@@ -86,21 +86,21 @@ export const EduWebWordmark: React.FC<{
   };
 
   const eduColor = {
-    light: 'text-slate-900',
+    light: 'text-[var(--ink)]',
     dark: 'text-white',
     glow: 'text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]',
   }[theme];
 
   const webGradient = {
-    light: 'bg-gradient-to-r from-[#003B73] via-[#00529B] to-[#002850] bg-clip-text text-transparent',
-    dark: 'bg-gradient-to-r from-sky-400 via-blue-300 to-sky-200 bg-clip-text text-transparent',
-    glow: 'bg-gradient-to-r from-sky-300 via-sky-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]',
+    light: 'bg-gradient-to-r from-[var(--brand)] to-[var(--brand-600)] bg-clip-text text-transparent',
+    dark: 'bg-gradient-to-r from-[var(--gold)] via-[#fcd34d] to-[var(--gold-600)] bg-clip-text text-transparent',
+    glow: 'bg-gradient-to-r from-[var(--gold)] via-amber-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(242,169,59,0.5)]',
   }[theme];
 
   const subtitleColor = {
-    light: 'text-slate-600 font-semibold',
-    dark: 'text-slate-200 font-semibold',
-    glow: 'text-sky-200/90 font-semibold',
+    light: 'text-[var(--muted)] font-semibold',
+    dark: 'text-slate-300 font-semibold',
+    glow: 'text-[var(--brand-tint)] font-semibold',
   }[theme];
 
   return (
