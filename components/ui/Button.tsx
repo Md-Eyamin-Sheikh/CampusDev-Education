@@ -32,7 +32,7 @@ export const Button: React.FC<ButtonProps> = ({
   const variantClasses = {
     primary:
       'bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)] text-white ' +
-      'shadow-[0_4px_14px_rgba(0,59,115,.25)] hover:shadow-[0_6px_20px_rgba(0,59,115,.35)] border-none',
+      'shadow-[0_4px_14px_rgba(30,122,80,.24)] hover:shadow-[0_6px_20px_rgba(30,122,80,.30)] border-none',
     secondary:
       'bg-[var(--color-brand-soft)] text-[var(--color-brand)] border border-[var(--color-brand)]/20 ' +
       'hover:bg-[var(--color-brand)]/15 hover:border-[var(--color-brand)]/35',

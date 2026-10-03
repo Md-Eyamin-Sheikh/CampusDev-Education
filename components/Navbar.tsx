@@ -182,8 +182,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           isVisible || mobileMenuOpen ? 'translate-y-0' : '-translate-y-full md:translate-y-0'
         } ${
           isScrolled 
-            ? 'bg-[#0B1B2B]/95 backdrop-blur-xl border-b border-sky-500/20 shadow-[0_12px_36px_rgba(0,0,0,0.6)]' 
-            : 'bg-[#0C1929]/95 backdrop-blur-lg border-b border-sky-900/40 shadow-lg'
+            ? 'bg-[#14342b]/95 backdrop-blur-xl border-b border-white/10 shadow-[0_12px_36px_rgba(20,52,43,0.35)]' 
+            : 'bg-[#14342b]/90 backdrop-blur-lg border-b border-white/10 shadow-lg'
         }`}
       >
         {/* Top Institutional Micro-Bar (Collapsible on scroll) */}

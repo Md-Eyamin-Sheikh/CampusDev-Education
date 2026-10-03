@@ -24,7 +24,7 @@ export const GlassPanel: React.FC<GlassPanelProps> = ({
   const intensityClasses = {
     light: 'bg-white/5 backdrop-blur-sm',
     medium: 'bg-white/10 backdrop-blur-md',
-    heavy: 'bg-[var(--card-bg,rgba(12,25,41,0.65))] backdrop-blur-xl',
+    heavy: 'bg-[var(--card-bg,rgba(20,52,43,0.65))] backdrop-blur-xl',
   };
 
   const roundedClasses = {
@@ -37,8 +37,8 @@ export const GlassPanel: React.FC<GlassPanelProps> = ({
     full: 'rounded-full',
   };
 
-  const borderClasses = bordered ? 'border border-[var(--border,rgba(0,59,115,0.12))]' : '';
-  const glowClasses = glowing ? 'shadow-[0_0_30px_rgba(0,59,115,0.15)]' : '';
+  const borderClasses = bordered ? 'border border-[var(--border,rgba(30,122,80,0.12))]' : '';
+  const glowClasses = glowing ? 'shadow-[0_0_30px_rgba(30,122,80,0.15)]' : '';
   const interactiveClasses = onClick ? 'cursor-pointer hover:bg-white/15 transition-colors' : '';
 
   return (
