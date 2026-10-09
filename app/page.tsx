@@ -175,7 +175,7 @@ export default function Home() {
         />
 
         {/* Main View Router — with page transition animation */}
-        <main className="flex-1 pb-20 md:pb-20 lg:pb-0">
+        <main className="flex-1 pt-20 pb-20 md:pb-20 lg:pb-0">
           <PageTransition section={currentSection}>
             {currentSection === 'home' && (
               <HomeView

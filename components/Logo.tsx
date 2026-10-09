@@ -32,8 +32,8 @@ export const EduWebIcon: React.FC<EduWebIconProps> = ({
   return (
     <div
       suppressHydrationWarning
-      className={`relative inline-flex items-center justify-center flex-shrink-0 rounded-xl bg-white/90 p-1 border border-[var(--brand-tint2)] shadow-[0_2px_8px_rgba(20,52,43,0.08)] ${
-        interactive ? 'hover:scale-[1.05] hover:shadow-[0_4px_12px_rgba(30,122,80,0.18)] transition-all duration-300 ease-out' : ''
+      className={`relative inline-flex items-center justify-center flex-shrink-0 bg-transparent ${
+        interactive ? 'hover:scale-[1.05] transition-transform duration-300 ease-out' : ''
       } ${sizeClasses} ${className}`}
       style={sizeStyle}
       aria-hidden="true"
@@ -44,7 +44,7 @@ export const EduWebIcon: React.FC<EduWebIconProps> = ({
           alt="EduWeb Logo"
           fill
           sizes="56px"
-          className="object-contain p-0.5 drop-shadow-xs"
+          className="object-contain"
           priority
         />
       </div>
@@ -88,15 +88,15 @@ export const EduWebWordmark: React.FC<{
   };
 
   const eduColor = {
-    light: 'text-[var(--ink)]',
+    light: 'text-[#0F2D25]',
     dark: 'text-white',
     glow: 'text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]',
   }[theme];
 
   const webGradient = {
-    light: 'bg-gradient-to-r from-[var(--brand)] to-[var(--brand-600)] bg-clip-text text-transparent',
-    dark: 'bg-gradient-to-r from-[var(--gold)] via-[#fcd34d] to-[var(--gold-600)] bg-clip-text text-transparent',
-    glow: 'bg-gradient-to-r from-[var(--gold)] via-amber-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(242,169,59,0.5)]',
+    light: 'text-[#1B7A4F]',
+    dark: 'text-[#C9A24B]',
+    glow: 'text-[#C9A24B]',
   }[theme];
 
   const subtitleColor = {

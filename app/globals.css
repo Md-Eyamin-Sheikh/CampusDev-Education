@@ -12,7 +12,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 6rem;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -167,13 +167,10 @@
 
 /* ── NAVIGATION ───────────────────────────────────────────────────── */
 
-/* Glass top bar */
+/* Top navbar — background, blur and rounded capsule are controlled
+   fully by Tailwind classes on the inner div in Navbar.tsx. */
 #top-main-navbar {
-  background: rgba(15, 45, 37, 0.90) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: 0 4px 24px rgba(15, 45, 37, 0.20);
-  backdrop-filter: blur(14px) saturate(160%);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  /* No forced background here — the floating capsule handles it */
 }
 
 /* Glass bottom tab bar */

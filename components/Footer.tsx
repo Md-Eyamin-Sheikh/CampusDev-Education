@@ -31,61 +31,61 @@ export const Footer: React.FC<FooterProps> = ({
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-[#14342b] text-slate-300 pt-6 sm:pt-10 md:pt-14 pb-24 md:pb-24 lg:pb-0 border-t border-white/10">
+    <footer className="w-full bg-[#0F2D25] text-slate-300 pt-6 sm:pt-10 md:pt-14 pb-24 md:pb-24 lg:pb-0 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top 4 Trust Value Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl bg-[#1c4237]/80 border border-white/10 mb-8 sm:mb-12 md:mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl bg-[#173A30]/80 border border-white/10 mb-8 sm:mb-12 md:mb-16">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#1e7a50]/20 border border-[#1e7a50]/30 flex items-center justify-center text-[#cfe4d6]">
+            <div className="w-10 h-10 rounded-xl bg-[#1B7A4F]/20 border border-[#1B7A4F]/30 flex items-center justify-center text-[#7FD1A6]">
               <Smartphone className="w-5 h-5" />
             </div>
             <div>
               <p className="text-xs sm:text-sm font-bold text-white">
                 {language === 'bn' ? '১০০% মোবাইল-ফার্স্ট' : '100% Mobile-First'}
               </p>
-              <p className="text-[11px] text-[#cfe4d6]/80">
+              <p className="text-[11px] text-[#7FD1A6]/75">
                 {language === 'bn' ? 'প্রতিটি ডিভাইসে মসৃণ ভিউ' : 'Responsive on all phones'}
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#f2a93b]/20 border border-[#f2a93b]/30 flex items-center justify-center text-[#f2a93b]">
+            <div className="w-10 h-10 rounded-xl bg-[#C9A24B]/15 border border-[#C9A24B]/25 flex items-center justify-center text-[#C9A24B]">
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
               <p className="text-xs sm:text-sm font-bold text-white">
                 {language === 'bn' ? 'ব্যাংক-গ্রেড নিরাপত্তা' : 'Bank-Grade Security'}
               </p>
-              <p className="text-[11px] text-[#cfe4d6]/80">
+              <p className="text-[11px] text-[#7FD1A6]/75">
                 {language === 'bn' ? 'অটো ব্যাকআপ ও এনক্রিপশন' : 'Auto cloud backup & SSL'}
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#1e7a50]/20 border border-[#1e7a50]/30 flex items-center justify-center text-[#cfe4d6]">
+            <div className="w-10 h-10 rounded-xl bg-[#1B7A4F]/20 border border-[#1B7A4F]/30 flex items-center justify-center text-[#7FD1A6]">
               <Zap className="w-5 h-5" />
             </div>
             <div>
               <p className="text-xs sm:text-sm font-bold text-white">
                 {language === 'bn' ? 'আল্ট্রা ফাস্ট স্পিড' : 'Ultra Fast Loading'}
               </p>
-              <p className="text-[11px] text-[#cfe4d6]/80">
+              <p className="text-[11px] text-[#7FD1A6]/75">
                 {language === 'bn' ? '১ সেকেন্ডের নিচে পেজ লোড' : 'Sub-second page speeds'}
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#f2a93b]/20 border border-[#f2a93b]/30 flex items-center justify-center text-[#f2a93b]">
+            <div className="w-10 h-10 rounded-xl bg-[#C9A24B]/15 border border-[#C9A24B]/25 flex items-center justify-center text-[#C9A24B]">
               <Headphones className="w-5 h-5" />
             </div>
             <div>
               <p className="text-xs sm:text-sm font-bold text-white">
                 {language === 'bn' ? '২৪/৭ সার্বক্ষণিক সাপোর্ট' : '24/7 Priority Support'}
               </p>
-              <p className="text-[11px] text-[#cfe4d6]/80">
+              <p className="text-[11px] text-[#7FD1A6]/75">
                 {language === 'bn' ? 'জরুরি কল ও হোয়াটসঅ্যাপ' : 'Dedicated tech hotlines'}
               </p>
             </div>
@@ -105,15 +105,15 @@ export const Footer: React.FC<FooterProps> = ({
 
             <div className="flex flex-col gap-2 pt-2 text-sm text-[#cfe4d6]/90">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#f2a93b]" />
+                <MapPin className="w-4 h-4 text-[#C9A24B]" />
                 <span>ধানমন্ডি ও উত্তরা, ঢাকা, বাংলাদেশ</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#f2a93b]" />
+                <Mail className="w-4 h-4 text-[#C9A24B]" />
                 <span>contact@eduweb.com.bd</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#f2a93b]" />
+                <Phone className="w-4 h-4 text-[#C9A24B]" />
                 <span>+৮৮০১৭১০-০০০০০০ (সরাসরি হটলাইন)</span>
               </div>
             </div>
@@ -121,7 +121,7 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Column: Solutions */}
           <div className="flex flex-col gap-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#f2a93b]">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#C9A24B]">
               {language === 'bn' ? 'সল্যুশনসমূহ' : 'Solutions'}
             </h4>
             <div className="flex flex-col gap-2 text-sm text-slate-300">
@@ -160,7 +160,7 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Column: Demos & Experience */}
           <div className="flex flex-col gap-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#f2a93b]">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#C9A24B]">
               {language === 'bn' ? 'ইন্টারেক্টিভ ডেমো' : 'Live Demos'}
             </h4>
             <div className="flex flex-col gap-2 text-sm text-slate-300">
@@ -184,7 +184,7 @@ export const Footer: React.FC<FooterProps> = ({
               </button>
               <button 
                 onClick={() => onNavigate('admin-demo')} 
-                className="text-left text-[#f2a93b] font-semibold hover:underline cursor-pointer py-1.5"
+                className="text-left text-[#C9A24B] font-semibold hover:underline cursor-pointer py-1.5"
               >
                 {language === 'bn' ? 'অ্যাডমিন ড্যাশবোর্ড টেস্ট ড্রাইভ' : 'Admin Panel Test Drive'}
               </button>
@@ -199,7 +199,7 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Column: Company & Resources */}
           <div className="flex flex-col gap-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#f2a93b]">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#C9A24B]">
               {language === 'bn' ? 'রিসোর্স ও কোম্পানি' : 'Company'}
             </h4>
             <div className="flex flex-col gap-2 text-sm text-slate-300">
@@ -238,21 +238,21 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
 
         {/* Client Website Passive Branding Showcase */}
-        <div className="p-4 rounded-xl bg-[#1c4237]/60 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 text-sm text-slate-300">
+        <div className="p-4 rounded-xl bg-[#173A30]/60 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 text-sm text-slate-300">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#f2a93b]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#C9A24B]" />
             <span>
               {language === 'bn' 
                 ? 'ক্লায়েন্টদের প্রতিটি ওয়েবসাইটের ফুটারে সংযোজিত হয় সম্মানজনক স্ট্যাম্প:' 
                 : 'Every partner institution features our signature verification stamp:'}
             </span>
-            <span className="font-semibold text-white px-2.5 py-1 rounded bg-[#1e7a50] border border-white/20">
+            <span className="font-semibold text-white px-2.5 py-1 rounded bg-[#1B7A4F] border border-white/20">
               Powered by EduWeb
             </span>
           </div>
           <button 
             onClick={onOpenConsultation}
-            className="text-[#f2a93b] hover:underline font-semibold cursor-pointer py-1.5"
+            className="text-[#C9A24B] hover:underline font-semibold cursor-pointer py-1.5"
           >
             {language === 'bn' ? 'আপনার প্রতিষ্ঠানের জন্য ওয়েবসাইট তৈরি করুন →' : 'Launch for your school →'}
           </button>
@@ -265,8 +265,8 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
 
           <div className="flex items-center gap-6">
-            <span className="inline-flex items-center gap-1.5 text-[#f2a93b]">
-              <span className="w-2 h-2 rounded-full bg-[#f2a93b] animate-pulse" />
+            <span className="inline-flex items-center gap-1.5 text-[#C9A24B]">
+              <span className="w-2 h-2 rounded-full bg-[#C9A24B] animate-pulse" />
               <span>{language === 'bn' ? 'সার্ভার স্ট্যাটাস: অপ্টিমাল (৯৯.৯৯%)' : 'Server Status: 99.99% Optimal'}</span>
             </span>
             <span className="text-white/20">|</span>
