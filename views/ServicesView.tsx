@@ -107,7 +107,7 @@ export const ServicesView: React.FC<ServicesViewProps> = ({
                   {language === 'bn' ? 'প্রধান প্রধান মডিউল ও সুবিধাসমূহ' : 'Core Modules & Features Included'}
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {(language === 'bn' ? srv.featuresBn : srv.featuresEn).map((feat, fIdx) => (
+                  {(language === 'bn' ? srv.featuresBn : srv.featuresEn).map((feat: any, fIdx: number) => (
                     <div
                       key={fIdx}
                       className="p-3.5 rounded-xl bg-white border border-slate-200 flex items-start gap-2.5 shadow-2xs"

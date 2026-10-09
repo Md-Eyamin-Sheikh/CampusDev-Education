@@ -117,7 +117,7 @@ export const WorksView: React.FC<WorksViewProps> = ({
                 <div className="p-6 flex flex-col gap-4">
                   {/* Tech stack badges */}
                   <div className="flex flex-wrap gap-1.5">
-                    {project.techStack.map((tech) => (
+                    {(project.techStack || []).map((tech: string) => (
                       <span key={tech} className="px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 text-xs font-mono font-medium">
                         {tech}
                       </span>
@@ -131,7 +131,7 @@ export const WorksView: React.FC<WorksViewProps> = ({
                   {/* Highlight Result Callout */}
                   <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200/80 text-sm">
                     <p className="font-bold text-emerald-900">
-                      ফলাফল: {language === 'bn' ? project.resultsBn[0] : project.resultsEn[0]}
+                      ফলাফল: {language === 'bn' ? (project.resultsBn?.[0] || '') : (project.resultsEn?.[0] || '')}
                     </p>
                   </div>
                 </div>

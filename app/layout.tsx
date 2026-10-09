@@ -1,57 +1,91 @@
-import type { Metadata, Viewport } from "next";
-import "./globals.css";
-import React from "react";
+import type { Metadata, Viewport } from 'next';
+import { Plus_Jakarta_Sans, Hind_Siliguri } from 'next/font/google';
+import './tokens.css';
+import './globals.css';
+import React from 'react';
 
-const inter = { variable: "font-sans" };
-const plusJakartaSans = { variable: "font-heading" };
-const hindSiliguri = { variable: "font-bengali" };
+/* ── Fonts — self-hosted via next/font, blueprint §1.5 ─────────────
+   Plus Jakarta Sans: Latin headings & UI (weights 500–800)
+   Hind Siliguri: All Bangla content (weights 400–700)
+   ------------------------------------------------------------------ */
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['500', '600', '700', '800'],
+  variable: '--ff-latin',
+  display: 'swap',
+  preload: true,
+});
+
+const hindSiliguri = Hind_Siliguri({
+  subsets: ['bengali', 'latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--ff-bangla',
+  display: 'swap',
+  preload: false, // Lazy-load Bangla subset — loads after initial render
+});
+
+/* ── SEO Metadata ───────────────────────────────────────────────── */
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://eduweb.com.bd';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "EduWeb — শিক্ষা প্রতিষ্ঠানের প্রিমিয়াম ওয়েব সল্যুশন",
-    template: "%s | EduWeb",
+    default: 'EduWeb — শিক্ষা প্রতিষ্ঠানের প্রিমিয়াম ওয়েব সল্যুশন',
+    template: '%s | EduWeb',
   },
-  description: "বাংলাদেশের শিক্ষা প্রতিষ্ঠানগুলোর জন্য প্রিমিয়াম ডাইনামিক ওয়েবসাইট ও ডিজিটাল ম্যানেজমেন্ট সল্যুশন। স্কুল, কলেজ, মাদ্রাসার জন্য আধুনিক ডিজিটাল অবকাঠামো।",
+  description:
+    'বাংলাদেশের স্কুল, কলেজ, মাদ্রাসা ও কোচিং সেন্টারের জন্য প্রিমিয়াম ডায়নামিক ওয়েবসাইট ও ডিজিটাল ম্যানেজমেন্ট সল্যুশন। দ্রুত, মোবাইল-ফার্স্ট, বাংলা-প্রথম।',
   keywords: [
-    "education website bangladesh",
-    "school website bangladesh",
-    "madrasa website",
-    "college portal bd",
-    "campusdev",
-    "শিক্ষা প্রতিষ্ঠান ওয়েবসাইট",
-    "স্কুল ওয়েবসাইট",
-    "মাদ্রাসা ওয়েবসাইট",
+    'education website bangladesh',
+    'school website bangladesh',
+    'madrasa website',
+    'college portal bd',
+    'EduWeb',
+    'শিক্ষা প্রতিষ্ঠান ওয়েবসাইট',
+    'স্কুল ওয়েবসাইট',
+    'মাদ্রাসা ওয়েবসাইট',
+    'কলেজ ওয়েবসাইট',
+    'কোচিং ওয়েবসাইট',
   ],
-  authors: [{ name: "EduWeb", url: "https://eduweb.com.bd" }],
-  creator: "EduWeb",
-  publisher: "EduWeb",
+  authors: [{ name: 'EduWeb', url: SITE_URL }],
+  creator: 'EduWeb',
+  publisher: 'EduWeb',
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   openGraph: {
-    type: "website",
-    locale: "bn_BD",
-    url: "https://eduweb.com.bd",
-    siteName: "EduWeb",
-    title: "EduWeb — শিক্ষা প্রতিষ্ঠানের প্রিমিয়াম ওয়েব সল্যুশন",
-    description: "স্কুল, কলেজ ও মাদ্রাসার জন্য আধুনিক ওয়েবসাইট ও ম্যানেজমেন্ট সিস্টেম",
+    type: 'website',
+    locale: 'bn_BD',
+    alternateLocale: 'en_US',
+    url: SITE_URL,
+    siteName: 'EduWeb',
+    title: 'EduWeb — শিক্ষা প্রতিষ্ঠানের প্রিমিয়াম ওয়েব সল্যুশন',
+    description:
+      'স্কুল, কলেজ ও মাদ্রাসার জন্য আধুনিক ওয়েবসাইট ও ম্যানেজমেন্ট সিস্টেম',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "EduWeb — শিক্ষা প্রতিষ্ঠানের প্রিমিয়াম ওয়েব সল্যুশন",
-    description: "স্কুল, কলেজ ও মাদ্রাসার জন্য আধুনিক ওয়েবসাইট ও ম্যানেজমেন্ট সিস্টেম",
+    card: 'summary_large_image',
+    title: 'EduWeb — শিক্ষা প্রতিষ্ঠানের প্রিমিয়াম ওয়েব সল্যুশন',
+    description:
+      'স্কুল, কলেজ ও মাদ্রাসার জন্য আধুনিক ওয়েবসাইট ও ম্যানেজমেন্ট সিস্টেম',
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: '/favicon.ico',
+    apple: '/favicon.ico',
+    shortcut: '/favicon.ico',
   },
-  manifest: "/manifest.json",
+  manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
-    statusBarStyle: "black-translucent",
-    title: "EduWeb",
+    statusBarStyle: 'black-translucent',
+    title: 'EduWeb',
   },
   formatDetection: {
     telephone: true,
@@ -62,59 +96,51 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#14342b" },
-    { media: "(prefers-color-scheme: light)", color: "#f4f6f2" },
+    { media: '(prefers-color-scheme: dark)', color: '#0F2D25' },
+    { media: '(prefers-color-scheme: light)', color: '#F6F7F3' },
   ],
-  width: "device-width",
+  width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-  viewportFit: "cover",
-  interactiveWidget: "resizes-content",
+  maximumScale: 5, // Allow pinch-zoom for accessibility (not locked)
+  viewportFit: 'cover',
+  interactiveWidget: 'resizes-content',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="bn"
-      className={`${inter.variable} ${plusJakartaSans.variable} ${hindSiliguri.variable} scroll-smooth`}
+      className={`${plusJakartaSans.variable} ${hindSiliguri.variable} scroll-smooth`}
       suppressHydrationWarning
     >
-      <head>
-        {/* Google Fonts CDN — Study Hall type scale: Bricolage Grotesque (display) + Mulish (body) + Hind Siliguri (Bangla) */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+      <body className="min-h-screen antialiased" suppressHydrationWarning>
+        {/* Skip navigation link for keyboard users */}
+        <a href="#main-content" className="skip-link">
+          মূল বিষয়বস্তুতে যান
+        </a>
 
-        {/* ── PWA / Web App ─────────────────────── */}
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-title" content="EduWeb" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <link rel="manifest" href="/manifest.json" />
+        {/* Organization structured data (JSON-LD) */}
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'EduWeb',
+              url: SITE_URL,
+              description:
+                'Bangladesh education institution website solutions',
+              areaServed: 'BD',
+              inLanguage: ['bn', 'en'],
+            }),
+          }}
+        />
 
-        {/* ── Apple Touch Icons ─────────────────── */}
-        <link rel="apple-touch-icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="152x152" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="167x167" href="/favicon.ico" />
-
-        {/* ── Microsoft Tiles ───────────────────── */}
-        <meta name="msapplication-TileColor" content="#14342b" />
-        <meta name="msapplication-tap-highlight" content="no" />
-
-        {/* ── Theme color per OS ────────────────── */}
-        <meta name="theme-color" content="#14342b" media="(prefers-color-scheme: dark)" />
-        <meta name="theme-color" content="#f4f6f2" media="(prefers-color-scheme: light)" />
-      </head>
-      <body className="min-h-screen antialiased" style={{ fontFamily: 'var(--ff-body)', background: 'var(--paper)', color: 'var(--ink-soft)' }}>
-        {children}
+        <div id="main-content">{children}</div>
       </body>
     </html>
   );
 }
-

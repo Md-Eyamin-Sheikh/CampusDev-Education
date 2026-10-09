@@ -118,7 +118,7 @@ export const PricingView: React.FC<PricingViewProps> = ({
                     </div>
 
                     <ul className="flex flex-col gap-2.5 text-sm mb-8">
-                      {(language === 'bn' ? plan.featuresBn : plan.featuresEn).map((feat, idx) => (
+                      {(language === 'bn' ? plan.featuresBn : plan.featuresEn).map((feat: any, idx: number) => (
                         <li key={idx} className="flex items-start gap-2">
                           <Check className={`w-4 h-4 flex-shrink-0 mt-0.5 ${plan.popular ? 'text-blue-300' : 'text-[#003B73]'}`} />
                           <span className={plan.popular ? 'text-slate-200' : 'text-slate-700'}>{feat}</span>
@@ -207,7 +207,7 @@ export const PricingView: React.FC<PricingViewProps> = ({
                     </div>
 
                     <ul className="flex flex-col gap-2.5 text-sm text-slate-700 mb-8">
-                      {(language === 'bn' ? care.featuresBn : care.featuresEn).map((feat, idx) => (
+                      {(language === 'bn' ? care.featuresBn : care.featuresEn).map((feat: any, idx: number) => (
                         <li key={idx} className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-[#003B73] flex-shrink-0 mt-0.5" />
                           <span>{feat}</span>

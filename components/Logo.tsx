@@ -32,20 +32,22 @@ export const EduWebIcon: React.FC<EduWebIconProps> = ({
   return (
     <div
       suppressHydrationWarning
-      className={`relative inline-flex items-center justify-center flex-shrink-0 ${
-        interactive ? 'hover:scale-[1.04] transition-transform duration-300 ease-out' : ''
+      className={`relative inline-flex items-center justify-center flex-shrink-0 rounded-xl bg-white/90 p-1 border border-[var(--brand-tint2)] shadow-[0_2px_8px_rgba(20,52,43,0.08)] ${
+        interactive ? 'hover:scale-[1.05] hover:shadow-[0_4px_12px_rgba(30,122,80,0.18)] transition-all duration-300 ease-out' : ''
       } ${sizeClasses} ${className}`}
       style={sizeStyle}
       aria-hidden="true"
     >
-      <Image
-        src="/EduWebLogo.png"
-        alt="EduWeb Logo"
-        fill
-        sizes="56px"
-        className="object-contain"
-        priority
-      />
+      <div className="relative w-full h-full flex items-center justify-center">
+        <Image
+          src="/EduWebLogo.png"
+          alt="EduWeb Logo"
+          fill
+          sizes="56px"
+          className="object-contain p-0.5 drop-shadow-xs"
+          priority
+        />
+      </div>
     </div>
   );
 };

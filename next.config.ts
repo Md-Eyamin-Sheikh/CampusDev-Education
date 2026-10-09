@@ -1,37 +1,87 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // Stable webpack (not Turbopack)
+  // ── Experimental ────────────────────────────────────────────────
   experimental: {
-    optimizeCss: true,
+    optimizeCss: true,   // Critters — critical CSS inline
+    // cacheComponents: true,  // Uncomment to enable Next.js 16 PPR / Cache Components
   },
-  // Next.js 16: top-level instead of experimental
-  serverExternalPackages: [],
-  // Compress responses
+
+  // ── Server packages — never bundled into the client ─────────────
+  serverExternalPackages: [
+    'google-auth-library',
+    '@googleapis/sheets',
+  ],
+
+  // ── Compression & response headers ──────────────────────────────
   compress: true,
-  // Power by header
   poweredByHeader: false,
-  // Strict mode for better dev experience
   reactStrictMode: true,
-  // Image optimization
+
+  // ── Image optimization ───────────────────────────────────────────
   images: {
-    formats: ["image/avif", "image/webp"],
+    formats: ['image/avif', 'image/webp'],
+    // dangerouslyAllowSVG: true with a tight CSP per blueprint TRD §3.5
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    remotePatterns: [
+      // Add patterns here when using external image hosts
+      // { protocol: 'https', hostname: '*.googleusercontent.com' },
+    ],
   },
-  // Security headers
+
+  // ── Security headers — blueprint TRD §3.5 ───────────────────────
+  // Removed: X-XSS-Protection (obsolete, per blueprint recommendation)
+  // Added: Content-Security-Policy
   async headers() {
+    const isDev = process.env.NODE_ENV !== 'production';
+
+    const scriptSrc = [
+      "'self'",
+      "'unsafe-inline'",
+      ...(isDev ? ["'unsafe-eval'"] : []),
+      "https://challenges.cloudflare.com",
+    ].join(' ');
+
+    const connectSrc = [
+      "'self'",
+      ...(isDev ? ["ws:", "wss:"] : []),
+      "https://challenges.cloudflare.com",
+      "https://api.telegram.org",
+    ].join(' ');
+
     return [
       {
-        source: "/(.*)",
+        source: '/(.*)',
         headers: [
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "X-Frame-Options", value: "DENY" },
-          { key: "X-XSS-Protection", value: "1; mode=block" },
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options',        value: 'DENY'    },
           {
-            key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=()",
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              `script-src ${scriptSrc}`,
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              "font-src 'self' https://fonts.gstatic.com",
+              "img-src 'self' data: blob: https:",
+              `connect-src ${connectSrc}`,
+              "frame-src https://challenges.cloudflare.com",
+              "frame-ancestors 'none'",
+              "base-uri 'self'",
+              "form-action 'self'",
+            ].join('; '),
           },
         ],
       },

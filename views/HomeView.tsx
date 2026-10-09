@@ -550,7 +550,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                     </p>
 
                     <div className="p-2.5 rounded-lg bg-blue-50 border border-blue-100 text-[11px] font-bold text-[#003B73] mt-2">
-                      ✓ {language === 'bn' ? study.resultsBn[0] : study.resultsEn[0]}
+                      ✓ {language === 'bn' ? (study.resultsBn?.[0] || '') : (study.resultsEn?.[0] || '')}
                     </div>
                   </div>
                 </div>
@@ -711,7 +711,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                   </div>
 
                   <ul className="flex flex-col gap-2.5 text-xs mb-8">
-                    {(language === 'bn' ? plan.featuresBn : plan.featuresEn).map((feat, idx) => (
+                    {(language === 'bn' ? plan.featuresBn : plan.featuresEn).map((feat: any, idx: number) => (
                       <li key={idx} className="flex items-start gap-2">
                         <Check className={`w-4 h-4 flex-shrink-0 mt-0.5 ${plan.popular ? 'text-sky-300' : 'text-[#003B73]'}`} />
                         <span className={plan.popular ? 'text-slate-200' : 'text-slate-700'}>{feat}</span>
@@ -795,7 +795,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
                 <div className="flex items-center gap-3 pt-3 border-t border-slate-200/60">
                   <div className="w-10 h-10 rounded-full bg-[#003B73] text-white flex items-center justify-center font-bold text-xs">
-                    {t.nameEn.charAt(0)}
+                    {(t.nameEn || t.authorName || 'E').charAt(0)}
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-[#0F172A]">

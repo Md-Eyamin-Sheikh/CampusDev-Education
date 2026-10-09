@@ -1,0 +1,110 @@
+/* =================================================================
+   EduWeb Design Tokens — Blueprint §1.6
+   Import once at the top of globals.css
+   Components read surface tokens (.zone-light / .zone-ink),
+   never raw hex values.
+   ================================================================= */
+
+:root {
+  /* ── Brand colors ─────────────────────────────────────────────── */
+  --pine-900:     #0F2D25;   /* Deep Pine — Ink-zone backgrounds, headings */
+  --pine-800:     #173A30;   /* Raised cards on Ink zones */
+  --emerald-600:  #1B7A4F;   /* Scholar Emerald — buttons, links, active */
+  --emerald-700:  #156640;   /* Hover / pressed state of primary buttons */
+  --emerald-50:   #E7F2EA;   /* Chips, selected rows, soft backgrounds */
+  --mint-300:     #7FD1A6;   /* Text & icons on Ink (Emerald fails there) */
+  --gold-500:     #C9A24B;   /* Antique Gold — hairlines, ratings, Ink CTA */
+  --gold-700:     #8A6A1F;   /* Gold as text on light surfaces */
+  --gold-50:      #F6EEDB;   /* Badge / highlight background */
+
+  /* ── Neutrals ─────────────────────────────────────────────────── */
+  --paper:        #F6F7F3;   /* Page background */
+  --white:        #FFFFFF;   /* Cards, inputs */
+  --line:         #E3E8E0;   /* Borders and dividers */
+  --text-strong:  var(--pine-900);
+  --text-body:    #2B4A40;   /* Paragraph text */
+  --text-muted:   #5A6B62;   /* Captions, helper text, placeholders */
+
+  /* ── Status colors — system feedback only, never decorative ───── */
+  --success:      #1B7A4F;
+  --warning:      #9A6700;
+  --danger:       #C8452F;
+  --info:         #2F6F9F;
+
+  /* ── Radius ───────────────────────────────────────────────────── */
+  --radius-sm:    12px;   /* Inputs, chips */
+  --radius-md:    20px;   /* Cards */
+  --radius-lg:    28px;   /* Hero media */
+  --radius-pill:  999px;  /* Buttons, badges */
+
+  /* ── Shadows (tinted Deep Pine) ───────────────────────────────── */
+  --shadow-1: 0 2px 8px rgba(15, 45, 37, 0.06);
+  --shadow-2: 0 14px 34px rgba(15, 45, 37, 0.10);
+  --shadow-3: 0 26px 60px rgba(15, 45, 37, 0.16);
+
+  /* ── Motion ───────────────────────────────────────────────────── */
+  --ease:         cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast:     150ms;
+  --dur-base:     240ms;
+
+  /* ── Typography ───────────────────────────────────────────────── */
+  --ff-latin:  'Plus Jakarta Sans', system-ui, sans-serif;
+  --ff-bangla: 'Hind Siliguri', system-ui, sans-serif;
+
+  /* ── Spacing (4-point grid reference) ────────────────────────── */
+  /* 4 | 8 | 12 | 16 | 24 | 32 | 48 | 64 | 96 */
+}
+
+/* ── Surface-aware tokens: components read these, never raw colors ── */
+
+.zone-light {
+  --surface-bg:   var(--white);
+  --link:         var(--emerald-600);
+  --btn-bg:       var(--emerald-600);
+  --btn-bg-hover: var(--emerald-700);
+  --btn-fg:       #FFFFFF;
+  --btn-outline-border: var(--emerald-600);
+  --btn-outline-fg: var(--emerald-600);
+  --focus-ring:   var(--emerald-600);
+  --active-fg:    var(--emerald-600);
+}
+
+.zone-ink {
+  background:     var(--pine-900);
+  color:          #FFFFFF;
+  --text-strong:  #FFFFFF;
+  --text-body:    #D5DED9;
+  --text-muted:   #B8C4BE;
+  --link:         var(--mint-300);
+  --btn-bg:       var(--gold-500);
+  --btn-bg-hover: var(--gold-700);
+  --btn-fg:       var(--pine-900);
+  --btn-outline-border: var(--mint-300);
+  --btn-outline-fg: var(--mint-300);
+  --focus-ring:   var(--mint-300);
+  --active-fg:    var(--mint-300);
+  --surface-bg:   var(--pine-800);
+  --line:         rgba(255, 255, 255, 0.12);
+}
+
+/* ── Hero gradient glow (one gradient, blueprint §1.4) ─────────── */
+.hero-glow {
+  background:
+    radial-gradient(120% 90% at 88% -8%, rgba(201, 162, 75, 0.10), transparent 55%),
+    radial-gradient(90% 80% at 4% 2%, rgba(27, 122, 79, 0.08), transparent 50%),
+    var(--pine-900);
+}
+
+/* ── Glass — top bar and bottom tab bar ONLY ──────────────────── */
+.glass-nav {
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  background: rgba(15, 45, 37, 0.90);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Status message pattern (4px left border on white card) ────── */
+.status-success { border-left: 4px solid var(--success); }
+.status-warning { border-left: 4px solid var(--warning); }
+.status-danger  { border-left: 4px solid var(--danger);  }
+.status-info    { border-left: 4px solid var(--info);    }

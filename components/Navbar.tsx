@@ -182,8 +182,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           isVisible || mobileMenuOpen ? 'translate-y-0' : '-translate-y-full md:translate-y-0'
         } ${
           isScrolled 
-            ? 'bg-[#14342b]/95 backdrop-blur-xl border-b border-white/10 shadow-[0_12px_36px_rgba(20,52,43,0.35)]' 
-            : 'bg-[#14342b]/90 backdrop-blur-lg border-b border-white/10 shadow-lg'
+            ? 'bg-[#f4f6f2]/95 backdrop-blur-xl border-b border-[#e2e8de] shadow-[0_4px_20px_rgba(20,52,43,0.06)]' 
+            : 'bg-[#f4f6f2]/85 backdrop-blur-lg border-b border-[#e2e8de]/70 shadow-xs'
         }`}
       >
         {/* Top Institutional Micro-Bar (Collapsible on scroll) */}
@@ -196,7 +196,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-[60px] sm:h-[68px] flex items-center justify-between gap-2 sm:gap-4 transition-all duration-200"
         >
           
-          {/* Brand Logo (Dark Theme styling) */}
+          {/* Brand Logo (Light / Paper Theme styling) */}
           <div className="flex items-center gap-2 flex-shrink-0 min-w-0">
             <button 
               id="navbar-brand-logo-btn"
@@ -204,7 +204,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="flex items-center gap-2 text-left focus:outline-none group cursor-pointer"
               aria-label="CampusDev Home"
             >
-              <Logo size="responsive" theme="dark" />
+              <Logo size="responsive" theme="light" />
             </button>
           </div>
 
@@ -212,7 +212,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <nav 
             id="desktop-main-navigation"
             aria-label="Main Navigation" 
-            className="hidden lg:flex items-center gap-1 bg-[#132337]/90 border border-sky-500/25 p-1.5 rounded-2xl shadow-inner backdrop-blur-md"
+            className="hidden lg:flex items-center gap-1 bg-[#eef2ec]/90 border border-[#e2e8de] p-1.5 rounded-full shadow-inner backdrop-blur-md"
           >
             {/* Primary Nav Links */}
             {primaryNavLinks.map((link) => {
@@ -222,15 +222,15 @@ export const Navbar: React.FC<NavbarProps> = ({
                   key={link.id}
                   id={`nav-link-${link.id}`}
                   onClick={() => handleNavClick(link.id)}
-                  className={`relative px-3.5 py-2 rounded-xl text-xs xl:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-1.5 whitespace-nowrap ${
+                  className={`relative px-4 py-2 rounded-full text-xs xl:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-1.5 whitespace-nowrap ${
                     isActive
-                      ? 'bg-[#003B73] text-white font-extrabold shadow-[0_0_15px_rgba(0,59,115,0.6)] border border-sky-400/50'
-                      : 'text-slate-200 hover:text-white hover:bg-white/10'
+                      ? 'bg-[#1e7a50] text-white font-extrabold shadow-[0_4px_14px_rgba(30,122,80,0.30)] border border-[#17663f]'
+                      : 'text-[#14342b] hover:text-[#1e7a50] hover:bg-white/80'
                   }`}
                 >
                   <span>{language === 'bn' ? link.labelBn : link.labelEn}</span>
                   {link.badge && (
-                    <span className={`px-1.5 py-0.5 text-[9px] font-extrabold rounded-full uppercase tracking-wider ${link.badgeColor || 'bg-sky-500/20 text-sky-300 border border-sky-400/30'}`}>
+                    <span className={`px-1.5 py-0.5 text-[9px] font-extrabold rounded-full uppercase tracking-wider ${link.badgeColor || 'bg-[#1e7a50]/15 text-[#1e7a50] border border-[#1e7a50]/30'}`}>
                       {link.badge}
                     </span>
                   )}
@@ -243,28 +243,28 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 id="navbar-more-dropdown-btn"
                 onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
-                className={`px-3 py-2 rounded-xl text-xs xl:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-1.5 whitespace-nowrap ${
+                className={`px-4 py-2 rounded-full text-xs xl:text-sm font-semibold transition-all duration-200 cursor-pointer flex items-center gap-1.5 whitespace-nowrap ${
                   isSecondaryActive || moreDropdownOpen
-                    ? 'bg-[#003B73] text-white font-extrabold shadow-[0_0_15px_rgba(0,59,115,0.6)] border border-sky-400/50'
-                    : 'text-slate-200 hover:text-white hover:bg-white/10'
+                    ? 'bg-[#1e7a50] text-white font-extrabold shadow-[0_4px_14px_rgba(30,122,80,0.30)] border border-[#17663f]'
+                    : 'text-[#14342b] hover:text-[#1e7a50] hover:bg-white/80'
                 }`}
                 aria-expanded={moreDropdownOpen}
               >
                 <span>{language === 'bn' ? 'আরো মেনু' : 'More'}</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${moreDropdownOpen ? 'rotate-180 text-sky-300' : 'text-slate-400'}`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${moreDropdownOpen ? 'rotate-180 text-emerald-200' : 'text-[#57685e]'}`} />
                 {isSecondaryActive && (
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.8)]" />
+                  <span className="w-2 h-2 rounded-full bg-[#f2a93b] shadow-[0_0_6px_rgba(242,169,59,0.8)]" />
                 )}
               </button>
 
-              {/* Desktop Dropdown Popover (High Contrast Ultra-Legible Dark Theme) */}
+              {/* Desktop Dropdown Popover */}
               {moreDropdownOpen && (
                 <div 
                   id="navbar-more-dropdown-popover"
-                  className="absolute top-full right-0 mt-3 w-84 bg-[#0F2238] border border-sky-500/40 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.7)] p-3 z-50 animate-in fade-in slide-in-from-top-2 duration-150 backdrop-blur-2xl"
+                  className="absolute top-full right-0 mt-3 w-84 bg-white border border-[#e2e8de] rounded-2xl shadow-[0_16px_40px_rgba(20,52,43,0.12)] p-3 z-50 animate-in fade-in slide-in-from-top-2 duration-150 backdrop-blur-2xl"
                 >
-                  <div className="px-3 py-2 border-b border-sky-500/20 mb-2">
-                    <span className="text-[11px] font-extrabold uppercase tracking-wider text-sky-300 block">
+                  <div className="px-3 py-2 border-b border-[#e2e8de] mb-2">
+                    <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#1e7a50] block">
                       {language === 'bn' ? 'অতিরিক্ত সেকশন ও টুলস' : 'Additional Sections & Tools'}
                     </span>
                   </div>
@@ -279,27 +279,27 @@ export const Navbar: React.FC<NavbarProps> = ({
                           onClick={() => handleNavClick(item.id)}
                           className={`w-full p-3 rounded-xl text-left transition-all flex items-start gap-3 cursor-pointer group ${
                             isActive 
-                              ? 'bg-[#003B73] text-white font-extrabold border border-sky-400/60 shadow-[0_0_15px_rgba(0,59,115,0.5)]' 
-                              : 'bg-[#152B44]/70 hover:bg-[#1C3859] border border-sky-500/20 hover:border-sky-400/40'
+                              ? 'bg-[#e7f2ea] text-[#14342b] font-extrabold border border-[#1e7a50]/40 shadow-xs' 
+                              : 'bg-[#f4f6f2] hover:bg-[#e7f2ea]/60 border border-[#e2e8de] hover:border-[#1e7a50]/30'
                           }`}
                         >
                           <div className={`w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 transition-transform group-hover:scale-105 ${
-                            isActive ? 'bg-sky-500/30 text-white' : 'bg-sky-500/15 border border-sky-400/30 text-sky-300'
+                            isActive ? 'bg-[#1e7a50] text-white' : 'bg-[#e7f2ea] border border-[#cfe4d6] text-[#1e7a50]'
                           }`}>
                             {item.icon}
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center justify-between gap-1">
-                              <span className="text-sm font-bold text-white group-hover:text-sky-200">
+                              <span className="text-sm font-bold text-[#14342b] group-hover:text-[#1e7a50]">
                                 {language === 'bn' ? item.labelBn : item.labelEn}
                               </span>
                               {item.badge && (
-                                <span className={`text-[10px] font-black px-2 py-0.5 rounded-full border ${item.badgeColor || 'bg-sky-500/20 text-sky-300 border-sky-400/30'}`}>
+                                <span className={`text-[10px] font-black px-2 py-0.5 rounded-full border ${item.badgeColor || 'bg-[#1e7a50]/15 text-[#1e7a50] border-[#1e7a50]/30'}`}>
                                   {item.badge}
                                 </span>
                               )}
                             </div>
-                            <p className="text-xs text-slate-200 font-medium line-clamp-1 mt-0.5">
+                            <p className="text-xs text-[#57685e] font-medium line-clamp-1 mt-0.5">
                               {language === 'bn' ? item.descBn : item.descEn}
                             </p>
                           </div>
@@ -319,24 +319,24 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               id="navbar-language-toggle-btn"
               onClick={onToggleLanguage}
-              className="group relative flex items-center gap-1.5 p-1 rounded-full bg-[#132337] hover:bg-[#1A3452] border border-sky-500/30 transition-all duration-300 shadow-inner active:scale-95 cursor-pointer flex-shrink-0 select-none"
+              className="group relative flex items-center gap-1.5 p-1 rounded-full bg-[#eef2ec] hover:bg-white border border-[#e2e8de] transition-all duration-300 shadow-xs active:scale-95 cursor-pointer flex-shrink-0 select-none"
               aria-label="Toggle language between Bengali and English"
               title={language === 'bn' ? 'Switch to English' : 'বাংলা ভাষায় পরিবর্তন করুন'}
             >
               <div className="relative flex items-center justify-center pl-2">
-                <Globe className="w-4 h-4 text-sky-400 group-hover:rotate-12 transition-transform duration-300 flex-shrink-0" />
+                <Globe className="w-4 h-4 text-[#1e7a50] group-hover:rotate-12 transition-transform duration-300 flex-shrink-0" />
               </div>
 
-              <div className="relative flex items-center gap-0.5 bg-[#0C1929] p-0.5 rounded-full border border-sky-500/20 text-[11px] font-bold">
+              <div className="relative flex items-center gap-0.5 bg-white p-0.5 rounded-full border border-[#e2e8de] text-[11px] font-bold">
                 <span
                   className={`relative px-2.5 py-0.5 rounded-full transition-all duration-300 flex items-center gap-1 ${
                     language === 'bn'
-                      ? 'bg-[#003B73] text-white font-extrabold shadow-sm border border-sky-400/40'
-                      : 'text-slate-300 hover:text-white'
+                      ? 'bg-[#1e7a50] text-white font-extrabold shadow-xs border border-[#17663f]'
+                      : 'text-[#57685e] hover:text-[#14342b]'
                   }`}
                 >
                   {language === 'bn' && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#f2a93b] animate-pulse" />
                   )}
                   <span>বাং</span>
                 </span>
@@ -344,12 +344,12 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span
                   className={`relative px-2.5 py-0.5 rounded-full transition-all duration-300 flex items-center gap-1 ${
                     language === 'en'
-                      ? 'bg-[#003B73] text-white font-extrabold shadow-sm border border-sky-400/40'
-                      : 'text-slate-300 hover:text-white'
+                      ? 'bg-[#1e7a50] text-white font-extrabold shadow-xs border border-[#17663f]'
+                      : 'text-[#57685e] hover:text-[#14342b]'
                   }`}
                 >
                   {language === 'en' && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#f2a93b] animate-pulse" />
                   )}
                   <span>EN</span>
                 </span>
@@ -360,11 +360,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               id="navbar-mobile-menu-toggle-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl text-white bg-[#132337] hover:bg-[#1A3452] border border-sky-500/30 active:scale-95 transition-all cursor-pointer flex items-center justify-center w-9 h-9 flex-shrink-0"
+              className="lg:hidden p-2 rounded-xl text-[#14342b] bg-[#eef2ec] hover:bg-white border border-[#e2e8de] active:scale-95 transition-all cursor-pointer flex items-center justify-center w-9 h-9 flex-shrink-0"
               aria-label="Toggle Navigation Menu"
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-[#14342b]" /> : <Menu className="w-5 h-5 text-[#14342b]" />}
             </button>
           </div>
         </div>
@@ -379,18 +379,18 @@ export const Navbar: React.FC<NavbarProps> = ({
             if (e.target === e.currentTarget) setMobileMenuOpen(false);
           }}
         >
-          <div className="w-full bg-[#0C1929]/98 border-b border-sky-500/30 shadow-2xl rounded-b-3xl max-h-[85vh] overflow-y-auto p-4 sm:p-6 flex flex-col gap-4 animate-in slide-in-from-top-4 duration-200 text-white">
+          <div className="w-full bg-[#f4f6f2]/98 border-b border-[#e2e8de] shadow-2xl rounded-b-3xl max-h-[85vh] overflow-y-auto p-4 sm:p-6 flex flex-col gap-4 animate-in slide-in-from-top-4 duration-200 text-[#14342b]">
             
             {/* Drawer Header */}
-            <div className="flex items-center justify-between pb-3.5 border-b border-sky-500/20 gap-2">
-              <Logo variant="compact" size="sm" theme="dark" />
+            <div className="flex items-center justify-between pb-3.5 border-b border-[#e2e8de] gap-2">
+              <Logo variant="compact" size="sm" theme="light" />
               <button
                 id="mobile-drawer-language-toggle-btn"
                 onClick={onToggleLanguage}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#003B73] hover:bg-[#00529B] text-white text-xs font-extrabold shadow-sm border border-sky-400/40 cursor-pointer active:scale-95 flex-shrink-0"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#1e7a50] hover:bg-[#17663f] text-white text-xs font-extrabold shadow-xs border border-[#17663f] cursor-pointer active:scale-95 flex-shrink-0"
                 aria-label="Toggle language between Bengali and English"
               >
-                <Globe className="w-3.5 h-3.5 text-sky-300" />
+                <Globe className="w-3.5 h-3.5 text-emerald-200" />
                 <span className="text-xs text-white font-black">
                   {language === 'bn' ? 'বাং → EN' : 'EN → বাং'}
                 </span>
@@ -408,59 +408,59 @@ export const Navbar: React.FC<NavbarProps> = ({
                     onClick={() => handleNavClick(link.id)}
                     className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-left text-[15px] font-bold transition-all cursor-pointer ${
                       isActive
-                        ? 'bg-[#003B73] text-white font-black border border-sky-400/50 shadow-md scale-[1.01]'
-                        : 'text-slate-200 hover:text-white bg-[#132337]/80 hover:bg-[#1A3452] border border-sky-500/20'
+                        ? 'bg-[#1e7a50] text-white font-black border border-[#17663f] shadow-md scale-[1.01]'
+                        : 'text-[#14342b] hover:text-[#1e7a50] bg-[#eef2ec]/80 hover:bg-white border border-[#e2e8de]'
                     }`}
                   >
                     <div className="flex items-center gap-2.5">
                       {link.icon && (
-                        <span className={isActive ? 'text-sky-300' : 'text-sky-400'}>
+                        <span className={isActive ? 'text-emerald-200' : 'text-[#1e7a50]'}>
                           {link.icon}
                         </span>
                       )}
-                      <span className="text-white font-bold">
+                      <span className={isActive ? 'text-white font-bold' : 'text-[#14342b] font-bold'}>
                         {language === 'bn' ? link.labelBn : link.labelEn}
                       </span>
                       {link.badge && (
                         <span className={`px-2 py-0.5 text-[10px] font-extrabold rounded-md ${
                           isActive 
-                            ? 'bg-sky-400/30 text-white border border-sky-300/40' 
-                            : 'bg-sky-500/20 text-sky-300 border border-sky-400/30'
+                            ? 'bg-emerald-400/30 text-white border border-emerald-300/40' 
+                            : 'bg-[#1e7a50]/15 text-[#1e7a50] border border-[#1e7a50]/30'
                         }`}>
                           {link.badge}
                         </span>
                       )}
                     </div>
-                    <ChevronRight className={`w-4 h-4 ${isActive ? 'text-white' : 'text-slate-400'}`} />
+                    <ChevronRight className={`w-4 h-4 ${isActive ? 'text-white' : 'text-[#57685e]'}`} />
                   </button>
                 );
               })}
             </div>
 
             {/* Quick Action Center Inside Drawer */}
-            <div className="pt-3.5 border-t border-sky-500/20 flex flex-col gap-3">
+            <div className="pt-3.5 border-t border-[#e2e8de] flex flex-col gap-3">
               <button
                 id="mobile-drawer-audit-btn"
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenAudit();
                 }}
-                className="w-full flex items-center justify-between p-3.5 rounded-xl bg-[#152B44] hover:bg-[#1C3859] border border-sky-500/30 text-white text-xs sm:text-sm font-bold shadow-xs transition-all cursor-pointer text-left group"
+                className="w-full flex items-center justify-between p-3.5 rounded-xl bg-[#e7f2ea] hover:bg-[#cfe4d6] border border-[#1e7a50]/30 text-[#14342b] text-xs sm:text-sm font-bold shadow-xs transition-all cursor-pointer text-left group"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-9.5 h-9.5 rounded-xl bg-[#003B73] text-white flex items-center justify-center flex-shrink-0 shadow-2xs border border-sky-400/30">
-                    <Zap className="w-4 h-4 text-sky-300" />
+                  <div className="w-9.5 h-9.5 rounded-xl bg-[#1e7a50] text-white flex items-center justify-center flex-shrink-0 shadow-2xs border border-[#17663f]">
+                    <Zap className="w-4 h-4 text-emerald-200" />
                   </div>
                   <div>
-                    <span className="block text-white font-black text-xs sm:text-sm">
+                    <span className="block text-[#14342b] font-black text-xs sm:text-sm">
                       {language === 'bn' ? 'ফ্রি ওয়েবসাইট স্পিড ও এসইও অডিট' : 'Free Speed & SEO Audit Tool'}
                     </span>
-                    <span className="text-[11px] font-semibold text-sky-300 block mt-0.5">
+                    <span className="text-[11px] font-semibold text-[#1e7a50] block mt-0.5">
                       {language === 'bn' ? 'আপনার বর্তমান সাইটের স্কোর ১ মিনিটে পরীক্ষা করুন' : 'Test your institutional portal performance'}
                     </span>
                   </div>
                 </div>
-                <ArrowRight className="w-4 h-4 text-sky-300 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-[#1e7a50] flex-shrink-0 group-hover:translate-x-1 transition-transform" />
               </button>
 
               <div className="grid grid-cols-2 gap-2.5">
@@ -469,7 +469,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   href="https://wa.me/8801700000000"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 p-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-400/30 text-xs font-black transition-colors shadow-sm"
+                  className="flex items-center justify-center gap-2 p-3 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white border border-emerald-500/30 text-xs font-black transition-colors shadow-xs"
                 >
                   <MessageCircle className="w-4 h-4 text-white" />
                   <span>{language === 'bn' ? 'হোয়াটসঅ্যাপ' : 'WhatsApp'}</span>
@@ -478,9 +478,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <a
                   id="mobile-drawer-phone-link"
                   href="tel:+8801700000000"
-                  className="flex items-center justify-center gap-2 p-3 rounded-xl bg-[#003B73] hover:bg-[#00529B] text-white border border-sky-400/30 text-xs font-black transition-colors shadow-sm"
+                  className="flex items-center justify-center gap-2 p-3 rounded-xl bg-[#1e7a50] hover:bg-[#17663f] text-white border border-[#17663f] text-xs font-black transition-colors shadow-xs"
                 >
-                  <Phone className="w-4 h-4 text-sky-300" />
+                  <Phone className="w-4 h-4 text-emerald-200" />
                   <span>{language === 'bn' ? 'কল করুন' : 'Direct Call'}</span>
                 </a>
               </div>
@@ -491,9 +491,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                   setMobileMenuOpen(false);
                   onOpenConsultation();
                 }}
-                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-gradient-to-r from-[#003B73] to-[#00529B] hover:from-[#004B8C] hover:to-[#0066C2] text-white text-sm font-black shadow-lg cursor-pointer transition-all active:scale-[0.99] border border-sky-400/40"
+                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-gradient-to-r from-[#1e7a50] to-[#17663f] hover:from-[#17663f] hover:to-[#14342b] text-white text-sm font-black shadow-[0_6px_20px_rgba(30,122,80,0.3)] cursor-pointer transition-all active:scale-[0.99] border border-[#1e7a50]/40"
               >
-                <Sparkles className="w-4 h-4 text-sky-200" />
+                <Sparkles className="w-4 h-4 text-emerald-200" />
                 <span>{language === 'bn' ? 'ফ্রি প্ল্যানিং ও কনসালটেশন বুক করুন' : 'Book Free Strategy Consultation'}</span>
               </button>
             </div>
